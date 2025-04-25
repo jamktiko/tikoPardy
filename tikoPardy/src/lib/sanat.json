@@ -1,0 +1,687 @@
+[
+	{
+		"sana": "Amazon Web Services",
+		"lyhenne": "AWS",
+		"selitys": "Amazonin tarjoama pilvipalvelualusta"
+	},
+	{
+		"sana": "Infrastructure as a Service",
+		"lyhenne": "IAAS",
+		"selitys": "Infra palveluna - Sinä hallitset lähes kaiken, paitsi fyysisen laitteiston"
+	},
+	{
+		"sana": "Platform as a Service",
+		"lyhenne": "PaaS",
+		"selitys": "Ohjelmisto palveluna - Käytät valmista sovellusta netin kautta"
+	},
+	{
+		"sana": "Software as a Service",
+		"lyhenne": "SaaS",
+		"selitys": "Ohjelmisto palveluna - Käytät valmista sovellusta netin kautta"
+	},
+	{
+		"sana": "Amazon Elastic Block Store",
+		"lyhenne": "EBS",
+		"selitys": "Tarjoaa pysyviä lohkotallennuslevyjä EC2-palvelimille"
+	},
+	{
+		"sana": "Amazon Elastic Compute Cloud",
+		"lyhenne": "EC2",
+		"selitys": "Tarjoaa virtuaalipalvelimia, joilla voi ajaa omia sovelluksia"
+	},
+	{
+		"sana": "Amazon Elastic Container Registry",
+		"lyhenne": "ECR",
+		"selitys": "Docker-kuvien säilytyspaikka AWS:ssä"
+	},
+	{
+		"sana": "Amazon Elastic Container Service",
+		"lyhenne": "ECS",
+		"selitys": "Konttien hallinta- ja orkestrointipalvelu"
+	},
+	{
+		"sana": "Amazon Elastic File System",
+		"lyhenne": "EFS",
+		"selitys": "Skaalautuva ja jaettu tiedostojärjestelmä, jota useat EC2-instanssit voivat käyttää samanaikaisesti"
+	},
+	{
+		"sana": "Amazon Elastic Kubernetes Service",
+		"lyhenne": "EKS",
+		"selitys": "Kubernetes-palvelu, joka helpottaa konttien orkestrointia AWS:ssä"
+	},
+	{
+		"sana": "Amazon Relational Database Service",
+		"lyhenne": "RDS",
+		"selitys": "Hallittu relaatiotietokantapalvelu (esim. MySQL, PostreSQL, Oracle, SQL Server"
+	},
+	{
+		"sana": "Amazon Simple Storage Service",
+		"lyhenne": "S3",
+		"selitys": "Skaalautuva onjektipohjainen tallennusratkaisu (esim. kuvat, videot, varmuuskopiot"
+	},
+	{
+		"sana": "Amazon Virtual Private Cloud",
+		"lyhenne": "VPC",
+		"selitys": "Virtuaalinen eristetty verkkoympäristö AWS:ssä"
+	},
+	{
+		"sana": "Identity and Access Management",
+		"lyhenne": "IAM",
+		"selitys": "Käyttäjien ja käyttöoikeuksien hallinta"
+	},
+	{
+		"sana": "Key Management Service",
+		"lyhenne": "KMS",
+		"selitys": "AWS:n avaintenhallintapalvelu salaukseen"
+	},
+	{
+		"sana": "Command Line Interface",
+		"lyhenne": "CLI",
+		"selitys": "Työkalu AWS:n hallintaan komentoriviltä"
+	},
+	{
+		"sana": "Software Development Kit",
+		"lyhenne": "SDK",
+		"selitys": "Ohjelmistokehitystyökalut, joilla voi kirjoittaa sovelluksia, jotka käyttävät AWS-palveluita"
+	},
+	{
+		"sana": "Cloud Adopiton Framework",
+		"lyhenne": "CAF",
+		"selitys": "Viitekehys, joka auttaa organisaatioita siirtymään pilveen"
+	},
+	{
+		"sana": "All Upfront Reserved Instance",
+		"lyhenne": "AURI",
+		"selitys": "Täysin etukäteen maksettu varaus, jolla saa alennetun hinnan EC2-palvelimista"
+	},
+	{
+		"sana": "Partial Upfront Reserved Instance",
+		"lyhenne": "PURI",
+		"selitys": "Osa hinnasta maksetaan etukäteen, loput ajan kuluessa"
+	},
+	{
+		"sana": "No Upfront Payment Reserved Instance",
+		"lyhenne": "NURI",
+		"selitys": "Ei ennakkomaksua, mutta silti alennettu hinta palvelun pitkäaikaisesta käytöstä"
+	},
+	{
+		"sana": "Total Cost of Ownership",
+		"lyhenne": "TCO",
+		"selitys": "Kokonaiskustannukset palvelun ylläpidosta ja käytöstä"
+	},
+	{
+		"sana": "Service Control Policy",
+		"lyhenne": "SCP",
+		"selitys": "Säännöt, joilla rajoitetaan, mitä AWS-resursseja organisaation yksiköt voivat käyttää"
+	},
+	{
+		"sana": "Organizational Unit",
+		"lyhenne": "OU",
+		"selitys": "AWS-organisaation alayksikkö, joka voi sisältää tilejä ja soveltaa niihin yhteisiä sääntöjä"
+	},
+	{
+		"sana": "Content Delivery Network",
+		"lyhenne": "CDN",
+		"selitys": "Sisällönjakeluverkko, joka nopeuttaa sivustojen latausta lähettämällä sisältöä käyttäjää lähimmältä palvelimelta"
+	},
+	{
+		"sana": "Network Access Control List",
+		"lyhenne": "Network ACL",
+		"selitys": "Palomuuritasoinen sääntösarja, joka kontrolloi saapuvaa ja lähtevää liikennettä aliverkossa"
+	},
+	{
+		"sana": "Access Control List",
+		"lyhenne": "ACL",
+		"selitys": "Resurssikohtainen lista, joka määrittää, kuka saa käyttää ja mitäkin"
+	},
+	{
+		"sana": "Amazon Machine Image",
+		"lyhenne": "AMI",
+		"selitys": "Esikuva, jolla voidaan luoda virtuaalikoneita"
+	},
+	{
+		"sana": "Direct Attached Storage",
+		"lyhenne": "DAS",
+		"selitys": "Tallennus, joka on fyysisesti kytketty yhteen palvelimeen"
+	},
+	{
+		"sana": "Storage Area Nerwork",
+		"lyhenne": "SAN",
+		"selitys": "Suorituskykyinen tallennusverkko, jota useat palvelimet voivat käyttää"
+	},
+	{
+		"sana": "Network Attached Storage",
+		"lyhenne": "NAS",
+		"selitys": "Verkossa jaettu tallennus, jota käytetään tiedostojen jakamiseen"
+	},
+	{
+		"sana": "Relational Database Management Service",
+		"lyhenne": "RDBMS",
+		"selitys": "Tietokantojen hallintajärjestelmä"
+	},
+	{
+		"sana": "Web Service",
+		"lyhenne": "",
+		"selitys": "Verkkopalvelu, joka tarjoaa toimintoja HTTP:n kautta"
+	},
+	{
+		"sana": "AWS Lambda",
+		"lyhenne": "",
+		"selitys": "Palvelu, jolla voit suorittaa koodia ilman palvelinten hallintaa"
+	},
+	{
+		"sana": "AWS Elastic Beanstalk",
+		"lyhenne": "",
+		"selitys": "Alusta, joka automatisoi sovellusten käyttöönoton ja skaalauksen"
+	},
+	{
+		"sana": "Amazon Lightsail",
+		"lyhenne": "",
+		"selitys": "Yksinkertaistettu VPS-palvelu, joka sopii pienille projekteille ja aloittelijoille"
+	},
+	{
+		"sana": "AWS Batch",
+		"lyhenne": "",
+		"selitys": "Palvelu, jolla voi ajaa eräajoja tai suuria taustaprosesseja skaalautuvasti"
+	},
+	{
+		"sana": "AWS Outposts",
+		"lyhenne": "",
+		"selitys": "AWS-palvelut toimitettuna asiakkaan omaan konesaliin"
+	},
+	{
+		"sana": "AWS Fargate",
+		"lyhenne": "",
+		"selitys": "Konttien ajamiseen tarkoitettu palvelu ilman, että tarvitsee hallita palvelimia"
+	},
+	{
+		"sana": "Amazon Cognito",
+		"lyhenne": "",
+		"selitys": "Käyttäjien hallintaan ja autentikointiin liittyvä palvelu mobiili- ja web-sovelluksille"
+	},
+	{
+		"sana": "AWS Shield",
+		"lyhenne": "",
+		"selitys": "DDoS-hyökkäyksiltä suojaava palvelu"
+	},
+	{
+		"sana": "AWS Artifact",
+		"lyhenne": "",
+		"selitys": "AWS:n turvallisuusraporttien ja vaatimustenmukaisuusdokumenttien hallintapaikka"
+	},
+	{
+		"sana": "Amazon S3 Glacier",
+		"lyhenne": "",
+		"selitys": "Halpa pitkäaikaistallennuspalvelu, joka soveltuu arkistointiin"
+	},
+	{
+		"sana": "Amazon DynamoDB",
+		"lyhenne": "",
+		"selitys": "Nopea ja skaalautuva NoSQL-tietokanta"
+	},
+	{
+		"sana": "Amazon Redshift",
+		"lyhenne": "",
+		"selitys": "Tietovarasto suurten datamassojen analytiikkaan"
+	},
+	{
+		"sana": "Amazon Aurora",
+		"lyhenne": "",
+		"selitys": "Tehokas relaatiotietokanta, joka on yhteensopiva MySQL:n ja PostgreSQL:n kanssa"
+	},
+	{
+		"sana": "Amazon CloudFront",
+		"lyhenne": "",
+		"selitys": "AWS:n oma CDN-palvelu"
+	},
+	{
+		"sana": "Elastic Load Balancing",
+		"lyhenne": "",
+		"selitys": "Kuormantasaaja, joka jakaa liikenteen usealle instanssille"
+	},
+	{
+		"sana": "AWS Trusted Advisor",
+		"lyhenne": "",
+		"selitys": "Analysoi AWS-ympäristösi ja suosittelee parannuksia esimerkiksi turvallisuuteen ja suorituskykyyn."
+	},
+	{
+		"sana": "AWS CloudWatch",
+		"lyhenne": "",
+		"selitys": "Monitorointi- ja lokipalvelu resursseille ja sovelluksille"
+	},
+	{
+		"sana": "AWS CloudTrail",
+		"lyhenne": "",
+		"selitys": "Seuraa ja tallentaa tilin tapahtumia ja API-kutsuja"
+	},
+	{
+		"sana": "AWS Well-Architected Tool",
+		"lyhenne": "",
+		"selitys": "Arvioi infrastruktuuriasi ja antaa suosituksia parantamiseen"
+	},
+	{
+		"sana": "AWS Auto Scaling",
+		"lyhenne": "",
+		"selitys": "Skaalaa resursseja automaattisesti kuormituksen mukaan"
+	},
+	{
+		"sana": "AWS Config",
+		"lyhenne": "",
+		"selitys": "Seuraa AWS-resurssien tilaa ja muutosta"
+	},
+	{
+		"sana": "AWS Management Console",
+		"lyhenne": "",
+		"selitys": "Graafinen käyttöliittymä AWS-palveluiden hallintaan"
+	},
+	{
+		"sana": "AWS Organizations",
+		"lyhenne": "",
+		"selitys": "Mahdollistaa useiden AWS-tilien keskitetyn hallinnan ja hallintakäytännöt"
+	},
+	{
+		"sana": "AWS Cost & Usage Report",
+		"lyhenne": "",
+		"selitys": "Yksityiskohtainen raportti kustannuksista ja käytöstä"
+	},
+	{
+		"sana": "AWS Budgets",
+		"lyhenne": "",
+		"selitys": "Budjettien ja kulutusrajojen määrittely ja valvonta"
+	},
+	{
+		"sana": "AWS Cost Explorer",
+		"lyhenne": "",
+		"selitys": "Visualisointi- ja analyysityökalu kustannusten seuraamiseen"
+	},
+	{
+		"sana": "Reserved Instance",
+		"lyhenne": "RI",
+		"selitys": "Edullisempi tapa käyttää EC2-palvelimia sitoutumalla pidempään käyttöön"
+	},
+	{
+		"sana": "Consolidated Billing",
+		"lyhenne": "",
+		"selitys": "Usean tilin laskutuksen yhdistäminen yhteen tiliin"
+	},
+	{
+		"sana": "AWS OpsWorks",
+		"lyhenne": "",
+		"selitys": "Konfiguraationhallintatyökalu, joka perustuu Chef-/Puppet-tekniikoihin"
+	},
+	{
+		"sana": "AWS Pricing Calculator",
+		"lyhenne": "",
+		"selitys": "Laskuri, jolla voi arvioida palveluiden kustannuksia"
+	},
+	{
+		"sana": "AWS Billing and Cost Management",
+		"lyhenne": "",
+		"selitys": "Portaali kustannusten ja laskujen hallintaan"
+	},
+	{
+		"sana": "AWS Cost and Usage Report Tool",
+		"lyhenne": "",
+		"selitys": "Työkalu, jolla voi analysoida kustannusraportteja tarkemmin"
+	},
+	{
+		"sana": "Amazon Simple Notification Service",
+		"lyhenne": "SNS",
+		"selitys": "Viestien ja ilmoitusten välityspalvelu"
+	},
+	{
+		"sana": "Technical Account Manager",
+		"lyhenne": "TAM",
+		"selitys": "Nimetty AWS-tukihenkilö isommille asiakkaille"
+	},
+	{
+		"sana": "Support Concierge",
+		"lyhenne": "",
+		"selitys": "AWS-tuen erityispalvelu yritysasiakkaille"
+	},
+	{
+		"sana": "AWS Global Infrastructure",
+		"lyhenne": "",
+		"selitys": "AWS:n fyysinen ja tekninen infrastruktuuri, johon kuuluu datakeskuksia, alueita ja reitityspisteitä"
+	},
+	{
+		"sana": "AWS Region",
+		"lyhenne": "",
+		"selitys": "Maantieteellinen alue, jossa on useita erillisiä saatavuusalueita (Availability Zoneja)"
+	},
+	{
+		"sana": "Availability Zone",
+		"lyhenne": "",
+		"selitys": "Fyysisesti erillinen tietokeskus, jotka ovat yhteydessä toisiinsa nopeilla yhteyksillä"
+	},
+	{
+		"sana": "Data Center",
+		"lyhenne": "",
+		"selitys": "Tietokeskus, jossa fyysiset palvelimet sijaitsevat"
+	},
+	{
+		"sana": "Point of Presence",
+		"lyhenne": "",
+		"selitys": "Verkkoyhteyspiste, joka nopeuttaa pääsyä AWS-palveluihin"
+	},
+	{
+		"sana": "Edge Location",
+		"lyhenne": "",
+		"selitys": "Paikka, jossa CDN palvelee sisältöä mahdollisimman lähellä käyttäjää"
+	},
+	{
+		"sana": "AWS Transit Gateway",
+		"lyhenne": "",
+		"selitys": "Yhdistää VPC:t ja paikalliset verkot keskitetysti ja hallitusti"
+	},
+	{
+		"sana": "Amazon Route 53",
+		"lyhenne": "",
+		"selitys": "DNS-palvelu, jolla hallitaan verkkotunnusten nimeämistä ja reititystä"
+	},
+	{
+		"sana": "AWS Direct Connect",
+		"lyhenne": "",
+		"selitys": "Yksityinen ja nopea yhteys organisaation datakeskuksesta AWS:ään"
+	},
+	{
+		"sana": "AWS VPN",
+		"lyhenne": "",
+		"selitys": "Salaamaton tai salattu yhteys AWS:n ja oman verkon välillä"
+	},
+	{
+		"sana": "Amazon Chime",
+		"lyhenne": "",
+		"selitys": "AWS:n oma viestintä- ja videokokouspalvelu"
+	},
+	{
+		"sana": "Secure Shell",
+		"lyhenne": "SSH",
+		"selitys": "Protokolla turvalliseen yhteyteen palvelimiin"
+	},
+	{
+		"sana": "Account Root User",
+		"lyhenne": "",
+		"selitys": "Tilin pääkäyttäjä, jolla on pääsy kaikkiin toimintoihin"
+	},
+	{
+		"sana": "Customer Master Key",
+		"lyhenne": "CMK",
+		"selitys": "Asiakkaan hallitsema avain AWS Key Management Servicessä"
+	},
+	{
+		"sana": "Security Assertion Markup Language",
+		"lyhenne": "SAML",
+		"selitys": "Protokolla kertakirjautumiseen"
+	},
+	{
+		"sana": "Secure HTTP",
+		"lyhenne": "HTTPS",
+		"selitys": "Salausprotokolla verkkoliikenteelle"
+	},
+	{
+		"sana": "IP-address",
+		"lyhenne": "",
+		"selitys": "Internet Protocol -osoite, joka yksilöi laitteen verkossa"
+	},
+	{
+		"sana": "Classless Inter-Domain Routing",
+		"lyhenne": "CIDR",
+		"selitys": "Verkon IP-osoitteiden esitystapa"
+	},
+	{
+		"sana": "Open Systems Interconnection",
+		"lyhenne": "OSI",
+		"selitys": "Teoreettinen malli tietoliikenteestä, jossa on 7 kerrosta."
+	},
+	{
+		"sana": "Independent Computing Architecture",
+		"lyhenne": "ICA",
+		"selitys": "Protokolla, jota Citrix käyttää - liittyy etätyöpöytäratkaisuihin"
+	},
+	{
+		"sana": "Subnet",
+		"lyhenne": "",
+		"selitys": "Aliverkko, jossa instanssit sijaitsevat. Osa VPC:tä"
+	},
+	{
+		"sana": "Domain Name System",
+		"lyhenne": "DNS",
+		"selitys": "Nimi- ja osoitepalvelu - muuntaa domainit IP-osoitteiksi"
+	},
+	{
+		"sana": "Network Address Translation",
+		"lyhenne": "NAT",
+		"selitys": "Mahdollistaa instanssien pääsyn internetiin piilottaen sisäverkon osoitteet"
+	},
+	{
+		"sana": "Security Group",
+		"lyhenne": "",
+		"selitys": "Palomuurisäännöt, jotka suojaavat EC2-instansseja"
+	},
+	{
+		"sana": "Simple routing",
+		"lyhenne": "",
+		"selitys": "Yksinkertainen DNS-reititys yhdelle resurssille"
+	},
+	{
+		"sana": "Weighted round robin routing",
+		"lyhenne": "",
+		"selitys": "Jakaa liikennettä useaan resurssiin painotuksen mukaan"
+	},
+	{
+		"sana": "Latency routing",
+		"lyhenne": "LBR",
+		"selitys": "Ohjaa liikenteen alueelle, jossa vasteaika on pienin"
+	},
+	{
+		"sana": "Geolocation routing",
+		"lyhenne": "",
+		"selitys": "Reititys käyttäjän sijainnin perusteella"
+	},
+	{
+		"sana": "Geoproximity routing",
+		"lyhenne": "",
+		"selitys": "Reititys maantieteellisen etäisyyden perusteella"
+	},
+	{
+		"sana": "Failover routing",
+		"lyhenne": "",
+		"selitys": "Ohjaa toiseen resurssiin, jos ensisijainen epäonnistuu"
+	},
+	{
+		"sana": "Multivalue answer routing",
+		"lyhenne": "",
+		"selitys": "Palauttaa useita IP-osoitteita eri palvelimille DNS-vastauksessa"
+	},
+	{
+		"sana": "Launch Instance Wizard",
+		"lyhenne": "",
+		"selitys": "Ohjattu työkalu EC2-instanssien luontiin"
+	},
+	{
+		"sana": "Amazon EC2 Instance Store",
+		"lyhenne": "",
+		"selitys": "Väliaikainen levytila, joka katoaa instanssin sammuttua"
+	},
+	{
+		"sana": "Per Second Billing",
+		"lyhenne": "",
+		"selitys": "EC2-laskutus sekunnin tarkkuudella"
+	},
+	{
+		"sana": "On-Demand",
+		"lyhenne": "",
+		"selitys": "Maksat käytön mukaan ilman pitkäaikaista sitoutumista"
+	},
+	{
+		"sana": "Dedicated Host",
+		"lyhenne": "",
+		"selitys": "Fyysinen palvelin, varattu yhdelle asiakkaalle"
+	},
+	{
+		"sana": "Dedicated Instance",
+		"lyhenne": "",
+		"selitys": "Virtuaalikone, joka toimii fyysisellä laitteella muiden dedikoitujen instanssien kanssa"
+	},
+	{
+		"sana": "Scheduled Reserved Instance",
+		"lyhenne": "",
+		"selitys": "Varattu käyttöaika tietyille ajanjaksoille"
+	},
+	{
+		"sana": "Spot Instance",
+		"lyhenne": "",
+		"selitys": "Edullinen EC2-resurssi, joka voidaan keskeyttää, jos kapasiteettia tarvitaan muuhun"
+	},
+	{
+		"sana": "Cost Optimization",
+		"lyhenne": "",
+		"selitys": "Parhaiden hintaratkaisujen etsiminen AWS-käytölle"
+	},
+	{
+		"sana": "Docker",
+		"lyhenne": "",
+		"selitys": "Konttiteknologia sovellusten paketoimiseen ja ajamiseen kevyesti"
+	},
+	{
+		"sana": "Input/Output Operations Per Second",
+		"lyhenne": "IOPS",
+		"selitys": "Levyjärjestelmän suorituskykymittari"
+	},
+	{
+		"sana": "Hypertext Transfer Protocol",
+		"lyhenne": "HTTP",
+		"selitys": "Verkkosivujen perustason protokolla"
+	},
+	{
+		"sana": "Bucket",
+		"lyhenne": "",
+		"selitys": "Amazon S3:n säiliö, johon tallennetaan tiedostoja"
+	},
+	{
+		"sana": "Operating System",
+		"lyhenne": "OS",
+		"selitys": "Käyttöjärjestelmä, jota ajetaan virtuaalipalvelimella"
+	},
+	{
+		"sana": "Database Instance",
+		"lyhenne": "",
+		"selitys": "Yksittäinen tietokantaympäristö Amazon RDS-palvelussa"
+	},
+	{
+		"sana": "Relational Database",
+		"lyhenne": "RDB",
+		"selitys": "Relaatiotietokanta, joka perustuu taulukoihin ja relaatiomalleihin"
+	},
+	{
+		"sana": "Non-Relational Database",
+		"lyhenne": "",
+		"selitys": "NoSQL-tietokanta, kuten DynamoDB - ei käytä perinteistä relaatiomallia"
+	},
+	{
+		"sana": "Structured Query Language",
+		"lyhenne": "SQL",
+		"selitys": "Kyselykieli relaatiotietokantojen käsittelyyn"
+	},
+	{
+		"sana": "Solid State Drive",
+		"lyhenne": "SSD",
+		"selitys": "Nopeampi ja luotettavampi levy tallennukseen, usein käytössä instanssien levyjärjestelmissä."
+	},
+	{
+		"sana": "AWS Database Migration Service",
+		"lyhenne": "DMS",
+		"selitys": "Palvelu, jolla siirretään tietokantoja AWS:ään tai AWS:n sisällä"
+	},
+	{
+		"sana": "AWS Well-Architected Framework",
+		"lyhenne": "",
+		"selitys": "Kokoelma parhaita käytäntöjä skaalautuvan, turvallisen ja tehokkaan arkkitehtuurin rakentamiseen"
+	},
+	{
+		"sana": "Cloud architecture",
+		"lyhenne": "",
+		"selitys": "Yleinen termi pilvi-infrastruksuurin suunnittelulle"
+	},
+	{
+		"sana": "Operational excellence",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - jatkuva parantaminen ja automaatio"
+	},
+	{
+		"sana": "Security",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - suojaus, salaus, käyttöoikeudet"
+	},
+	{
+		"sana": "Reliability",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - järjestelmien kyky toipua häiriöistä ja pysyä toiminnassa"
+	},
+	{
+		"sana": "Performance Efficiency",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - resurssien tehokas hyödyntäminen"
+	},
+	{
+		"sana": "Cost Optimization",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - kustannusten minimointi ilman toiminnallisuuden menettämistä"
+	},
+	{
+		"sana": "Sustainability",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - ympäristön minimointi pilvi-infrastruktuurissa"
+	},
+	{
+		"sana": "Mean Time Between Failures",
+		"lyhenne": "MTBF",
+		"selitys": "Keskimääräinen aika vikojen välillä - mittaa luotettavuutta"
+	},
+	{
+		"sana": "Mean Time To Failure",
+		"lyhenne": "MTTF",
+		"selitys": "Keskimääräinen aika siihen, että komponentti epäonnistuu"
+	},
+	{
+		"sana": "Mean Time To Repair",
+		"lyhenne": "MTTR",
+		"selitys": "Keskimääräinen korjaukseen kuluva aika - mittaa huollettavuutta"
+	},
+	{
+		"sana": "Application Load Balancer",
+		"lyhenne": "",
+		"selitys": "Reitittää liikennettä sovellustasolla ja tukee monimutkaisempia sääntöjä"
+	},
+	{
+		"sana": "Secure Sockets Layer",
+		"lyhenne": "SSL",
+		"selitys": "Vanhempi salausprotokolla - korvattu pääosin TLS:llä"
+	},
+	{
+		"sana": "Transport Layer Security",
+		"lyhenne": "TLS",
+		"selitys": "Moderni salausprotokolla verkkoliikenteelle"
+	},
+	{
+		"sana": "Network Load Balancer",
+		"lyhenne": "",
+		"selitys": "Kuormantasaaja, joka toimii verkkotasolla - soveltuu erittäin nopeatempoiseen liikenteeseen"
+	},
+	{
+		"sana": "User Datagram Protocol",
+		"lyhenne": "UDP",
+		"selitys": "Nopea yhteydetön verkkoprotokolla - käytetään esim. reaaliaikaisissa sovelluksissa"
+	},
+	{
+		"sana": "Classic Loan Balancer",
+		"lyhenne": "",
+		"selitys": "Vanhempi kuormantasaaja, joka tukee sekä sovellus- että verkkotason reititystä"
+	},
+	{
+		"sana": "Spot Fleet",
+		"lyhenne": "",
+		"selitys": "Kokoelma Spot-instansseja, joita voidaan käyttää tietyn tehtävän suorittamiseen mahdollisimman kustannustehokkaasti"
+	}
+]
