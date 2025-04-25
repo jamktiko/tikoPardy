@@ -93,6 +93,8 @@ import sanatData from '../lib/sanat.json';
           return { ...kysymys, extraWrongAnswers };
   }
 
+
+
   // Initialize with the random question
   let randomKysymys = $state(randomQuestion());
 
@@ -114,6 +116,7 @@ import sanatData from '../lib/sanat.json';
           vastaus = randomKysymys.vastaus;
           vaara = randomKysymys.vaara;
           extraWrongAnswers = randomKysymys.extraWrongAnswers || ["", ""];
+          closeModal()
   }
 
   // Alternative approach to shuffle answers without shuffleArray
@@ -152,8 +155,6 @@ import sanatData from '../lib/sanat.json';
   {/each}
 </div>
 
-<!-- Added a button to get a new question -->
-<Button onclick={() => newQuestion()} text="Uusi kysymys"/>
 
 {#if showModal}
   <Modal>
@@ -161,6 +162,6 @@ import sanatData from '../lib/sanat.json';
 
       <div>{modalMessage}</div>
 
-      <footer><Button onclick={() => closeModal()} text="Sulje" /></footer>
+      <footer><Button onclick={() => newQuestion()} text="Seuraava kysymys" /></footer>
   </Modal>
 {/if}
