@@ -1,6 +1,6 @@
 <script>
-  import Button from '$lib/components/Button.svelte';
-  import Modal from '$lib/components/Modal.svelte';
+  import Button from '../lib/components/OhjeetButton.svelte';
+  import Modal from '../lib/components/Modal2.svelte';
   
   let showInstructionsModal = false;
   
