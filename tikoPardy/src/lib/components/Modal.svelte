@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
 	import type { Snippet } from 'svelte';
 	interface Props {
 		header?: Snippet;
@@ -11,18 +12,18 @@
 	import { fly } from 'svelte/transition';
 </script>
 
-<div class="backdrop"></div>
+<div class="backdrop">
+	<div class="modal" transition:fly={{ y: -300, delay: 50, duration: 500 }}>
+		<header>
+			{@render header?.()}
+		</header>
 
-<div class="modal" transition:fly={{ y: -300, delay: 50, duration: 500 }}>
-	<header>
-		{@render header?.()}
-	</header>
+		{@render children()}
 
-	{@render children()}
-
-	<footer>
-		{@render footer?.()}
-	</footer>
+		<footer>
+			{@render footer?.()}
+		</footer>
+	</div>
 </div>
 
 <style>
@@ -34,18 +35,24 @@
 		height: 100vh;
 		background: rgba(0, 0, 0, 0.75);
 		z-index: 10;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 100;
 	}
 
 	.modal {
-		padding: 1rem;
+		padding: 1.5rem;
 		position: fixed;
-		top: 10vh;
-		left: 10vw;
-		width: 80%;
+		background-color: #1a1a5f;
+		border: 2px solid #ffcc00;
+		border-radius: 0.5rem;
+		width: 90%;
+		max-width: 600px;
 		max-height: 80vh;
-		background: white;
-		border-radius: 5px;
+		overflow-y: auto;
+		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 		z-index: 100;
-		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+		color: white;
 	}
 </style>
