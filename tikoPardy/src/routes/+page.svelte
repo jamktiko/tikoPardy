@@ -4,7 +4,7 @@
 	import Modal from '../lib/components/Modal.svelte';
 
 type Kurssit = 'Pilvipalveluiden perusteet' | 'Tietoturvan perusteet' | 'Web Perusteet' | ''; 
-let kurssit: Kurssit = $state(''); 
+let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 
 	let showInstructionsModal = $state(false);
 
@@ -13,11 +13,6 @@ let kurssit: Kurssit = $state('');
 	}
 
   function startGame() {
-    if (!kurssit) {
-        // Jos mitään kurssia ei ole valittu, näytä varoitus
-        alert("Valitse kurssi ensin!");
-        return;
-    }
     goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
 }
 
