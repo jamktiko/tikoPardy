@@ -1,0 +1,126 @@
+[
+	{
+		"sana": "Tietoturvallisuus",
+		"selitys": "Suojellaan tietoa luvattomalta käytöltä, muuttamiselta tai tuhoamiselta"
+	},
+    {
+		"sana": "Kyberturvallisuus",
+		"selitys": "Verkkojen, järjestelmien ja digitaalisen omaisuuden suojelua"
+	},
+    {
+		"sana": "Tietosuoja",
+		"selitys": "Varmistaa, että henkilökohtaista tietoa ja dataa käsitellään turvallisesti ja laillisesti"
+	},
+    {
+		"sana": "CIA-triadi",
+		"selitys": "Varmistaa tiedon luottamuksellisuuden, eheyden ja saatavuuden"
+	},
+    {
+		"sana": "Kryptaus",
+		"selitys": "Arkaluontoisten tiedostojen salaus"
+	},
+    {
+		"sana": "Malware",
+		"selitys": "Pahantahtoiset ohjelmistot, kuten virukset, madot ja lunnasvaatimuksia asettavat ohjelmistot"
+	},
+    {
+		"sana": "Ransomware",
+		"selitys": "Lunnasvaatimuksia asettavat ohjelmistot"
+	},
+    {
+		"sana": "Phishing",
+		"selitys": "Tietojen kalastelu"
+	},
+    {
+		"sana": "Palvelunestohyökkäys",
+		"selitys": "Järjestelmän kuormittaminen siten, ettei se ole enää saatavilla"
+	},
+    {
+		"sana": "MFA",
+		"selitys": "Monivaiheinen tunnistautuminen"
+	},
+    {
+		"sana": "GDPR",
+		"selitys": "Euroopan Unionin sisällä vaikuttava yleinen lainsäädännöllinen tietosuoja-asetus"
+	},
+    {
+		"sana": "Rekisteröity/Data Subject",
+		"selitys": "Yksilö, jonka dataa käsitellään"
+	},
+    {
+		"sana": "Rekisterinpitäjä/Data Controller",
+		"selitys": "Päättää siitä, miksi ja miten dataa käsitellään"
+	},
+    {
+		"sana": "Henkilötietojen käsittelijä/Data Processor",
+		"selitys": "Käsittelee dataa datan hallinnoijan puolesta"
+	},
+    {
+		"sana": "Fyysinen tietoturva",
+		"selitys": "Turvaa tilat, rakennukset, laitteet ja tallennusvälineet"
+	},
+    {
+		"sana": "Tailgating",
+		"selitys": "Pyrkiminen tiloihin luvallisten käyttäjien mukana"
+	},
+    {
+		"sana": "Social Engineering",
+		"selitys": "Pyrkimys taivutella ihmiset tekemään jotain - perustuu inhimilliseen päätöksentekoprosessiin"
+	},
+    {
+		"sana": "OSINT/Intel",
+		"selitys": "Tiedustelu- ja tiedonhankintavaihe, avointen lähteiden tiedonkeruu"
+	},
+    {
+		"sana": "Henkilötieto",
+		"selitys": "Kaikki tiedot, jotka liittyvät tunnistettuun tai tunnistettavissa olevaan luonnolliseen henkilöön"
+	},
+    {
+		"sana": "Pseudonymisointi",
+		"selitys": "Henkilötietojen käsitteleminen siten, että henkilötietoja ei voida yhdistää tiettyyn henkilöön ilman lisätietoja"
+	},
+    {
+		"sana": "Anonymisointi",
+		"selitys": "Henkilötietojen käsitteleminen siten, ettei henkilöä voi tunnistaa niistä."
+	},
+    {
+		"sana": "Nimenomaisuuden vaatimus",
+		"selitys": "Tapa, jolla rekisteröity ilmaisee suostumuksensa henkilötietojen käsittelylle"
+	},
+    {
+		"sana": "Hajauttaminen",
+		"selitys": "Käyttäjä antaa järjestelmälle salasanan ja järjestelmä laskee algoritmin avulla salasanalle hash-arvon"
+	},
+    {
+		"sana": "Suolaus",
+		"selitys": "Salasanaan lisätään arvo, joka jälkeen generoitu tiiviste on täysin erilainen kuin varsinaisella salasanalla tuotettu tiiviste"
+	},
+    {
+		"sana": "Pippurointi",
+		"selitys": "Kaikille salasanoille yhteinen arvo, käytetään ylimääräisenä suojakerroksena tiivisteen ja suolauksen päällä"
+	},
+    {
+		"sana": "Palomuuri",
+		"selitys": "Estää luvattoman liikenteen verkkoon ja sieltä pois"
+	},
+    {
+		"sana": "VPN",
+		"selitys": "Virtuaalinen verkko verkon sisällä, ei salli mitään autentikoimatonta liikennettä verkon ulkopuolelta"
+	},
+    {
+		"sana": "Hardening",
+		"selitys": "Laitteiden ja palvelimien kovennus, eli tietoturva-asetusten tarkennus ja tiukennus"
+	},
+    {
+		"sana": "Man In The Middle",
+		"selitys": "Hyökkäystyyppi, jossa arkaluontoista tietoa hankitaan salakuuntelemalla viestintää kahden kohteen välillä"
+	},
+    {
+		"sana": "SQL-injektio",
+		"selitys": "Pystyy tuhoamaan koko tietokannan - Yksi yleisimmistä hyökkäystavoista"
+	},
+    {
+		"sana": "Cross-Site Scripting",
+		"selitys": "Hyökkääjä liittää koodia oikealle, harmittomalle verkkosivulle ja koodi ajetaan, kun hyökkäyksen kohde lataa verkkosivun"
+	}
+]
