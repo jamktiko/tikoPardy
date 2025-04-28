@@ -1,7 +1,7 @@
 <script lang="ts">
   import Button from '../../lib/components/GameButton.svelte';
   import Modal from '../../lib/components/GameModal.svelte';
-import sanatData from '../../lib/sanat.json';
+import sanatData from '../../lib/pilvi_sanat.json';
 import { goto } from '$app/navigation';
 
   // Use the imported data directly but map it differently
