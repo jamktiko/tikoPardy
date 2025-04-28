@@ -47,6 +47,12 @@
 {/if}
 
 <style>
+      :global(html, body) {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(135deg, #1a1a5f, #3a3a8c);
+    }
 	main {
 		display: flex;
 		justify-content: center;
