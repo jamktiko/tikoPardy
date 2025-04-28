@@ -11,8 +11,11 @@ import sanatData from '../../lib/sanat.json';
       lyhenne: item.lyhenne // Keep the lyhenne field in case needed
   }));
   
-  // Keep track of used questions
+
   let usedQuestionIndices: number[] = [];
+
+  let lives = $state(3);
+
 
   // Modal control
   let showModal = $state(false);
@@ -73,7 +76,7 @@ import sanatData from '../../lib/sanat.json';
                   randomIndex = Math.floor(Math.random() * kysymykset.length);
           } while (usedQuestionIndices.includes(randomIndex) && usedQuestionIndices.length < kysymykset.length);
           
-          // Track this question as used
+          // lisää käytettyihin kysymyksiin
           usedQuestionIndices.push(randomIndex);
           
           const kysymys = kysymykset[randomIndex];
@@ -87,7 +90,7 @@ import sanatData from '../../lib/sanat.json';
               return { ...kysymys, extraWrongAnswers };
           }
           
-          // Get two random wrong answers from other questions
+
           const extraWrongAnswers = getRandomWrongAnswers(kysymys.vastaus);
           
           return { ...kysymys, extraWrongAnswers };
@@ -95,7 +98,7 @@ import sanatData from '../../lib/sanat.json';
 
 
 
-  // Initialize with the random question
+
   let randomKysymys = $state(randomQuestion());
 
   let vastaus = $derived(randomKysymys.vastaus);
@@ -107,10 +110,13 @@ import sanatData from '../../lib/sanat.json';
                   openModal('Tulokset', 'Oikein!');
           } else {
                   openModal('Tulokset', 'Väärin! Oikea vastaus on: ' + randomKysymys.vastaus);
-          }
-  }
+                  lives -= 1; 
+          }     
+                }
+        
   
-  // Add a function to get a new question
+  
+  // Uusi kysymys
   function newQuestion() {
           randomKysymys = randomQuestion();
           vastaus = randomKysymys.vastaus;
@@ -119,7 +125,16 @@ import sanatData from '../../lib/sanat.json';
           closeModal()
   }
 
-  // Alternative approach to shuffle answers without shuffleArray
+  function resetGame() {
+                lives = 3;
+                newQuestion();
+                usedQuestionIndices = []; 
+  }
+
+  function mainMenu() {
+          window.location.href = '/'; 
+  }
+
   function randomizeAnswers() {
           const answers = [
                   { text: vastaus, isCorrect: true },
@@ -142,7 +157,8 @@ import sanatData from '../../lib/sanat.json';
   });
 </script>
 
-<h1>AWS Kysymyspeli</h1>
+<h1>TikoPardy</h1>
+<div class="lives">Elämät: {lives}</div>
 
 <h2>{randomKysymys.kysymys}</h2>
 
@@ -161,7 +177,32 @@ import sanatData from '../../lib/sanat.json';
       <header style="font-weight: bold;">{modalTitle}</header>
 
       <div>{modalMessage}</div>
+      <div>Elämiä jäljellä: {lives}</div>
 
       <footer><Button onclick={() => newQuestion()} text="Seuraava kysymys" /></footer>
   </Modal>
 {/if}
+
+{#if lives <= 0}
+  <Modal>
+      <header style="font-weight: bold;">Game Over</header>
+      <div>Peli on päättynyt!</div>
+      <div>Elämiä jäljellä: {lives}</div>
+
+      <footer><Button onclick={() => resetGame()} text="Yritä Uudelleen" />
+        <Button onclick={() => mainMenu()} text="Alkuruutuun" />
+      </footer>
+  </Modal>
+{/if}
+
+<style>
+        .lives {
+                position: fixed;
+                top: 10px;
+                right: 10px;
+                width: 10%;
+                font-size: 1.5rem;
+                color: red;
+                border-radius: 5px;
+        }
+</style>
