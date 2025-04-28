@@ -19,24 +19,28 @@ let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 </script>
 
 <main>
-	<div class="game-container">
-		<div class="game-content">
-			<h1>TikoPardy</h1>
-			<p>Welcome to the ultimate quiz challenge!</p>
-		</div>
+  <div class="game-container">
+    <div class="top-left-button">
+      <Button text="Buy Me A Coffee" onclick={() => goto('https://www.paypal.com/fi/home')} type="secondary" />
+    </div>
+
+    <div class="game-content">
+      <h1>TikoPardy</h1>
+      <p>Welcome to the ultimate quiz challenge!</p>
+    </div>
 
     <p>Valitse Kurssi:</p>
-<select bind:value={kurssit}>
-  <option value="Pilvipalveluiden perusteet">Pilvipalveluiden Perusteet</option>
-  <option value="Tietoturvan perusteet">Tietoturvan perusteet</option>
-  <option value="Web Perusteet">Web Perusteet</option>
-</select>
+    <select bind:value={kurssit}>
+      <option value="Pilvipalveluiden perusteet">Pilvipalveluiden Perusteet</option>
+      <option value="Tietoturvan perusteet">Tietoturvan perusteet</option>
+      <option value="Web Perusteet">Web Perusteet</option>
+    </select>
 
-		<div class="button-container">
-			<Button text="Ohjeet" onclick={toggleInstructions} type="secondary" />
-			<Button text="Aloita peli" onclick={startGame} type="primary" />
-		</div>
-	</div>
+    <div class="button-container">
+      <Button text="Ohjeet" onclick={toggleInstructions} type="secondary" />
+      <Button text="Aloita peli" onclick={startGame} type="primary" />
+    </div>
+  </div>
 </main>
 {#if showInstructionsModal}
 	<Modal>
@@ -50,6 +54,7 @@ let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 				<li>Aloita peli</li>
 				<li>Valitse selitystä vastaava käsite</li>
 				<li>Saat pisteitä oikeasta vastauksesta, väärästä vastauksesta menetät elämän</li>
+        <li>Kasvatat oikeilla vastauksilla streakkiasi, jonka kasvattaa pisteesi saamista</li>
         <li>Peli loppuu, kun elämät ovat loppu</li>
 			</ol>
 
@@ -80,19 +85,20 @@ let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 		color: #333;
 	}
 
-	.game-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between; /* push content and buttons apart */
-		align-items: center;
-		padding: 2rem;
-		background-color: #f5f5f5;
-		border-radius: 1.5rem;
-		box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-		width: 50vw;
-		height: 70vh;
-		text-align: center;
-	}
+  .game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push top and bottom apart */
+  align-items: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 75vw;
+  height: 75vh;
+  text-align: center;
+  position: relative; /* <-- allow absolute positioning inside */
+}
 
 	.game-content {
 		display: flex;
@@ -118,12 +124,19 @@ let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 		margin: 0;
 	}
 
-	.button-container {
-		display: flex;
-		justify-content: center;
-		gap: 1.5rem;
-		margin-bottom: 1rem; /* small space from bottom */
-	}
+  .top-left-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+  .button-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem; /* <-- MORE space between buttons */
+  margin-bottom: 2rem; /* Push buttons closer to bottom */
+}
 
 	.instructions {
 		text-align: left;
