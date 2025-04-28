@@ -196,6 +196,8 @@ import sanatData from '../../lib/sanat.json';
 {/if}
 
 <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
         .lives {
                 position: fixed;
                 top: 10px;
@@ -205,4 +207,39 @@ import sanatData from '../../lib/sanat.json';
                 color: red;
                 border-radius: 5px;
         }
+
+        :global(html, body) {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #F5F0EC; /* Same soft neutral */
+  font-family: "Cascadia Mono", sans-serif;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Cascadia Mono", sans-serif;
+  font-size: 64px;
+  color: #7B1E1E; /* Dark red */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
 </style>
