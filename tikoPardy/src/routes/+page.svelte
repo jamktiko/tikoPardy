@@ -33,12 +33,13 @@
 			<div class="modal-header">
 				<h2>Ohjeet</h2>
 			</div>
-			<h3>How to Play TikoPardy:</h3>
+			<h3>Näin sinä pelaat TikoPardy peliä:</h3>
 			<ol>
-				<li>Select a category and point value</li>
-				<li>Answer the question correctly to earn points</li>
-				<li>If you answer incorrectly, you lose points</li>
-				<li>The player with the most points at the end wins!</li>
+				<li>Valitse haluamasi kurssi</li>
+				<li>Aloita peli</li>
+				<li>Valitse selitystä vastaava käsite</li>
+				<li>Saat pisteitä oikeasta vastauksesta, väärästä vastauksesta menetät elämän</li>
+        <li>Peli loppuu, kun elämät ovat loppu</li>
 			</ol>
 
 			<div class="button-center">
