@@ -44,8 +44,7 @@
 	.modal {
 		padding: 1.5rem;
 		position: fixed;
-		background-color: #1a1a5f;
-		border: 2px solid #ffcc00;
+		background-color: #F5F5F5;
 		border-radius: 0.5rem;
 		width: 90%;
 		max-width: 600px;
@@ -53,6 +52,6 @@
 		overflow-y: auto;
 		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 		z-index: 100;
-		color: white;
+		color: black;
 	}
 </style>

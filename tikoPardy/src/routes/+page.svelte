@@ -15,15 +15,17 @@
 </script>
 
 <main>
-	<div class="game-container">
-		<h1>TikoPardy</h1>
-		<p>Welcome to the ultimate quiz challenge!</p>
+  <div class="game-container">
+    <div class="game-content">
+      <h1>TikoPardy</h1>
+      <p>Welcome to the ultimate quiz challenge!</p>
+    </div>
 
-		<div class="button-container">
-			<Button text="Ohjeet" onclick={toggleInstructions} type="secondary" />
-			<Button text="Aloita peli" onclick={startGame} type="primary" />
-		</div>
-	</div>
+    <div class="button-container">
+      <Button text="Ohjeet" onclick={toggleInstructions} type="secondary" />
+      <Button text="Aloita peli" onclick={startGame} type="primary" />
+    </div>
+  </div>
 </main>
 {#if showInstructionsModal}
 	<Modal>
@@ -47,78 +49,99 @@
 {/if}
 
 <style>
-      :global(html, body) {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        background: linear-gradient(135deg, #1a1a5f, #3a3a8c);
-    }
-	main {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 100vh;
-		background: linear-gradient(135deg, #1a1a5f, #3a3a8c);
-		font-family: 'Arial', sans-serif;
-		color: white;
-	}
+  @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+  
+  :global(html, body) {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #F5F0EC; /* Light warm gray */
+}
 
-	.game-container {
-		text-align: center;
-		padding: 2rem;
-		background-color: rgba(0, 0, 0, 0.7);
-		border-radius: 1rem;
-		box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-		max-width: 800px;
-	}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #F5F0EC;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
 
-	h1 {
-		font-size: 4rem;
-		margin-bottom: 1rem;
-		color: #ffcc00;
-		text-shadow: 3px 3px 0 #000;
-	}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* push content and buttons apart */
+  align-items: center;
+  padding: 2rem;
+  background-color: #F5F5F5;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  width: 50vw;
+  height: 70vh;
+  text-align: center;
+}
 
-	p {
-		font-size: 1.5rem;
-		margin-bottom: 2rem;
-	}
+.game-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem; /* Small gap between h1 and p */
+}
 
-	.button-container {
-		display: flex;
-		justify-content: center;
-		gap: 1.5rem;
-		margin-bottom: 2rem;
-	}
+h1 {
+  color: #7B1E1E;
+  font-family: "Cascadia Mono", sans-serif;
+  font-size: 96px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1; /* tighter */
+  letter-spacing: 1px;
+  margin: 0;
+}
 
-	.instructions {
-		text-align: left;
-	}
+p {
+  font-size: 1.5rem;
+  font-family: "Cascadia Mono", sans-serif;
+  margin: 0;
+}
 
-	.instructions h3 {
-		color: #ffcc00;
-		margin-bottom: 1rem;
-	}
-
-	.instructions ol {
-		padding-left: 1.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.instructions li {
-		margin-bottom: 0.5rem;
-	}
-
-	.button-center {
-		display: flex;
-		justify-content: center;
-		margin-top: 1.5rem;
-	}
-	.modal-header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		border-bottom: 1px solid #ffcc00;
-		color: #ffcc00;
-	}
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem; /* small space from bottom */
+}
+  
+  .instructions {
+      text-align: left;
+  }
+  
+  .instructions h3 {
+      color: #7B1E1E; /* Match header dark red */
+      margin-bottom: 1rem;
+  }
+  
+  .instructions ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+  }
+  
+  .instructions li {
+      margin-bottom: 0.5rem;
+  }
+  
+  .button-center {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+  }
+  
+  .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #7B1E1E;
+      color: #7B1E1E;
+  }
 </style>
