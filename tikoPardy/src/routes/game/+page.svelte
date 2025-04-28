@@ -60,7 +60,7 @@
         });
       
         let usedQuestionIndices: number[] = $state([]);
-        let lives = $state(1000000);
+        let lives = $state(3);
         let score = $state(0);
       
         // Modal control
