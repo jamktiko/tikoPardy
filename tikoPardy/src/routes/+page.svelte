@@ -1,9 +1,12 @@
-<script>
+<script lang="ts">
 	import { goto } from '$app/navigation';
 	import Button from '../lib/components/Button.svelte';
 	import Modal from '../lib/components/Modal.svelte';
 
-	let showInstructionsModal = false;
+type Kurssit = 'Pilvipalveluiden perusteet' | 'Tietoturvan perusteet' | 'Web Perusteet' | ''; 
+let kurssit: Kurssit = $state(''); 
+
+	let showInstructionsModal = $state(false);
 
 	function toggleInstructions() {
 		showInstructionsModal = !showInstructionsModal;
@@ -12,6 +15,7 @@
 	function startGame() {
 		goto('/game');
 	}
+
 </script>
 
 <main>
@@ -20,6 +24,13 @@
 			<h1>TikoPardy</h1>
 			<p>Welcome to the ultimate quiz challenge!</p>
 		</div>
+
+    <p>Valitse Kurssi:</p>
+<select bind:value={kurssit}>
+  <option value="Pilvipalveluiden perusteet">Pilvipalveluiden Perusteet</option>
+  <option value="Tietoturvan perusteet">Tietoturvan perusteet</option>
+  <option value="Web Perusteet">Web Perusteet</option>
+</select>
 
 		<div class="button-container">
 			<Button text="Ohjeet" onclick={toggleInstructions} type="secondary" />

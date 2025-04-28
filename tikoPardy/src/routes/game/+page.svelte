@@ -1,8 +1,15 @@
 <script lang="ts">
+<<<<<<< HEAD
 	import Button from '../../lib/components/Button.svelte';
 	import Modal from '../../lib/components/Modal.svelte';
 	import sanatData from '../../lib/pilvi_sanat.json';
 	import { goto } from '$app/navigation';
+=======
+  import Button from '../../lib/components/GameButton.svelte';
+  import Modal from '../../lib/components/GameModal.svelte';
+import sanatData from '../../lib/pilvi_sanat.json';
+import { goto } from '$app/navigation';
+>>>>>>> a883d6131e812e7fd3976bec6980590400b12e19
 
 	// Use the imported data directly but map it differently
 	let kysymykset = sanatData.map((item) => ({
