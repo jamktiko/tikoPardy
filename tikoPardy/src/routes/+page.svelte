@@ -12,9 +12,14 @@ let kurssit: Kurssit = $state('');
 		showInstructionsModal = !showInstructionsModal;
 	}
 
-	function startGame() {
-		goto('/game');
-	}
+  function startGame() {
+    if (!kurssit) {
+        // Jos mitään kurssia ei ole valittu, näytä varoitus
+        alert("Valitse kurssi ensin!");
+        return;
+    }
+    goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
+}
 
 </script>
 
