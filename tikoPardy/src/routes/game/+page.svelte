@@ -86,8 +86,7 @@
     score += 100;
     lastPoints = 100;
   } else {
-    // Progressiivinen korotus jokaiselle seuraavalle oikealle vastaukselle
-    const newPoints = Math.round(lastPoints * 1.3); // 30% lisäys
+    const newPoints = Math.round(lastPoints * 1.3); 
     score += newPoints;
     lastPoints = newPoints;
   }
@@ -223,6 +222,7 @@
 <h1>TikoPardy - {kurssi}</h1>
 <div class="lives">Elämät: {lives}</div>
 <div class="score">Pisteet: {score}</div>
+<div class="streak">Streak: {streak}</div>
 
 <h2>{randomKysymys.kysymys}</h2>
 
@@ -313,6 +313,15 @@ div {
         width: 10%;
         font-size: 1.5rem;
         color: green;
+        border-radius: 5px;
+}
+.streak {
+        position: fixed;
+        top: 90px;
+        right: 10px;
+        width: 10%;
+        font-size: 1.5rem;
+        color: blue;
         border-radius: 5px;
 }
 </style>
