@@ -59,8 +59,8 @@
           }
         });
       
-        let usedQuestionIndices: number[] = [];
-        let lives = $state(3);
+        let usedQuestionIndices: number[] = $state([]);
+        let lives = $state(1000000);
         let score = $state(0);
       
         // Modal control
@@ -80,6 +80,8 @@
 
         let streak = $state(0);
         let lastPoints = $state(100);
+        let showVictoryModal = $state(false);
+
         function increaseScore() {
           streak ++;
           if (streak === 1) {
@@ -124,12 +126,12 @@
         }
         
         function randomQuestion() {
-          // Tarkistetaan onko kaikki kysymykset käytetty
-          if (usedQuestionIndices.length >= kysymykset.length) {
-            // Nollataan käytetyt kysymykset, jos kaikki kysymykset on näytetty
-            usedQuestionIndices = [];
-          }
-          
+    // Tarkistetaan onko kaikki kysymykset käytetty
+    if (usedQuestionIndices.length >= kysymykset.length) {
+      // Näytetään voittomodal
+      showVictoryModal = true;
+      return randomKysymys; // Palautetaan nykyinen kysymys, koska kaikki on käyty läpi
+    }
           // Lisätään turvatarkistus virheiden estämiseksi, jos taulukko on tyhjä
           if (kysymykset.length === 0) {
             return { 
@@ -193,10 +195,13 @@
         function resetGame() {
           lives = 3;
           score = 0;
+          streak = 0;
+          lastPoints = 100;
           usedQuestionIndices = [];
           randomKysymys = randomQuestion();
           shuffledAnswers = randomizeAnswers();
           closeModal();
+          showVictoryModal = false;
         }
         
         function mainMenu() {
@@ -223,6 +228,7 @@
 <div class="lives">Elämät: {lives}</div>
 <div class="score">Pisteet: {score}</div>
 <div class="streak">Streak: {streak}</div>
+<audio controls src="millionaireBackground.mp3"></audio>
 
 <h2>{randomKysymys.kysymys}</h2>
 
@@ -258,6 +264,20 @@
       </footer>
   </Modal>
 {/if}
+
+{#if showVictoryModal}
+  <Modal>
+    <header style="font-weight: bold;">Voitit Pelin!</header>
+    <div>Onneksi olkoon, selvisit kaikki kysymykset!</div>
+    <div>Pisteet: {score}</div>
+
+    <footer>
+      <Button onclick={() => resetGame()} text="Pelaa Uudelleen" />
+      <Button onclick={() => mainMenu()} text="Alkuruutuun" />
+    </footer>
+  </Modal>
+{/if}
+
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
