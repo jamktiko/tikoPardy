@@ -2,6 +2,7 @@
   import Button from '../../lib/components/Button.svelte';
   import Modal from '../../lib/components/Modal.svelte';
 import sanatData from '../../lib/sanat.json';
+import { goto } from '$app/navigation';
 
   // Use the imported data directly but map it differently
   let kysymykset = sanatData.map(item => ({
@@ -17,9 +18,6 @@ import sanatData from '../../lib/sanat.json';
   let lives = $state(3);
   let score = $state(0);
 
-  function increaseScore() {
-          score += 100;
-  }
 
 
   // Modal control
@@ -139,7 +137,7 @@ import sanatData from '../../lib/sanat.json';
   }
 
   function mainMenu() {
-          window.location.href = '/'; 
+         goto('/'); 
   }
 
   function randomizeAnswers() {
