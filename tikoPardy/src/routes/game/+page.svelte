@@ -77,6 +77,32 @@
         function closeModal() {
           showModal = false;
         }
+
+        let streak = $state(0);
+        let lastPoints = $state(100);
+        function increaseScore() {
+          streak ++;
+          if (streak === 1) {
+    score += 100;
+    lastPoints = 100;
+  } else {
+    // Progressiivinen korotus jokaiselle seuraavalle oikealle vastaukselle
+    const newPoints = Math.round(lastPoints * 1.3); // 30% lisäys
+    score += newPoints;
+    lastPoints = newPoints;
+  }
+  
+  // Näytetään käyttäjälle palautetta
+  return {
+    points: lastPoints,
+    streak: streak
+  };
+        }
+
+        function resetStreak() {
+  streak = 0;
+  lastPoints = 100;
+}
       
         function getRandomWrongAnswers(correctAnswer: string, count: number = 2) {
           // Suodatetaan pois nykyinen oikea vastaus duplikaattien välttämiseksi
@@ -149,10 +175,11 @@
         function tarkistusVastaus(valinta: string) {
           if (valinta === randomKysymys.vastaus) {
             openModal('Tulokset', 'Oikein!');
-            score += 100;
+                increaseScore();
           } else {
             openModal('Tulokset', 'Väärin! Oikea vastaus on: ' + randomKysymys.vastaus);
             lives -= 1; 
+            resetStreak();
           }
         }
         

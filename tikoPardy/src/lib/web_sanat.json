@@ -1,0 +1,342 @@
+[
+	{
+		"sana": "Internet",
+		"lyhenne": "",
+		"selitys": "Globaali verkosto tietokoneita ja palvelimia, joka mahdollistaa tiedon jakamisen ja viestinnän."
+	},
+	{
+		"sana": "IP-Osoite",
+		"lyhenne": "",
+		"selitys": "Yksilöllinen numerosarja, joka tunnistaa laitteen Internetissä tai paikallisverkossa"
+	},
+	{
+		"sana": "Internet-selain",
+		"lyhenne": "",
+		"selitys": "Ohjelma, jolla käyttäjä voi selata verkkosivuja Internetissä"
+	},
+	{
+		"sana": "http",
+		"lyhenne": "",
+		"selitys": " protokolla, jolla verkkoselaimet ja palvelimet kommunikoivat tiedonsiirrossa"
+	},
+	{
+		"sana": "https",
+		"lyhenne": "",
+		"selitys": "Salattu ja suojattu versio protokollasta, jolla verkkoselaimet ja palvelimet kommunikoivat tiedonsiirrossa"
+	},
+	{
+		"sana": "Verkkodokumentti",
+		"lyhenne": "",
+		"selitys": "yksi tai useampi web-tekniikoilla tehty tiedosto jotka liittyvät toisiinsa"
+	},
+	{
+		"sana": "HTML",
+		"lyhenne": "",
+		"selitys": "verkkosivujen rakennekieli, jolla määritellään sivun sisältö, kuten otsikot, kappaleet, kuvat ja linkit"
+	},
+	{
+		"sana": "Verkkosivusto",
+		"lyhenne": "",
+		"selitys": "Yksi tai useampi toisiinsa liittyvä verkkosivu, jotka sijaitsevat samassa verkkotunnuksessa."
+	},
+	{
+		"sana": "Webbipalvelin",
+		"lyhenne": "",
+		"selitys": "Palvelin, joka vastaanottaa ja vastaa HTTP-pyyntöihin ja toimittaa verkkosivuja selaimille."
+	},
+	{
+		"sana": "Element",
+		"lyhenne": "",
+		"selitys": "HTML:n rakenneosa, kuten <p>, <div> tai <img>."
+	},
+	{
+		"sana": "Tag",
+		"lyhenne": "",
+		"selitys": "HTML-elementin aloitus- ja lopetusmerkintä, esimerkiksi <h1> ja </h1>."
+	},
+	{
+		"sana": "Void element",
+		"lyhenne": "",
+		"selitys": "HTML-elementti, joka ei sisällä sisältöä eikä lopetustägiä, esimerkiksi <img> tai <br>."
+	},
+	{
+		"sana": "Block element",
+		"lyhenne": "",
+		"selitys": "HTML-elementti, joka alkaa uudelta riviltä ja vie koko rivin leveyden, kuten <div> tai <p>."
+	},
+	{
+		"sana": "Inline element",
+		"lyhenne": "",
+		"selitys": "HTML-elementti, joka ei katkaise riviä ja vie vain tarvittavan tilan, kuten <span> tai <a>."
+	},
+	{
+		"sana": "Attribute",
+		"lyhenne": "",
+		"selitys": "Elementille annettava lisätieto, esimerkiksi href linkissä tai src kuvassa."
+	},
+	{
+		"sana": "Entity",
+		"lyhenne": "",
+		"selitys": "Merkintä, jolla esitetään erikoismerkkejä HTML:ssä, kuten &amp; tarkoittaa &-merkkiä."
+	},
+	{
+		"sana": "Metadata",
+		"lyhenne": "",
+		"selitys": "Tietoa tiedosta, kuten verkkosivun otsikko, kuvaukset ja avainsanat."
+	},
+	{
+		"sana": "Open Graph protocol",
+		"lyhenne": "",
+		"selitys": "Protokolla, joka määrittelee miten verkkosivu näytetään ja jaetaan sosiaalisessa mediassa."
+	},
+	{
+		"sana": "Relative links",
+		"lyhenne": "",
+		"selitys": "Linkit, jotka määritellään suhteessa nykyiseen sivuun, esimerkiksi /kuvat/logo.png."
+	},
+	{
+		"sana": "Absolute links",
+		"lyhenne": "",
+		"selitys": "Linkit, joissa on koko polku, mukaan lukien verkkotunnus, esimerkiksi https://esimerkki.fi/kuva.jpg."
+	},
+	{
+		"sana": "Ordered lists",
+		"lyhenne": "",
+		"selitys": "Numeroitu luettelo HTML:ssä, luodaan <ol> ja <li> elementeillä."
+	},
+	{
+		"sana": "Unordered lists",
+		"lyhenne": "",
+		"selitys": "Pisteillä merkitty luettelo HTML:ssä, luodaan <ul> ja <li> elementeillä."
+	},
+	{
+		"sana": "Description lists",
+		"lyhenne": "",
+		"selitys": "Luettelo, joka näyttää termit ja niiden kuvaukset HTML:ssä (<dl>, <dt>, <dd>)."
+	},
+	{
+		"sana": "Table",
+		"lyhenne": "",
+		"selitys": "HTML-rakenne tietojen taulukkomuotoiseen esittämiseen."
+	},
+	{
+		"sana": "Semantic elements",
+		"lyhenne": "",
+		"selitys": "HTML-elementtejä, jotka kuvaavat sisällön merkitystä, kuten <article>, <section> ja <nav>."
+	},
+	{
+		"sana": "Media elements",
+		"lyhenne": "",
+		"selitys": "HTML-elementtejä median, kuten äänen ja videon esittämiseen, esimerkiksi <audio> ja <video>."
+	},
+	{
+		"sana": "Cascading Style Sheets",
+		"lyhenne": "CSS",
+		"selitys": "Tyylikieli, jolla hallitaan HTML-sivujen ulkoasua ja asettelua."
+	},
+	{
+		"sana": "Element selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka kohdistuu tiettyihin HTML-elementteihin nimen perusteella."
+	},
+	{
+		"sana": "Pseudo Classes",
+		"lyhenne": "",
+		"selitys": "CSS-luokkia, jotka vaikuttavat elementin erityistiloihin, kuten :hover tai :focus."
+	},
+	{
+		"sana": "Classes",
+		"lyhenne": "",
+		"selitys": "HTML-attribuutti, jonka avulla määritellään ryhmiä elementeille, joita voidaan muotoilla CSS:llä."
+	},
+	{
+		"sana": "ID’s",
+		"lyhenne": "",
+		"selitys": "Yksilöllisiä tunnisteita HTML-elementeille, joita käytetään CSS- ja JavaScript-tarkoituksiin."
+	},
+	{
+		"sana": "Class selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka valitsee kaikki elementit tietyn luokan perusteella (.luokka)."
+	},
+	{
+		"sana": "ID selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka valitsee tietyn elementin ID-tunnisteen perusteella (#id)."
+	},
+	{
+		"sana": "Contextual selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka perustuu elementtien suhteeseen toisiinsa."
+	},
+	{
+		"sana": "Attribute selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka kohdistuu elementteihin niiden attribuuttien perusteella."
+	},
+	{
+		"sana": "Pseudo-class selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka perustuu elementin tilaan, kuten :hover tai :first-child."
+	},
+	{
+		"sana": "Display-parameter",
+		"lyhenne": "",
+		"selitys": "CSS:n display-ominaisuus määrittelee, miten elementti käyttäytyy ja sijoittuu sivulla."
+	},
+	{
+		"sana": "Padding",
+		"lyhenne": "",
+		"selitys": "Sisätila elementin sisällön ja reunojen välillä."
+	},
+	{
+		"sana": "Border",
+		"lyhenne": "",
+		"selitys": "Elementin reuna, jonka tyyli ja väri voidaan määrittää CSS:llä."
+	},
+	{
+		"sana": "Margin",
+		"lyhenne": "",
+		"selitys": "Tyhjä tila elementin ulkopuolella muihin elementteihin nähden."
+	},
+	{
+		"sana": "position: static",
+		"lyhenne": "",
+		"selitys": "Elementin oletussijoittelu normaalissa dokumenttivirrassa."
+	},
+	{
+		"sana": "Dynamic pseudo-class",
+		"lyhenne": "",
+		"selitys": "Reagoi käyttäjän toimintaan, kuten :hover."
+	},
+	{
+		"sana": "State-based pseudo class",
+		"lyhenne": "",
+		"selitys": "Perustuu elementin tilaan, kuten :checked."
+	},
+	{
+		"sana": "Structural pseudo class",
+		"lyhenne": "",
+		"selitys": "Kohdistuu elementin rakenteelliseen asemaan, kuten :first-child."
+	},
+	{
+		"sana": "Form",
+		"lyhenne": "",
+		"selitys": "HTML-rakenne, jolla kerätään käyttäjän syötteitä ja lähetetään ne palvelimelle."
+	},
+	{
+		"sana": "Viewport",
+		"lyhenne": "",
+		"selitys": "Näkymäalue, jossa verkkosivu näkyy selaimessa."
+	},
+	{
+		"sana": "Breakpoint",
+		"lyhenne": "",
+		"selitys": "Näytön leveyspiste, jossa verkkosivun ulkoasu muuttuu responsiiviseksi."
+	},
+	{
+		"sana": "Responsive images",
+		"lyhenne": "",
+		"selitys": "Kuvat, jotka mukautuvat automaattisesti eri näyttökokoihin ja laitteisiin."
+	},
+	{
+		"sana": "Relative units",
+		"lyhenne": "",
+		"selitys": "CSS-yksiköt, jotka perustuvat toisiin arvoihin, kuten prosentti (%) tai em."
+	},
+	{
+		"sana": "Absolute units",
+		"lyhenne": "",
+		"selitys": "Kiinteät CSS-yksiköt, kuten pikselit (px) tai tuumat (in)."
+	},
+	{
+		"sana": "Media Queries",
+		"lyhenne": "",
+		"selitys": "CSS:n ominaisuus, joka mahdollistaa tyylien soveltamisen näytön ominaisuuksien perusteella."
+	},
+	{
+		"sana": "display: float",
+		"lyhenne": "",
+		"selitys": "Vanha tapa asettaa elementtejä vierekkäin 'kelluttamalla' niitä vasemmalle tai oikealle."
+	},
+	{
+		"sana": "display: flexbox",
+		"lyhenne": "",
+		"selitys": "Nykyaikainen CSS-asettelumenetelmä joustavien rivien ja sarakkeiden hallintaan."
+	},
+	{
+		"sana": "Multicolumn layout",
+		"lyhenne": "",
+		"selitys": "Asettelu, jossa teksti tai sisältö jaetaan useampaan sarakkeeseen."
+	},
+	{
+		"sana": "Single/one column",
+		"lyhenne": "",
+		"selitys": "Sivun asettelu yhdellä pystysarakkeella."
+	},
+	{
+		"sana": "Hero layout",
+		"lyhenne": "",
+		"selitys": "Sivun yläosan korostettu alue, jossa on yleensä suuri kuva ja tärkeä viesti."
+	},
+	{
+		"sana": "F-shape layout",
+		"lyhenne": "",
+		"selitys": "Tätä asettelua käytetään yleisesti verkkosivustojen selaamista koskevien tutkimusten tuloksena."
+	},
+	{
+		"sana": "Z-shape layout",
+		"lyhenne": "",
+		"selitys": "Skannauskuvio jota käytetään enimmäkseen paljon kuvia sisältävillä verkkosivuilla"
+	},
+	{
+		"sana": "Grid",
+		"lyhenne": "",
+		"selitys": "CSS-asettelutekniikka, jossa sisältö sijoitetaan riveihin ja sarakkeisiin."
+	},
+	{
+		"sana": "Card",
+		"lyhenne": "",
+		"selitys": "Pieni itsenäinen sisältölohko, jossa on esimerkiksi kuva ja teksti."
+	},
+	{
+		"sana": "CSS preprocessor",
+		"lyhenne": "",
+		"selitys": "Työkalu, joka lisää ominaisuuksia CSS:ään ja muuntaa sen tavalliseksi CSS:ksi."
+	},
+	{
+		"sana": "Transpiler",
+		"lyhenne": "",
+		"selitys": "Ohjelma, joka muuntaa ohjelmakoodia yhdestä versiosta tai kielestä toiseen."
+	},
+	{
+		"sana": "Syntatically Awesome Style Sheet",
+		"lyhenne": "Sass",
+		"selitys": "CSS-esiprosessori, joka mahdollistaa muuttujat, sisäkkäisyyden ja funktiot tyyleissä."
+	},
+	{
+		"sana": "Leaner Style Sheets",
+		"lyhenne": "LESS",
+		"selitys": "CSS-esiprosessori, joka tarjoaa lisäominaisuuksia kuten muuttujat ja funktiot."
+	},
+	{
+		"sana": "CSS frameworks",
+		"lyhenne": "",
+		"selitys": "Kokoelmia valmiita CSS-tyylejä ja komponentteja, jotka nopeuttavat verkkosivujen kehittämistä."
+	},
+	{
+		"sana": "Tailwind CSS",
+		"lyhenne": "",
+		"selitys": "Utility-first-periaatteella toimiva CSS-kehys, joka tarjoaa käyttöluokkia nopeaan suunnitteluun."
+	},
+	{
+		"sana": "Bootstrap",
+		"lyhenne": "",
+		"selitys": "Laajalti käytetty responsiivinen CSS- ja JavaScript-kehys verkkosivujen rakentamiseen."
+	},
+	{
+		"sana": "Bulma",
+		"lyhenne": "",
+		"selitys": "Moderni responsiivinen CSS-kehys, joka pohjautuu Flexboxiin."
+	}
+]
