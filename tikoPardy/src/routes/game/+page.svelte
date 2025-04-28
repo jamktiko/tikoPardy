@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Button from '../../lib/components/Button.svelte';
-  import Modal from '../../lib/components/Modal.svelte';
+  import Button from '../../lib/components/GameButton.svelte';
+  import Modal from '../../lib/components/GameModal.svelte';
 import sanatData from '../../lib/sanat.json';
 import { goto } from '$app/navigation';
 
