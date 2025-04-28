@@ -15,6 +15,11 @@ import sanatData from '../../lib/sanat.json';
   let usedQuestionIndices: number[] = [];
 
   let lives = $state(3);
+  let score = $state(0);
+
+  function increaseScore() {
+          score += 100;
+  }
 
 
   // Modal control
@@ -108,6 +113,7 @@ import sanatData from '../../lib/sanat.json';
   function tarkistusVastaus(valinta: string) {
           if (valinta === randomKysymys.vastaus) {
                   openModal('Tulokset', 'Oikein!');
+                  score += 100;
           } else {
                   openModal('Tulokset', 'Väärin! Oikea vastaus on: ' + randomKysymys.vastaus);
                   lives -= 1; 
@@ -129,6 +135,7 @@ import sanatData from '../../lib/sanat.json';
                 lives = 3;
                 newQuestion();
                 usedQuestionIndices = []; 
+                score = 0;
   }
 
   function mainMenu() {
@@ -159,6 +166,7 @@ import sanatData from '../../lib/sanat.json';
 
 <h1>TikoPardy</h1>
 <div class="lives">Elämät: {lives}</div>
+<div class="score">Pisteet: {score}</div>
 
 <h2>{randomKysymys.kysymys}</h2>
 
@@ -196,6 +204,8 @@ import sanatData from '../../lib/sanat.json';
 {/if}
 
 <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
         .lives {
                 position: fixed;
                 top: 10px;
@@ -203,6 +213,50 @@ import sanatData from '../../lib/sanat.json';
                 width: 10%;
                 font-size: 1.5rem;
                 color: red;
+                border-radius: 5px;
+        }
+
+        :global(html, body) {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #F5F0EC; /* Same soft neutral */
+  font-family: "Cascadia Mono", sans-serif;
+  color: #333;
+}
+
+h1 {
+  text-align: center;
+  font-family: "Cascadia Mono", sans-serif;
+  font-size: 64px;
+  color: #7B1E1E; /* Dark red */
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+        .score {
+                position: fixed;
+                top: 50px;
+                right: 10px;
+                width: 10%;
+                font-size: 1.5rem;
+                color: green;
                 border-radius: 5px;
         }
 </style>
