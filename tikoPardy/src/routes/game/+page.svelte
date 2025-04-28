@@ -1,15 +1,8 @@
 <script lang="ts">
-<<<<<<< HEAD
-	import Button from '../../lib/components/Button.svelte';
-	import Modal from '../../lib/components/Modal.svelte';
-	import sanatData from '../../lib/pilvi_sanat.json';
-	import { goto } from '$app/navigation';
-=======
   import Button from '../../lib/components/GameButton.svelte';
   import Modal from '../../lib/components/GameModal.svelte';
-import sanatData from '../../lib/pilvi_sanat.json';
-import { goto } from '$app/navigation';
->>>>>>> a883d6131e812e7fd3976bec6980590400b12e19
+  import sanatData from '../../lib/pilvi_sanat.json';
+  import { goto } from '$app/navigation';
 
 	// Use the imported data directly but map it differently
 	let kysymykset = sanatData.map((item) => ({
@@ -200,59 +193,59 @@ import { goto } from '$app/navigation';
 {/if}
 
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
-	.lives {
-		position: fixed;
-		top: 10px;
-		right: 10px;
-		width: 10%;
-		font-size: 1.5rem;
-		color: red;
-		border-radius: 5px;
-	}
+.lives {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        width: 10%;
+        font-size: 1.5rem;
+        color: red;
+        border-radius: 5px;
+}
 
-	:global(html, body) {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		background: #f5f0ec; /* Same soft neutral */
-		font-family: 'Cascadia Mono', sans-serif;
-		color: #333;
-	}
+:global(html, body) {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #f5f0ec; /* Same soft neutral */
+        font-family: 'Cascadia Mono', sans-serif;
+        color: #333;
+}
 
-	h1 {
-		text-align: center;
-		font-family: 'Cascadia Mono', sans-serif;
-		font-size: 64px;
-		color: #7b1e1e; /* Dark red */
-		margin-top: 2rem;
-		margin-bottom: 1rem;
-	}
+h1 {
+        text-align: center;
+        font-family: 'Cascadia Mono', sans-serif;
+        font-size: 64px;
+        color: #7b1e1e; /* Dark red */
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+}
 
-	h2 {
-		text-align: center;
-		font-size: 2rem;
-		color: #333;
-		margin-bottom: 2rem;
-	}
+h2 {
+        text-align: center;
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 2rem;
+}
 
-	div {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-		margin: 0 auto;
-		max-width: 600px;
-	}
+div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 600px;
+}
 
-	.score {
-		position: fixed;
-		top: 50px;
-		right: 10px;
-		width: 10%;
-		font-size: 1.5rem;
-		color: green;
-		border-radius: 5px;
-	}
+.score {
+        position: fixed;
+        top: 50px;
+        right: 10px;
+        width: 10%;
+        font-size: 1.5rem;
+        color: green;
+        border-radius: 5px;
+}
 </style>
