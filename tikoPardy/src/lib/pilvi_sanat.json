@@ -57,7 +57,7 @@
 	{
 		"sana": "Amazon Simple Storage Service",
 		"lyhenne": "S3",
-		"selitys": "Skaalautuva onjektipohjainen tallennusratkaisu (esim. kuvat, videot, varmuuskopiot"
+		"selitys": "Skaalautuva objektipohjainen tallennusratkaisu (esim. kuvat, videot, varmuuskopiot"
 	},
 	{
 		"sana": "Amazon Virtual Private Cloud",
@@ -97,7 +97,7 @@
 	{
 		"sana": "Partial Upfront Reserved Instance",
 		"lyhenne": "PURI",
-		"selitys": "Osa hinnasta maksetaan etukäteen, loput ajan kuluessa"
+		"selitys": "Osa palvelun hinnasta maksetaan etukäteen, loput ajan kuluessa"
 	},
 	{
 		"sana": "No Upfront Payment Reserved Instance",
@@ -132,7 +132,7 @@
 	{
 		"sana": "Access Control List",
 		"lyhenne": "ACL",
-		"selitys": "Resurssikohtainen lista, joka määrittää, kuka saa käyttää ja mitäkin"
+		"selitys": "Resurssikohtainen lista, joka määrittää, kuka saa käyttää mitäkin"
 	},
 	{
 		"sana": "Amazon Machine Image",
@@ -202,7 +202,7 @@
 	{
 		"sana": "AWS Shield",
 		"lyhenne": "",
-		"selitys": "DDoS-hyökkäyksiltä suojaava palvelu"
+		"selitys": "Palvelunestohyökkäyksiltä suojaava palvelu"
 	},
 	{
 		"sana": "AWS Artifact",
@@ -602,7 +602,7 @@
 	{
 		"sana": "Cloud architecture",
 		"lyhenne": "",
-		"selitys": "Yleinen termi pilvi-infrastruksuurin suunnittelulle"
+		"selitys": "Yleinen termi pilvi-infrastruktuurin suunnittelulle"
 	},
 	{
 		"sana": "Operational excellence",
@@ -632,7 +632,7 @@
 	{
 		"sana": "Sustainability",
 		"lyhenne": "",
-		"selitys": "Yksi Well-Architected Frameworkin pilareista - ympäristön minimointi pilvi-infrastruktuurissa"
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - ympäristövaikutusten minimointi pilvi-infrastruktuurissa"
 	},
 	{
 		"sana": "Mean Time Between Failures",

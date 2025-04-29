@@ -4,16 +4,18 @@
   import Modal from '../lib/components/Modal.svelte';
   import { Coffee, HelpCircle, ArrowRight, ChevronDown, X } from '@lucide/svelte';
 
-  let kurssit = $state('Pilvipalveluiden perusteet');
-  let showInstructionsModal = $state(false);
+	type Kurssit = 'Pilvipalveluiden perusteet' | 'Tietoturvan perusteet' | 'Web Perusteet' | '';
+	let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
+	
+	let showInstructionsModal = $state(false)
 
   function toggleInstructions() {
     showInstructionsModal = !showInstructionsModal;
   }
 
-  function startGame() {
-    goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
-  }
+	function startGame() {
+		goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
+	}
 </script>
 
 <main>

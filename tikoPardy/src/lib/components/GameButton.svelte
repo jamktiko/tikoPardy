@@ -12,12 +12,11 @@
 <button class={type} {onclick} {disabled}>{text}</button>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-
+	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 	button {
 		padding: 1.2rem 1.9rem;
-		font-family: "Cascadia Mono", sans-serif;
+		font-family: 'Cascadia Mono', sans-serif;
 		font-size: 1.4rem;
 		border: none;
 		border-radius: 0.5rem;
@@ -33,16 +32,16 @@
 	}
 
 	.primary {
-		background-color: #7B1E1E; /* Dark Red */
+		background-color: #7b1e1e; /* Dark Red */
 		color: white;
 	}
 
 	.primary:hover {
-		background-color: #5C1515; /* Darker Red on hover */
+		background-color: #5c1515; /* Darker Red on hover */
 	}
 
 	.secondary {
-		background-color: #AAAAAA; /* Light Neutral */
+		background-color: #0ba4eb; /* Light Neutral */
 		color: #000;
 	}
 
@@ -50,4 +49,3 @@
 		background-color: #888888; /* Slightly darker neutral */
 	}
 </style>
-
