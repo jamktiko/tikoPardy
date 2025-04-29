@@ -8,12 +8,12 @@
 	import { Volume2, VolumeX } from '@lucide/svelte';
 
 	// All your existing code remains the same...
-	
+
 	// Add this new state variable to track volume
 	let audioVolume = $state(0.3); // Initial volume set to match the prop in AudioSlider
-	
+
 	// Function to handle volume changes from AudioSlider
-	function handleVolumeChange(event:number) {
+	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
 	}
 	interface Kysymys {
@@ -233,11 +233,11 @@
 	{:else}
 		<Volume2 class="volume-icon" />
 	{/if}
-	<AudioSlider 
-		setVolume={audioVolume} 
-		Mplay={false} 
-		audioSrc="millionaireBackground.mp3" 
-		on:volumechange={handleVolumeChange} 
+	<AudioSlider
+		setVolume={audioVolume}
+		Mplay={false}
+		audioSrc="millionaireBackground.mp3"
+		on:volumechange={handleVolumeChange}
 	/>
 </div>
 
