@@ -18,30 +18,34 @@
 
 	onMount(async () => {
 		try {
-			kurssi = $page.url.searchParams.get('kurssi') || 'Pilvipalveluiden perusteet';
+			kurssi = $page.url.searchParams.get('kurssi') || '';
+			// Ladataan kaikki kysymykset yhdestä JSON-tiedostosta
+			const jsonData = await import('../../lib/kysymykset.json');
 
-			let jsonData;
-			switch (kurssi) {
-				case 'Pilvipalveluiden perusteet':
-					jsonData = await import('../../lib/pilvi_sanat.json');
-					break;
-				case 'Tietoturvan perusteet':
-					jsonData = await import('../../lib/tietoturva_sanat.json');
-					break;
-				case 'Web Perusteet':
-					jsonData = await import('../../lib/web_sanat.json');
-					break;
-				default:
-					jsonData = await import('../../lib/pilvi_sanat.json');
+			// Haetaan kurssin ID kurssin nimen perusteella
+			const kurssit = await import('../../lib/kurssit.json');
+
+			const selectedCourse = kurssit.default.find(
+				(course) => course.nimi.toLowerCase() === kurssi.toLowerCase()
+			);
+
+			if (!selectedCourse) {
+				alert('Kurssia ei löytynyt: ' + kurssi);
+				kysymykset = [];
+				return;
 			}
 
+			// Suodatetaan kysymykset kurssin ID:n perusteella
+			const courseId = selectedCourse.id;
 			if (Array.isArray(jsonData.default)) {
-				kysymykset = jsonData.default.map((item) => ({
-					kysymys: item.selitys,
-					vastaus: item.sana,
-					vaara: '',
-					lyhenne: item?.lyhenne
-				}));
+				kysymykset = jsonData.default
+					.filter((item) => item.id === courseId)
+					.map((item) => ({
+						kysymys: item.selitys,
+						vastaus: item.sana,
+						vaara: '',
+						lyhenne: item?.lyhenne // Voi olla undefined jossakin tiedostoissa
+					}));
 			} else {
 				console.error('Virheellinen dataformaatti:', jsonData.default);
 				kysymykset = [];
@@ -237,7 +241,7 @@
 {#if lives <= 0}
 	<Modal>
 		<header style="font-weight: bold;">Game Over</header>
-		<div>Peli on päättynyt!</div>
+		<div>Hävisit pelin!</div>
 		<div>Pisteet: {score}</div>
 		<footer>
 			<Button onclick={() => resetGame()} text="Yritä Uudelleen" />
