@@ -20,7 +20,7 @@
 	input[type='range'] {
 		-webkit-appearance: none;
 		appearance: none;
-		background: transparent;
+		background-color: #f5f0ec;
 		cursor: pointer;
 		width: 7.5rem;
 	}
