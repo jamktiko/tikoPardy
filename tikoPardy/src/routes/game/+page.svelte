@@ -32,7 +32,7 @@
 			);
 
 			if (!selectedCourse) {
-				console.error('Kurssia ei löytynyt:', kurssi);
+				alert('Kurssia ei löytynyt: ' + kurssi);
 				kysymykset = [];
 				return;
 			}
