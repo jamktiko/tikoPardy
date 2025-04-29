@@ -5,7 +5,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { Volume2, VolumeX, Volume1 } from '@lucide/svelte';
+	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 
 	// All your existing code remains the same...
 
@@ -218,6 +218,7 @@
 	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
 </script>
 
+<button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1>TikoPardy - {kurssi}</h1>
 
 <div class="game-info-side">
@@ -376,5 +377,17 @@
 		height: 1.5rem; /* Adjust size of the icon */
 		color: rgb(89, 89, 89); /* Icon color */
 		flex-shrink: 0; /* Prevent icon from shrinking */
+	}
+
+	.goBack {
+		background-color: #f5f0ec;
+		border: none;
+		padding: 0.5rem 1rem;
+	}
+	.goBack:hover {
+		background-color: #e0d5d1;
+		cursor: pointer;
+		transform: scale(1.3);
+		border-radius: 0.5rem;
 	}
 </style>
