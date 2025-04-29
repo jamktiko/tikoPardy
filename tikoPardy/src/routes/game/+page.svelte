@@ -5,7 +5,7 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { Volume2, VolumeX } from '@lucide/svelte';
+	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 
 	// All your existing code remains the same...
 	
@@ -13,7 +13,7 @@
 	let audioVolume = $state(0.3); // Initial volume set to match the prop in AudioSlider
 	
 	// Function to handle volume changes from AudioSlider
-	function handleVolumeChange(event) {
+	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
 	}
 	interface Kysymys {
@@ -219,6 +219,7 @@
 	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
 </script>
 
+<button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1>TikoPardy - {kurssi}</h1>
 
 <div class="game-info-side">
@@ -230,8 +231,10 @@
 <div class="audio-slider-container">
 	{#if audioVolume <= 0}
 		<VolumeX class="volume-icon" />
+	{:else if audioVolume <= 0.5} 
+	<Volume1 class="volume-icon" />
 	{:else}
-		<Volume2 class="volume-icon" />
+	 	<Volume2 class="volume-icon" />
 	{/if}
 	<AudioSlider 
 		setVolume={audioVolume} 
@@ -375,5 +378,17 @@
 		height: 1.6rem; /* Adjust size of the icon */
 		color: rgb(89, 89, 89); /* Icon color */
 		flex-shrink: 0; /* Prevent icon from shrinking */
+	}
+
+	.goBack {
+		background-color: #f5f0ec;
+		border: none;
+		padding: 0.5rem 1rem;
+	}
+	.goBack:hover {
+		background-color: #e0d5d1;
+		cursor: pointer;
+		transform: scale(1.3);
+		border-radius: 0.5rem;
 	}
 </style>
