@@ -2,9 +2,9 @@
 	import { goto } from '$app/navigation';
 	import Button from '../lib/components/Button.svelte';
 	import Modal from '../lib/components/Modal.svelte';
+	import kurssitData from '../lib/kurssit.json';
 
-	type Kurssit = 'Pilvipalveluiden perusteet' | 'Tietoturvan perusteet' | 'Web Perusteet' | '';
-	let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
+	let kurssit: string = $state('Pilvipalveluiden perusteet'); // Default value
 
 	let showInstructionsModal = $state(false);
 
@@ -26,9 +26,9 @@
 
 		<p>Valitse Kurssi:</p>
 		<select bind:value={kurssit}>
-			<option value="Pilvipalveluiden perusteet">Pilvipalveluiden Perusteet</option>
-			<option value="Tietoturvan perusteet">Tietoturvan perusteet</option>
-			<option value="Web Perusteet">Web Perusteet</option>
+			{#each kurssitData as kurssi}
+				<option value={kurssi.nimi}>{kurssi.nimi}</option>
+			{/each}
 		</select>
 
 		<div class="button-container">
