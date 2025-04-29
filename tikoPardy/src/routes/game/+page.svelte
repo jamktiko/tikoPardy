@@ -5,14 +5,15 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { Volume2, VolumeX, Volume1 } from '@lucide/svelte';
+	import { Volume2, VolumeX } from '@lucide/svelte';
 
 	// All your existing code remains the same...
-
+	
 	// Add this new state variable to track volume
 	let audioVolume = $state(0.3); // Initial volume set to match the prop in AudioSlider
-
-	function handleVolumeChange(event: CustomEvent) {
+	
+	// Function to handle volume changes from AudioSlider
+	function handleVolumeChange(event) {
 		audioVolume = event.detail.volume;
 	}
 	interface Kysymys {
@@ -229,16 +230,14 @@
 <div class="audio-slider-container">
 	{#if audioVolume <= 0}
 		<VolumeX class="volume-icon" />
-	{:else if audioVolume <= 0.5}
-		<Volume1 class="volume-icon" />
 	{:else}
 		<Volume2 class="volume-icon" />
 	{/if}
-	<AudioSlider
-		setVolume={audioVolume}
-		Mplay={false}
-		audioSrc="millionaireBackground.mp3"
-		on:volumechange={handleVolumeChange}
+	<AudioSlider 
+		setVolume={audioVolume} 
+		Mplay={false} 
+		audioSrc="millionaireBackground.mp3" 
+		on:volumechange={handleVolumeChange} 
 	/>
 </div>
 
@@ -372,8 +371,8 @@
 	}
 
 	:global(.volume-icon) {
-		width: 1.5rem; /* Adjust size of the icon */
-		height: 1.5rem; /* Adjust size of the icon */
+		width: 1.6rem; /* Adjust size of the icon */
+		height: 1.6rem; /* Adjust size of the icon */
 		color: rgb(89, 89, 89); /* Icon color */
 		flex-shrink: 0; /* Prevent icon from shrinking */
 	}

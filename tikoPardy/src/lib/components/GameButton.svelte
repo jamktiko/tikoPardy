@@ -16,6 +16,8 @@
 
 	button {
 		padding: 1.2rem 1.9rem;
+		color: white;
+		background-color: #7b1e1e;
 		font-family: 'Cascadia Mono', sans-serif;
 		font-size: 1.4rem;
 		border: none;
@@ -29,23 +31,6 @@
 
 	button:hover {
 		transform: scale(1.05);
-	}
-
-	.primary {
-		background-color: #7b1e1e; /* Dark Red */
-		color: white;
-	}
-
-	.primary:hover {
-		background-color: #5c1515; /* Darker Red on hover */
-	}
-
-	.secondary {
-		background-color: #0ba4eb; /* Light Neutral */
-		color: #000;
-	}
-
-	.secondary:hover {
-		background-color: #888888; /* Slightly darker neutral */
+		background:#9a2929;
 	}
 </style>

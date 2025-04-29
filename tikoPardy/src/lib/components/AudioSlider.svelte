@@ -60,14 +60,14 @@
 		-webkit-appearance: none; /* Override default look */
 		appearance: none;
 		margin-top: -4px; /* Centers thumb on the track */
-		background-color: #aeaeae;
+		background-color: #6f6f6f;
 		border-radius: 0.5rem;
 		height: 1rem;
 		width: 1rem;
 	}
 
 	input[type='range']:focus::-webkit-slider-thumb {
-		outline: 3px solid #aeaeae;
+		outline: 3px solid #6f6f6f;
 		outline-offset: 0.125rem;
 	}
 
