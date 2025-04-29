@@ -5,7 +5,17 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { Volume2, VolumeX } from '@lucide/svelte';
 
+	// All your existing code remains the same...
+	
+	// Add this new state variable to track volume
+	let audioVolume = $state(0.3); // Initial volume set to match the prop in AudioSlider
+	
+	// Function to handle volume changes from AudioSlider
+	function handleVolumeChange(event:number) {
+		audioVolume = event.detail.volume;
+	}
 	interface Kysymys {
 		kysymys: string;
 		vastaus: string;
@@ -217,8 +227,18 @@
 	<div class="info streak">🔥 {streak}</div>
 </div>
 
-<div class="audio-slider">
-	<AudioSlider setVolume={0.3} Mplay={true} audioSrc="millionaireBackground.mp3" />
+<div class="audio-slider-container">
+	{#if audioVolume <= 0}
+		<VolumeX class="volume-icon" />
+	{:else}
+		<Volume2 class="volume-icon" />
+	{/if}
+	<AudioSlider 
+		setVolume={audioVolume} 
+		Mplay={false} 
+		audioSrc="millionaireBackground.mp3" 
+		on:volumechange={handleVolumeChange} 
+	/>
 </div>
 
 <h2>{randomKysymys.kysymys}</h2>
@@ -338,5 +358,22 @@
 	.info.streak {
 		background-color: #e3f2fd;
 		color: #1565c0;
+	}
+
+	.audio-slider-container {
+		display: flex;
+		flex-direction: row; /* Ensure items are laid out horizontally */
+		align-items: center; /* Align icon and slider vertically */
+		gap: 1rem; /* Adjust gap between icon and slider */
+		justify-content: center; /* Center the container horizontally */
+		margin: 1rem auto; /* Add some margin and center it */
+		width: fit-content; /* Make container only as wide as needed */
+	}
+
+	:global(.volume-icon) {
+		width: 1.5rem; /* Adjust size of the icon */
+		height: 1.5rem; /* Adjust size of the icon */
+		color: rgb(89, 89, 89); /* Icon color */
+		flex-shrink: 0; /* Prevent icon from shrinking */
 	}
 </style>

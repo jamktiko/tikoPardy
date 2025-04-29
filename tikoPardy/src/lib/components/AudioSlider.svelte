@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { createEventDispatcher } from 'svelte';
+	
 	interface Props {
 		setVolume: number;
 		Mplay: boolean;
@@ -6,6 +8,14 @@
 	}
 
 	let { setVolume, Mplay, audioSrc }: Props = $props();
+	
+	// Create event dispatcher
+	const dispatch = createEventDispatcher();
+	
+	// Function to handle volume changes
+	function handleVolumeChange() {
+		dispatch('volumechange', { volume: setVolume });
+	}
 </script>
 
 <audio autoplay loop bind:volume={setVolume} bind:paused={Mplay}>
@@ -13,7 +23,14 @@
 	Your browser doesn't support the audio.
 </audio>
 
-<input type="range" min="0" max="1" step="0.01" bind:value={setVolume} />
+<input 
+	type="range" 
+	min="0" 
+	max="1" 
+	step="0.01" 
+	bind:value={setVolume} 
+	oninput={handleVolumeChange}
+/>
 
 <style>
 	/*********** Baseline, reset styles ***********/
