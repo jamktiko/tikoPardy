@@ -5,14 +5,13 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { Volume2, VolumeX } from '@lucide/svelte';
+	import { Volume2, VolumeX, Volume1 } from '@lucide/svelte';
 
 	// All your existing code remains the same...
 
 	// Add this new state variable to track volume
 	let audioVolume = $state(0.3); // Initial volume set to match the prop in AudioSlider
 
-	// Function to handle volume changes from AudioSlider
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
 	}
@@ -230,6 +229,8 @@
 <div class="audio-slider-container">
 	{#if audioVolume <= 0}
 		<VolumeX class="volume-icon" />
+	{:else if audioVolume <= 0.5}
+		<Volume1 class="volume-icon" />
 	{:else}
 		<Volume2 class="volume-icon" />
 	{/if}
