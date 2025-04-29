@@ -3,8 +3,8 @@
 	import Button from '../lib/components/Button.svelte';
 	import Modal from '../lib/components/Modal.svelte';
 
-type Kurssit = 'Pilvipalveluiden perusteet' | 'Tietoturvan perusteet' | 'Web Perusteet' | ''; 
-let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
+	type Kurssit = 'Pilvipalveluiden perusteet' | 'Tietoturvan perusteet' | 'Web Perusteet' | '';
+	let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 
 	let showInstructionsModal = $state(false);
 
@@ -12,10 +12,9 @@ let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 		showInstructionsModal = !showInstructionsModal;
 	}
 
-  function startGame() {
-    goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
-}
-
+	function startGame() {
+		goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
+	}
 </script>
 
 <main>
@@ -25,12 +24,12 @@ let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 			<p>Welcome to the ultimate quiz challenge!</p>
 		</div>
 
-    <p>Valitse Kurssi:</p>
-<select bind:value={kurssit}>
-  <option value="Pilvipalveluiden perusteet">Pilvipalveluiden Perusteet</option>
-  <option value="Tietoturvan perusteet">Tietoturvan perusteet</option>
-  <option value="Web Perusteet">Web Perusteet</option>
-</select>
+		<p>Valitse Kurssi:</p>
+		<select bind:value={kurssit}>
+			<option value="Pilvipalveluiden perusteet">Pilvipalveluiden Perusteet</option>
+			<option value="Tietoturvan perusteet">Tietoturvan perusteet</option>
+			<option value="Web Perusteet">Web Perusteet</option>
+		</select>
 
 		<div class="button-container">
 			<Button text="Ohjeet" onclick={toggleInstructions} type="secondary" />
@@ -50,7 +49,7 @@ let kurssit: Kurssit = $state('Pilvipalveluiden perusteet'); // Default value
 				<li>Aloita peli</li>
 				<li>Valitse selitystä vastaava käsite</li>
 				<li>Saat pisteitä oikeasta vastauksesta, väärästä vastauksesta menetät elämän</li>
-        <li>Peli loppuu, kun elämät ovat loppu</li>
+				<li>Peli loppuu, kun elämät ovat loppu</li>
 			</ol>
 
 			<div class="button-center">

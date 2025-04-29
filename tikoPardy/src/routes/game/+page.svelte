@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Button from '../../lib/components/GameButton.svelte';
 	import Modal from '../../lib/components/GameModal.svelte';
+	import AudioSlider from '$lib/components/AudioSlider.svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
@@ -227,7 +228,9 @@
 <div class="lives">Elämät: {lives}</div>
 <div class="score">Pisteet: {score}</div>
 <div class="streak">Streak: {streak}</div>
-<audio controls src="millionaireBackground.mp3"></audio>
+<div class="audio-slider">
+	<AudioSlider setVolume={0.3} Mplay={true} audioSrc="millionaireBackground.mp3" />
+</div>
 
 <h2>{randomKysymys.kysymys}</h2>
 
