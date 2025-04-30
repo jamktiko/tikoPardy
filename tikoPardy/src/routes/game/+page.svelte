@@ -7,16 +7,14 @@
 	import { onMount } from 'svelte';
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 
-	// All your existing code remains the same...
-
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
 
-	// Function to handle volume changes from AudioSlider
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
 		isMuted = audioVolume === 0;
 	}
+
 	interface Kysymys {
 		kysymys: string;
 		vastaus: string;
@@ -24,42 +22,33 @@
 	}
 
 	let kysymykset: Kysymys[] = [];
-	let kurssi = $state('');
+	let kurssiId = $state(0); // Kurssin ID otetaan suoraan URL-parametrista
 
 	onMount(async () => {
 		try {
-			kurssi = $page.url.searchParams.get('kurssi') || '';
+			// Haetaan kurssin ID URL-parametrista
+			kurssiId = parseInt($page.url.searchParams.get('kurssi') || '0', 10);
+			console.log('Kurssi ID:', kurssiId);
+
 			// Ladataan kaikki kysymykset yhdestä JSON-tiedostosta
 			const jsonData = await import('../../lib/kysymykset.json');
 
-			// Haetaan kurssin ID kurssin nimen perusteella
-			const kurssit = await import('../../lib/kurssit.json');
-
-			const selectedCourse = kurssit.default.find(
-				(course) => course.nimi.toLowerCase() === kurssi.toLowerCase()
-			);
-
-			if (!selectedCourse) {
-				alert('Kurssia ei löytynyt: ' + kurssi);
-				kysymykset = [];
-				return;
-			}
-
 			// Suodatetaan kysymykset kurssin ID:n perusteella
-			const courseId = selectedCourse.id;
 			if (Array.isArray(jsonData.default)) {
 				kysymykset = jsonData.default
-					.filter((item) => item.id === courseId)
+					.filter((item) => item.id === kurssiId) // Suodatetaan ID:n perusteella
 					.map((item) => ({
 						kysymys: item.selitys,
 						vastaus: item.sana,
 						lyhenne: item?.lyhenne // Voi olla undefined jossakin tiedostoissa
 					}));
+				console.log('Ladatut kysymykset:', kysymykset);
 			} else {
 				console.error('Virheellinen dataformaatti:', jsonData.default);
 				kysymykset = [];
 			}
 
+			// Alustetaan ensimmäinen kysymys
 			randomKysymys = randomQuestion();
 			shuffledAnswers = randomizeAnswers();
 		} catch (error) {
@@ -228,7 +217,7 @@
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
-<h1 class="">TikoPardy - {kurssi}</h1>
+<h1 class="">TikoPardy -</h1>
 
 <div class="game-info-side">
 	<div class="info lives">❤️ {lives}</div>
@@ -312,17 +301,12 @@
 	}
 
 	:global(.main-content) {
-<<<<<<< HEAD
-	padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 1rem;
-}
-=======
 		padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
 	}
->>>>>>> 59495e557fba860e18b7d4cc6af26112d062e15f
 
 	h1 {
 		text-align: center;
@@ -354,11 +338,7 @@
 	.question-box {
 		text-align: center;
 		margin-bottom: 0rem;
-<<<<<<< HEAD
-}
-=======
 	}
->>>>>>> 59495e557fba860e18b7d4cc6af26112d062e15f
 
 	.question-label {
 		font-size: 1.2rem;
@@ -367,11 +347,7 @@
 		text-transform: uppercase;
 		margin-bottom: -2rem;
 		letter-spacing: 0.05em;
-<<<<<<< HEAD
-}
-=======
 	}
->>>>>>> 59495e557fba860e18b7d4cc6af26112d062e15f
 
 	.game-info-side {
 		position: fixed;
