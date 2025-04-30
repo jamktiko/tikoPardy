@@ -16,8 +16,6 @@
 	function startGame() {
 		goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
 	}
-
-	$inspect(kurssit);
 </script>
 
 <main>

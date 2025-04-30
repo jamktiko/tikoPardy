@@ -6,9 +6,12 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
+	import kurssitData from '../../lib/kurssit.json';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
+
+	let otsikko: string = $state('');
 
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
@@ -28,7 +31,14 @@
 		try {
 			// Haetaan kurssin ID URL-parametrista
 			kurssiId = parseInt($page.url.searchParams.get('kurssi') || '0', 10);
-			console.log('Kurssi ID:', kurssiId);
+
+			const selectedCourse = kurssitData.find((course) => course.id === kurssiId);
+			if (selectedCourse) {
+				otsikko = selectedCourse.nimi;
+			} else {
+				console.error('Kurssia ei löytynyt ID:llä:', kurssiId);
+				otsikko = 'Tuntematon kurssi';
+			}
 
 			// Ladataan kaikki kysymykset yhdestä JSON-tiedostosta
 			const jsonData = await import('../../lib/kysymykset.json');
@@ -212,12 +222,10 @@
 	}
 
 	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
-
-	$inspect(wrongAnswers);
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
-<h1 class="">TikoPardy -</h1>
+<h1 class="">TikoPardy - {otsikko}</h1>
 
 <div class="game-info-side">
 	<div class="info lives">❤️ {lives}</div>
@@ -301,12 +309,12 @@
 	}
 
 	:global(.main-content) {
-	padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 1rem;
-}
+		padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
 
 	h1 {
 		text-align: center;
@@ -338,7 +346,7 @@
 	.question-box {
 		text-align: center;
 		margin-bottom: 0rem;
-}
+	}
 
 	.question-label {
 		font-size: 1.2rem;
@@ -347,11 +355,11 @@
 		text-transform: uppercase;
 		margin-bottom: -2rem;
 		letter-spacing: 0.05em;
-}
+	}
 
 	.game-info-side {
 		position: fixed;
-		top: 53%;	
+		top: 53%;
 		right: 35px; /* Match the slider's right value */
 		transform: translateY(-50%);
 		display: flex;
