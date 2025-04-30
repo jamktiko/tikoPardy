@@ -8,20 +8,18 @@
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 
 	// All your existing code remains the same...
-	
-	// Add this new state variable to track volume
+
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
 
 	// Function to handle volume changes from AudioSlider
 	function handleVolumeChange(event: CustomEvent) {
-	audioVolume = event.detail.volume;
-	isMuted = audioVolume === 0;
-}
+		audioVolume = event.detail.volume;
+		isMuted = audioVolume === 0;
+	}
 	interface Kysymys {
 		kysymys: string;
 		vastaus: string;
-		vaara?: string;
 		lyhenne?: string;
 	}
 
@@ -55,7 +53,6 @@
 					.map((item) => ({
 						kysymys: item.selitys,
 						vastaus: item.sana,
-						vaara: '',
 						lyhenne: item?.lyhenne // Voi olla undefined jossakin tiedostoissa
 					}));
 			} else {
@@ -85,7 +82,6 @@
 		showModal = true;
 	}
 
-		
 	function toggleMute() {
 		if (isMuted) {
 			audioVolume = 0.3;
@@ -125,7 +121,7 @@
 		lastPoints = 100;
 	}
 
-	function getRandomWrongAnswers(correctAnswer: string, count: number = 2) {
+	function getRandomWrongAnswers(correctAnswer: string, count: number = 3) {
 		const otherAnswers = kysymykset
 			.filter((q) => q.vastaus !== correctAnswer)
 			.map((q) => q.vastaus);
@@ -147,8 +143,7 @@
 			return {
 				kysymys: 'Ei kysymyksiä saatavilla',
 				vastaus: '',
-				vaara: '',
-				extraWrongAnswers: ['', '']
+				wrongAnswers: ['', '', '']
 			};
 		} else if (usedQuestionIndices.length === kysymykset.length) {
 			showVictoryModal = true;
@@ -166,22 +161,19 @@
 
 		const kysymys = kysymykset[randomIndex];
 		const wrongAnswers = getRandomWrongAnswers(kysymys.vastaus, 3);
-		const vaara = wrongAnswers[0] || 'Ei vastausta';
-		const extraWrongAnswers = wrongAnswers.slice(1);
 
-		return { ...kysymys, vaara, extraWrongAnswers };
+		return { ...kysymys, wrongAnswers };
 	}
 
 	let randomKysymys = $state({
 		kysymys: 'Ladataan kysymyksiä...',
 		vastaus: '',
-		vaara: '',
-		extraWrongAnswers: ['', '']
+
+		wrongAnswers: ['', '', '']
 	});
 
 	let vastaus = $derived(randomKysymys.vastaus);
-	let vaara = $derived(randomKysymys.vaara);
-	let extraWrongAnswers = $derived(randomKysymys.extraWrongAnswers || ['', '']);
+	let wrongAnswers = $derived(randomKysymys.wrongAnswers || ['', '', '']);
 
 	function tarkistusVastaus(valinta: string) {
 		if (valinta === randomKysymys.vastaus) {
@@ -221,15 +213,18 @@
 	function randomizeAnswers() {
 		const answers = [
 			{ text: vastaus, isCorrect: true },
-			{ text: vaara, isCorrect: false },
-			{ text: extraWrongAnswers[0], isCorrect: false },
-			{ text: extraWrongAnswers[1], isCorrect: false }
+
+			{ text: wrongAnswers[0], isCorrect: false },
+			{ text: wrongAnswers[1], isCorrect: false },
+			{ text: wrongAnswers[2], isCorrect: false }
 		].filter((a) => a.text);
 
 		return answers.sort(() => Math.random() - 0.5);
 	}
 
 	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
+
+	$inspect(wrongAnswers);
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
@@ -252,11 +247,11 @@
 		{/if}
 	</button>
 
-	<AudioSlider 
-		setVolume={audioVolume} 
-		Mplay={false} 
-		audioSrc="millionaireBackground.mp3" 
-		on:volumechange={handleVolumeChange} 
+	<AudioSlider
+		setVolume={audioVolume}
+		Mplay={false}
+		audioSrc="millionaireBackground.mp3"
+		on:volumechange={handleVolumeChange}
 	/>
 </div>
 
@@ -317,8 +312,8 @@
 	}
 
 	:global(.main-content) {
-	padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
-}
+		padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
+	}
 
 	h1 {
 		text-align: center;
@@ -348,20 +343,20 @@
 	}
 
 	.question-box {
-	text-align: center;
-	margin-bottom: 0rem;
-}
+		text-align: center;
+		margin-bottom: 0rem;
+	}
 
-.question-label {
-	font-size: 1.2rem;
-	color: #555;
-	font-weight: 600;
-	text-transform: uppercase;
-	margin-bottom: -2rem;
-	letter-spacing: 0.05em;
-}
+	.question-label {
+		font-size: 1.2rem;
+		color: #555;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: -2rem;
+		letter-spacing: 0.05em;
+	}
 
-		.game-info-side {
+	.game-info-side {
 		position: fixed;
 		top: 53%;
 		right: 35px; /* Match the slider's right value */
@@ -379,20 +374,20 @@
 	}
 
 	.audio-slider-container {
-	position: fixed;
-	top: 40%; /* Slightly above game-info box */
-	right: 15px; /* Moved left from right edge */
-	transform: translateY(-50%);
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 0.5rem;
-	background-color: rgba(255, 255, 255, 0.9);
-	padding: 0.5rem 0.75rem;
-	border-radius: 8px;
-	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-	z-index: 11;
-}
+		position: fixed;
+		top: 40%; /* Slightly above game-info box */
+		right: 15px; /* Moved left from right edge */
+		transform: translateY(-50%);
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 0.5rem;
+		background-color: rgba(255, 255, 255, 0.9);
+		padding: 0.5rem 0.75rem;
+		border-radius: 8px;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+		z-index: 11;
+	}
 
 	.info {
 		font-size: 1rem;
@@ -426,14 +421,14 @@
 	}
 
 	.volume-button {
-	background: none;
-	border: none;
-	cursor: pointer;
-	padding: 0;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+		background: none;
+		border: none;
+		cursor: pointer;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
 	.goBack {
 		background-color: #f5f0ec;
