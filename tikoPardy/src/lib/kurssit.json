@@ -14,5 +14,9 @@
 	{
 		"id": 4,
 		"nimi": "Käyttöjärjestelmät ja palvelimet"
+	},
+	{
+		"id": 6,
+		"nimi": "Ohjelmoinnin perusteet"
 	}
 ]
