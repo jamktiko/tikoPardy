@@ -5,7 +5,7 @@
 	import kurssitData from '../lib/kurssit.json';
 	import { Coffee, HelpCircle, ArrowRight, ChevronDown, X } from '@lucide/svelte';
 
-	let kurssit: string = $state('Pilvipalveluiden perusteet'); // Default value
+	let kurssit: number = $state(1); // Default value
 
 	let showInstructionsModal = $state(false);
 
@@ -16,6 +16,8 @@
 	function startGame() {
 		goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
 	}
+
+	$inspect(kurssit);
 </script>
 
 <main>
@@ -38,44 +40,45 @@
 		</div>
 
 		<p>Valitse Kurssi:</p>
-	<div class="select-wrapper">
-		<select bind:value={kurssit}>
-			{#each kurssitData as kurssi}
-				<option value={kurssi.nimi}>{kurssi.nimi}</option>
-			{/each}
-		</select>
-		<ChevronDown class="dropdown-icon" size={20} />
-	</div>
+		<div class="select-wrapper">
+			<select bind:value={kurssit}>
+				{#each kurssitData as kurssi}
+					<option value={kurssi.id}>{kurssi.nimi}</option>
+				{/each}
+			</select>
+			<ChevronDown class="dropdown-icon" size={20} />
+		</div>
 
-	<div class="button-container">
-		<Button text="Ohjeet" onclick={toggleInstructions} type="secondary">
-			<svelte:fragment slot="icon">
-				<HelpCircle size={20} />
-			</svelte:fragment>
-		</Button>
-		<Button text="Aloita peli" onclick={startGame} type="primary">
-			<svelte:fragment slot="icon">
-				<ArrowRight size={20} />
-			</svelte:fragment>
-		</Button>
+		<div class="button-container">
+			<Button text="Ohjeet" onclick={toggleInstructions} type="secondary">
+				<svelte:fragment slot="icon">
+					<HelpCircle size={20} />
+				</svelte:fragment>
+			</Button>
+			<Button text="Aloita peli" onclick={startGame} type="primary">
+				<svelte:fragment slot="icon">
+					<ArrowRight size={20} />
+				</svelte:fragment>
+			</Button>
+		</div>
 	</div>
 </main>
 
 {#if showInstructionsModal}
-  <Modal>
-    <div class="instructions">
-      <div class="modal-header">
-        <h2>Ohjeet</h2>
-      </div>
-      <h3>Näin sinä pelaat TikoPardy peliä:</h3>
-      <ol>
-        <li>Valitse haluamasi kurssi</li>
-        <li>Aloita peli</li>
-        <li>Valitse selitystä vastaava käsite</li>
-        <li>Saat pisteitä oikeasta vastauksesta ⭐, väärästä vastauksesta menetät elämän ❤️</li>
-        <li>Kasvatat oikeilla vastauksilla streakkiasi 🔥, jonka kasvattaa pisteesi saamista ⭐</li>
-        <li>Peli loppuu, kun elämät ovat loppu</li>
-      </ol>
+	<Modal>
+		<div class="instructions">
+			<div class="modal-header">
+				<h2>Ohjeet</h2>
+			</div>
+			<h3>Näin sinä pelaat TikoPardy peliä:</h3>
+			<ol>
+				<li>Valitse haluamasi kurssi</li>
+				<li>Aloita peli</li>
+				<li>Valitse selitystä vastaava käsite</li>
+				<li>Saat pisteitä oikeasta vastauksesta ⭐, väärästä vastauksesta menetät elämän ❤️</li>
+				<li>Kasvatat oikeilla vastauksilla streakkiasi 🔥, jonka kasvattaa pisteesi saamista ⭐</li>
+				<li>Peli loppuu, kun elämät ovat loppu</li>
+			</ol>
 
 			<div class="button-center">
 				<Button text="Close" onclick={toggleInstructions} type="primary">
@@ -164,7 +167,7 @@
 		transform: scale(0.8);
 	}
 
-	:global(.select-wrapper){
+	:global(.select-wrapper) {
 		position: relative;
 		display: inline-block;
 	}
