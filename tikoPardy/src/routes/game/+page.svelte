@@ -10,12 +10,14 @@
 	// All your existing code remains the same...
 	
 	// Add this new state variable to track volume
-	let audioVolume = $state(0.3); // Initial volume set to match the prop in AudioSlider
-	
+	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
+	let isMuted = $state(false);
+
 	// Function to handle volume changes from AudioSlider
 	function handleVolumeChange(event: CustomEvent) {
-		audioVolume = event.detail.volume;
-	}
+	audioVolume = event.detail.volume;
+	isMuted = audioVolume === 0;
+}
 	interface Kysymys {
 		kysymys: string;
 		vastaus: string;
@@ -81,6 +83,17 @@
 		modalTitle = title;
 		modalMessage = message;
 		showModal = true;
+	}
+
+		
+	function toggleMute() {
+		if (isMuted) {
+			audioVolume = 0.3;
+			isMuted = false;
+		} else {
+			audioVolume = 0;
+			isMuted = true;
+		}
 	}
 
 	function closeModal() {
@@ -220,7 +233,7 @@
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
-<h1>TikoPardy - {kurssi}</h1>
+<h1 class="">TikoPardy - {kurssi}</h1>
 
 <div class="game-info-side">
 	<div class="info lives">❤️ {lives}</div>
@@ -229,13 +242,16 @@
 </div>
 
 <div class="audio-slider-container">
-	{#if audioVolume <= 0}
-		<VolumeX class="volume-icon" />
-	{:else if audioVolume <= 0.5} 
-	<Volume1 class="volume-icon" />
-	{:else}
-	 	<Volume2 class="volume-icon" />
-	{/if}
+	<button class="volume-button" onclick={toggleMute}>
+		{#if audioVolume <= 0}
+			<VolumeX class="volume-icon" />
+		{:else if audioVolume <= 0.5}
+			<Volume1 class="volume-icon" />
+		{:else}
+			<Volume2 class="volume-icon" />
+		{/if}
+	</button>
+
 	<AudioSlider 
 		setVolume={audioVolume} 
 		Mplay={false} 
@@ -244,9 +260,12 @@
 	/>
 </div>
 
-<h2>{randomKysymys.kysymys}</h2>
+<div class="main-content">
+	<div class="question-box">
+		<h3 class="question-label">Kysymys</h3>
+		<h2>{randomKysymys.kysymys}</h2>
+	</div>
 
-<div>
 	{#each shuffledAnswers as answer}
 		<Button onclick={() => tarkistusVastaus(answer.text)} text={answer.text} />
 	{/each}
@@ -297,20 +316,26 @@
 		color: #333;
 	}
 
+	:global(.main-content) {
+	padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
+}
+
 	h1 {
 		text-align: center;
 		font-family: 'Cascadia Mono', sans-serif;
-		font-size: 64px;
+		font-size: 30px;
 		color: #7b1e1e;
-		margin-top: 2rem;
-		margin-bottom: 1rem;
+		margin-top: -2rem;
+		margin-bottom: 3rem;
 	}
 
 	h2 {
-		text-align: center;
 		font-size: 2rem;
+		background: #fff;
+		padding: 1rem 1.5rem;
+		border-radius: 12px;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 		color: #333;
-		margin-bottom: 2rem;
 	}
 
 	div {
@@ -319,13 +344,27 @@
 		align-items: center;
 		gap: 1rem;
 		margin: 0 auto;
-		max-width: 600px;
+		max-width: 950px;
 	}
 
-	.game-info-side {
+	.question-box {
+	text-align: center;
+	margin-bottom: 0rem;
+}
+
+.question-label {
+	font-size: 1.2rem;
+	color: #555;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: -2rem;
+	letter-spacing: 0.05em;
+}
+
+		.game-info-side {
 		position: fixed;
-		top: 50%;
-		right: 10px;
+		top: 53%;
+		right: 35px; /* Match the slider's right value */
 		transform: translateY(-50%);
 		display: flex;
 		flex-direction: column;
@@ -338,6 +377,22 @@
 		min-width: 110px;
 		z-index: 10;
 	}
+
+	.audio-slider-container {
+	position: fixed;
+	top: 40%; /* Slightly above game-info box */
+	right: 15px; /* Moved left from right edge */
+	transform: translateY(-50%);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.9);
+	padding: 0.5rem 0.75rem;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+	z-index: 11;
+}
 
 	.info {
 		font-size: 1rem;
@@ -363,22 +418,22 @@
 		color: #1565c0;
 	}
 
-	.audio-slider-container {
-		display: flex;
-		flex-direction: row; /* Ensure items are laid out horizontally */
-		align-items: center; /* Align icon and slider vertically */
-		gap: 1rem; /* Adjust gap between icon and slider */
-		justify-content: center; /* Center the container horizontally */
-		margin: 1rem auto; /* Add some margin and center it */
-		width: fit-content; /* Make container only as wide as needed */
-	}
-
 	:global(.volume-icon) {
 		width: 1.6rem; /* Adjust size of the icon */
 		height: 1.6rem; /* Adjust size of the icon */
 		color: rgb(89, 89, 89); /* Icon color */
 		flex-shrink: 0; /* Prevent icon from shrinking */
 	}
+
+	.volume-button {
+	background: none;
+	border: none;
+	cursor: pointer;
+	padding: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
 	.goBack {
 		background-color: #f5f0ec;
