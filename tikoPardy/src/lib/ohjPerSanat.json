@@ -1,0 +1,422 @@
+[
+	{
+		"sana": "Ohjelmointi",
+		"lyhenne": "",
+		"selitys": "Tietokoneelle annettavien toimintaohjeiden eli käskyjen sarja",
+        "id": 6
+	},
+    {
+		"sana": "Bitti",
+		"lyhenne": "",
+		"selitys": "Ykköset ja nollat, joista konekieli koostuu",
+        "id": 6
+	},
+    {
+		"sana": "Ohjelmointikieli",
+		"lyhenne": "",
+		"selitys": "Ykkösistä ja nollista koostuva konekieli on piilotettu symbolien ja termien taakse",
+        "id": 6
+	},
+    {
+		"sana": "Käännettävä ohjelmointikieli",
+		"lyhenne": "",
+		"selitys": "Tekstitiedostoon kirjoitettu lähdekoodi käännetään konekieliseksi kielikohtaisella kääntäjällä",
+        "id": 6
+	},
+    {
+		"sana": "Tulkattava ohjelmointikieli",
+		"lyhenne": "",
+		"selitys": "Ohjelmat ajetaan kielikohtaisen tulkin lävitse",
+        "id": 6
+	},
+    {
+		"sana": "Javascript",
+		"lyhenne": "",
+		"selitys": "Ainoa suoraan web-selaimessa tuettu ohjelmointikieli",
+        "id": 6
+	},
+    {
+		"sana": "Transpilointi",
+		"lyhenne": "",
+		"selitys": "Ohjelmakoodin muuntaminen uudemmasta vanhempaan ja laajemmin tuettuun versioon",
+        "id": 6
+	},
+    {
+		"sana": "Typescript",
+		"lyhenne": "",
+		"selitys": "Javascriptin rinnalle kehitetty kieltä parantava ja/tai selkiyttävä ohjelmointikieli",
+        "id": 6
+	},
+    {
+		"sana": "Algoritmi",
+		"lyhenne": "",
+		"selitys": "Tehtävän ratkaisemiseksi tehty ohjeistus",
+        "id": 6
+	},
+    {
+		"sana": "Pseudokoodi",
+		"lyhenne": "",
+		"selitys": "Koodi, joka ei sellaisenaan ole sopiva tietokoneelle, mutta helpompi tulkita ja ymmärtää tuntematta käytettyä ohjelmointikieltä",
+        "id": 6
+	},
+    {
+		"sana": "Syntaksi",
+		"lyhenne": "",
+		"selitys": "Ohjelmointikielen kielioppi",
+        "id": 6
+	},
+    {
+		"sana": "Notaatio",
+		"lyhenne": "",
+		"selitys": "Ohjelmointikielen merkintätapa",
+        "id": 6
+	},
+    {
+		"sana": "Muuttuja",
+		"lyhenne": "",
+		"selitys": "Tiedon tallennuspaikka, jossa olevaan sisältöön päästään käsiksi ja jota voidaan muuttaa",
+        "id": 6
+	},
+    {
+		"sana": "Toistorakenne",
+		"lyhenne": "",
+		"selitys": "Silmukka, jonka avulla koodin tiettyä osaa toistetaan haluttu määrä",
+        "id": 6
+	},
+    {
+		"sana": "Haarautumisrakenne",
+		"lyhenne": "",
+		"selitys": "Ohjelman osa, joka pystyy tekemään eri asioita tilasta tai tilanteesta riippuen",
+        "id": 6
+	},
+    {
+		"sana": "Funktio",
+		"lyhenne": "",
+		"selitys": "Ohjelman osa, joka suorittaa yleensä pienen ja rajatun toiminnallisuuden ohjelmassa",
+        "id": 6
+	},
+    {
+		"sana": "Hello World",
+		"lyhenne": "",
+		"selitys": "Ohjelma, jolla ohjelmoinnin opiskelu tyypillisesti aloitetaan",
+        "id": 6
+	},
+    {
+		"sana": "Puolipiste",
+		"lyhenne": "",
+		"selitys": "Merkki, johon koodirivi tyypillisesti päätetään",
+        "id": 6
+	},
+    {
+		"sana": "Kommentti",
+		"lyhenne": "",
+		"selitys": "Selkiyttää koodirivien eri tarkoituksia",
+        "id": 6
+	},
+    {
+		"sana": "Koodilohko",
+		"lyhenne": "",
+		"selitys": "Muuttujan näkyvyysalue, määritellään aaltosulkeilla",
+        "id": 6
+	},
+    {
+		"sana": "Tietotyypit",
+		"lyhenne": "",
+		"selitys": "Päätellään dynaamisesti suorituksen aikana muuttujan arvon perusteella",
+        "id": 6
+	},
+    {
+		"sana": "Number",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, joka merkitsee kokonaislukua tai liukulukua",
+        "id": 6
+	},
+    {
+		"sana": "Bigint",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, joka esittelee liian suuret luvut Number-tietotyypille",
+        "id": 6
+	},
+    {
+		"sana": "Merkkijono",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, joka tulkitaan tekstinä, määritellään hipsujen sisään",
+        "id": 6
+	},
+    {
+		"sana": "Boolean",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, jolla on vain kaksi arvoa: true ja false",
+        "id": 6
+	},
+    {
+		"sana": "Undefined",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, jossa muuttujan arvoa ei ole määritelty",
+        "id": 6
+	},
+    {
+		"sana": "Null",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, jossa muuttujan arvo on tarkoituksellisesti määrittelemätön tai tyhjä",
+        "id": 6
+	},
+    {
+		"sana": "Vertailuoperaattorit",
+		"lyhenne": "",
+		"selitys": "Vertaillaan, ovatko muuttujat suurempia, pienempiä tai yhtäsuuria",
+        "id": 6
+	},
+    {
+		"sana": "Loogiset operaattorit",
+		"lyhenne": "",
+		"selitys": "Ja-tai-operaattorit, joilla voi yhdistää kaksi vertailua",
+        "id": 6
+	},
+    {
+		"sana": "Switch",
+		"lyhenne": "",
+		"selitys": "Evaluoi ehtolauseen ja suorittaa sen tulosta vastaavan case-osan sisällön",
+        "id": 6
+	},
+    {
+		"sana": "Break",
+		"lyhenne": "",
+		"selitys": "Päättää silmukan suorittamisen kesken kaiken",
+        "id": 6
+	},
+    {
+		"sana": "While-silmukka",
+		"lyhenne": "",
+		"selitys": "Toistorakenne, jossa koodilohkoa suoritetaan niin kauan, kun vertailuehto on voimassa",
+        "id": 6
+	},
+    {
+		"sana": "For-silmukka",
+		"lyhenne": "",
+		"selitys": "Soveltuu tilanteisiin, joissa tiedetään etukäteen toiston määrä",
+        "id": 6
+	},
+    {
+		"sana": "Continue",
+		"lyhenne": "",
+		"selitys": "Lause, jolla hypätään toistorakenteen sisällä koodilohkon loppujen komentojen yli",
+        "id": 6
+	},
+    {
+		"sana": "Readline-sync",
+		"lyhenne": "",
+		"selitys": "Tarjoaa helpon, synkronisen tavan syötteiden lukemiseen",
+        "id": 6
+	},
+    {
+		"sana": "parseInt",
+		"lyhenne": "",
+		"selitys": "Muuntaa luvun kokonaisluvuksi",
+        "id": 6
+	},
+    {
+		"sana": "parseFloat",
+		"lyhenne": "",
+		"selitys": "Muuntaa luvun desimaaliluvuksi",
+        "id": 6
+	},
+    {
+		"sana": "Taulukko",
+		"lyhenne": "",
+		"selitys": "Käytetään usean tietoalkion tallentamiseksi yhteen muuttujaan",
+        "id": 6
+	},
+    {
+		"sana": "forEach",
+		"lyhenne": "",
+		"selitys": "Metodi, jota käytetään taulukon alkioiden läpikäymiseen",
+        "id": 6
+	},
+    {
+		"sana": "Push",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lisää alkion taulukon loppuun",
+        "id": 6
+	},
+    {
+		"sana": "Pop",
+		"lyhenne": "",
+		"selitys": "Metodi, joka poistaa alkion taulukon lopusta",
+        "id": 6
+	},
+    {
+		"sana": "Unshift",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lisää alkion taulukon alkuun",
+        "id": 6
+	},
+    {
+		"sana": "Shift",
+		"lyhenne": "",
+		"selitys": "Metodi, joka poistaa alkion taulukon alusta",
+        "id": 6
+	},
+    {
+		"sana": "indexOf",
+		"lyhenne": "",
+		"selitys": "Metodi, jolla voi etsiä tiettyä alkiota taulusta",
+        "id": 6
+	},
+    {
+		"sana": "Splice",
+		"lyhenne": "",
+		"selitys": "Metodi, joka poistaa alkion taulukon tietystä kohdasta",
+        "id": 6
+	},
+    {
+		"sana": "Concat",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lisää taulukon alkiot toiseen taulukkoon",
+        "id": 6
+	},
+    {
+		"sana": "Join",
+		"lyhenne": "",
+		"selitys": "Metodi, joka yhdistää taulukon alkiot merkkijonoksi",
+        "id": 6
+	},
+    {
+		"sana": "Sort",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lajittelee taulukon nousevaan aakkosjärjestykseen",
+        "id": 6
+	},
+    {
+		"sana": "Reverse",
+		"lyhenne": "",
+		"selitys": "Metodi, joka kääntää taulukon ympäri",
+        "id": 6
+	},
+    {
+		"sana": "Parametri",
+		"lyhenne": "",
+		"selitys": "Funktiolle välitetty arvo, jonka pohjalta funktio toimii ja palauttaa erilaisia arvoja eri suorituskerroilla",
+        "id": 6
+	},
+    {
+		"sana": "Argumentti",
+		"lyhenne": "",
+		"selitys": "Antaa funktion parametrille arvon funktiota kutsuttaessa",
+        "id": 6
+	},
+    {
+		"sana": "Hoisting",
+		"lyhenne": "",
+		"selitys": "Funktioiden määritteleminen deklaraatioina, jolloin funktiomäärittely nousevat näkyvyysalueen alkuun",
+        "id": 6
+	},
+    {
+		"sana": "Funktion sivuvaikutus",
+		"lyhenne": "",
+		"selitys": "Voi muuttaa esimerkiksi argumenttina annetun muuttujan tai globaalin muuttujan arvoa",
+        "id": 6
+	},
+    {
+		"sana": "Typeof",
+		"lyhenne": "",
+		"selitys": "Operaattori, joka varmistaa, että parametri on oikean tyyppinen",
+        "id": 6
+	},
+    {
+		"sana": "Anonyymi funktio",
+		"lyhenne": "",
+		"selitys": "Lausekesyntaksilla määritelty funktio, jolla ei välttämättä tarvitse olla nimeä",
+        "id": 6
+	},
+    {
+		"sana": "Callback-funktio",
+		"lyhenne": "",
+		"selitys": "Funktio, joka välitetään toiselle funktiolle parametrina, ja jota kutsutaan tästä toisesta funktiosta",
+        "id": 6
+	},
+    {
+		"sana": "Map",
+		"lyhenne": "",
+		"selitys": "Metodi, joka luo uuden taulukon ja suorittaa kullekin alkiolle callback-funktiossa määritellyt toimenpiteet",
+        "id": 6
+	},
+    {
+		"sana": "Filter",
+		"lyhenne": "",
+		"selitys": "Metodi, joka luo uuden taulukon, johon se palauttaa toisesta taulukosta sellaiset alkiot, jotka toteuttavat callback-funktiossa määritellyn arvon",
+        "id": 6
+	},
+    {
+		"sana": "Find",
+		"lyhenne": "",
+		"selitys": "Metodi, joka palauttaa käsiteltävän taulukon ensimmäisen callback-funktiossa määritellyt ehdot täyttävän alkion",
+        "id": 6
+	},
+    {
+		"sana": "Objekti",
+		"lyhenne": "",
+		"selitys": "Kokoelma pilkulla toisistaan erotettuja ominaisuuksia, jotka puolestaan ovat nimi-arvo -pareja",
+        "id": 6
+	},
+    {
+		"sana": "Object.assign",
+		"lyhenne": "",
+		"selitys": "Metodi, jolla objektista voidaan tehdä klooni",
+        "id": 6
+	},
+    {
+		"sana": "Object.freeze",
+		"lyhenne": "",
+		"selitys": "Metodi, jolla voidaan estää objektin sisällön muuttaminen",
+        "id": 6
+	},
+    {
+		"sana": "Destructing assignment",
+		"lyhenne": "",
+		"selitys": "Syntaksi, jola voidaan ottaa objektista tai taulukosta käyttöön vain tietty osa",
+        "id": 6
+	},
+    {
+		"sana": "This",
+		"lyhenne": "",
+		"selitys": "Avainsana, jonka avulla objektin metodista pystytään viittaamaan objektin muihin arvoihin",
+        "id": 6
+	},
+    {
+		"sana": "Olio",
+		"lyhenne": "",
+		"selitys": "Ohjelman osa, joka yhdistää dataa (ominaisuuksia) ja siihen liittyviä toimintoja (metodeita ja funktioita)",
+        "id": 6
+	},
+    {
+		"sana": "Olio-ohjelmointi",
+		"lyhenne": "",
+		"selitys": "Ohjelmointiparadigma, joka perustuu objektien käyttöön ohjelman rakenteen ja toiminnan suunnittelussa",
+        "id": 6
+	},
+    {
+		"sana": "Luokka",
+		"lyhenne": "",
+		"selitys": "Kuvaa käsiteltävän asian piirteet",
+        "id": 6
+	},
+    {
+		"sana": "Prototyyppi",
+		"lyhenne": "",
+		"selitys": "Objekti, joka tarjoaa muille objekteille niiden käyttämät yhteiset ominaisuudet ja metodit",
+        "id": 6
+	},
+    {
+		"sana": "Kapselointi",
+		"lyhenne": "",
+		"selitys": "Ilmentymien sisältämien tietojen suojaamista",
+        "id": 6
+	},
+    {
+		"sana": "Staattinen muuttuja",
+		"lyhenne": "",
+		"selitys": "Koko luokan ominaisuus",
+        "id": 6
+	}
+]
