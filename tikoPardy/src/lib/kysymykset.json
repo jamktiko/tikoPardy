@@ -1752,5 +1752,167 @@
 		"sana": "chown",
 		"lyhenne": "",
 		"selitys": "Muuttaa tiedoston tai hakemiston omistajaa."
+	},
+	{
+		"id": 4,
+		"sana": "Tietokonoe",
+		"lyhenne": "",
+		"selitys": "On elektroninen laite, joka käsittelee tietoa tai dataa."
+	},
+	{
+		"id": 4,
+		"sana": "Hardware",
+		"lyhenne": "",
+		"selitys": "Tietokoneen fyysiset osat, kuten emolevy, prosessori ja muisti."
+	},
+	{
+		"id": 4,
+		"sana": "Software",
+		"lyhenne": "",
+		"selitys": "Ohjelmat ja käyttöjärjestelmät, jotka ohjaavat laitteiston toimintaa."
+	},
+	{
+		"id": 4,
+		"sana": "Universal Serial Bus",
+		"lyhenne": "USB",
+		"selitys": "Yleinen liitäntästandardi oheislaitteiden yhdistämiseen tietokoneeseen."
+	},
+	{
+		"id": 4,
+		"sana": "Internet Service Provider",
+		"lyhenne": "ISP",
+		"selitys": "Yritys, joka tarjoaa asiakkailleen internetyhteyden."
+	},
+	{
+		"id": 4,
+		"sana": "Central Processing Unit",
+		"lyhenne": "CPU",
+		"selitys": "Tietokoneen keskusyksikkö, joka suorittaa käskyt ja laskutoimitukset."
+	},
+	{
+		"id": 4,
+		"sana": "Cloud",
+		"lyhenne": "",
+		"selitys": "Internetin kautta tarjottavat tietotekniikkapalvelut, kuten tallennus tai laskenta."
+	},
+	{
+		"id": 4,
+		"sana": "Random access memory",
+		"lyhenne": "RAM",
+		"selitys": "Tietokoneen nopea väliaikainen muisti, jossa ohjelmat ja tiedot säilyvät käynnissä ollessa."
+	},
+	{
+		"id": 4,
+		"sana": "Motherboard",
+		"lyhenne": "",
+		"selitys": "Tietokoneen keskuspiirilevy, johon kaikki muut komponentit liitetään."
+	},
+	{
+		"id": 4,
+		"sana": "HD/SSD",
+		"lyhenne": "",
+		"selitys": "Massamuistit, joita käytetään tietojen pysyvään tallennukseen."
+	},
+	{
+		"id": 4,
+		"sana": "x86_64",
+		"lyhenne": "",
+		"selitys": "64-bittinen suoritinarkkitehtuuri, jota käytetään yleisesti pöytäkoneissa ja palvelimissa."
+	},
+	{
+		"id": 4,
+		"sana": "ARM",
+		"lyhenne": "",
+		"selitys": "Suoritinarkkitehtuuri, joka on energiatehokas ja yleinen mobiililaitteissa."
+	},
+	{
+		"id": 4,
+		"sana": "Server",
+		"lyhenne": "",
+		"selitys": "Tietokone tai ohjelma, joka tarjoaa palveluita muille tietokoneille verkossa."
+	},
+	{
+		"id": 4,
+		"sana": "Cloud computing",
+		"lyhenne": "",
+		"selitys": "Tietotekniikan resurssien, kuten laskennan ja tallennuksen, toimittaminen internetin kautta."
+	},
+	{
+		"id": 4,
+		"sana": "IPv4",
+		"lyhenne": "",
+		"selitys": "Osoitejärjestelmä joka mahdollistaa laitteiden yhdistämisen verkkoon."
+	},
+	{
+		"id": 4,
+		"sana": "Network Adapter",
+		"lyhenne": "",
+		"selitys": "Laite, joka mahdollistaa tietokoneen yhdistämisen verkkoon."
+	},
+	{
+		"id": 4,
+		"sana": "Network Address Translation",
+		"lyhenne": "NAT",
+		"selitys": "Tekniikka, jolla yksityisen verkon IP-osoitteet muunnetaan julkisiksi osoitteiksi."
+	},
+	{
+		"id": 4,
+		"sana": "Dynamic Host Configuration Protocol",
+		"lyhenne": "DHCP",
+		"selitys": "Protokolla, joka jakaa laitteille automaattisesti IP-osoitteet verkossa."
+	},
+	{
+		"id": 4,
+		"sana": "Demilitarized zone",
+		"lyhenne": "DMZ",
+		"selitys": "Verkon osa, johon sijoitetaan ulkoisesti saavutettavat palvelimet, mutta joka on eristetty sisäverkosta."
+	},
+	{
+		"id": 4,
+		"sana": "Wireless access point",
+		"lyhenne": "WAP",
+		"selitys": "Laite, joka tarjoaa langattoman yhteyden verkkoon."
+	},
+	{
+		"id": 4,
+		"sana": "Network interface controller",
+		"lyhenne": "NIC",
+		"selitys": "Laite tai piirisarja, joka yhdistää tietokoneen verkkoon."
+	},
+	{
+		"id": 4,
+		"sana": "Internet Exchange Point",
+		"lyhenne": "IXP",
+		"selitys": "Fyysinen kohta, jossa eri internet-palveluntarjoajat voivat vaihtaa liikennettä."
+	},
+	{
+		"id": 4,
+		"sana": "Content delivery network",
+		"lyhenne": "CDN",
+		"selitys": "Verkko palvelimia, jotka toimittavat verkkosisältöä nopeasti käyttäjille eri puolilla maailmaa."
+	},
+	{
+		"id": 4,
+		"sana": "Domain name",
+		"lyhenne": "",
+		"selitys": "Verkko-osoitteen ihmisen luettava nimi, joka vastaa IP-osoitetta."
+	},
+	{
+		"id": 4,
+		"sana": "Top domain",
+		"lyhenne": "",
+		"selitys": "Verkkotunnuksen viimeinen osa, kuten .fi, .com tai .org."
+	},
+	{
+		"id": 4,
+		"sana": "Virtual Private Server",
+		"lyhenne": "VPS",
+		"selitys": "Virtuaalinen palvelin, joka jakaa fyysisen palvelimen resurssit muiden kanssa, mutta toimii itsenäisesti."
+	},
+	{
+		"id": 4,
+		"sana": "Load balancers",
+		"lyhenne": "",
+		"selitys": "Laitteita tai ohjelmia, jotka jakavat verkkoliikenteen useille palvelimille tasaisesti."
 	}
 ]
