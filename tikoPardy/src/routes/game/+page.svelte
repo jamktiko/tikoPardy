@@ -318,6 +318,10 @@
 
 	:global(.main-content) {
 	padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
 }
 
 	h1 {
@@ -348,20 +352,20 @@
 	}
 
 	.question-box {
-	text-align: center;
-	margin-bottom: 0rem;
+		text-align: center;
+		margin-bottom: 0rem;
 }
 
-.question-label {
-	font-size: 1.2rem;
-	color: #555;
-	font-weight: 600;
-	text-transform: uppercase;
-	margin-bottom: -2rem;
-	letter-spacing: 0.05em;
+	.question-label {
+		font-size: 1.2rem;
+		color: #555;
+		font-weight: 600;
+		text-transform: uppercase;
+		margin-bottom: -2rem;
+		letter-spacing: 0.05em;
 }
 
-		.game-info-side {
+	.game-info-side {
 		position: fixed;
 		top: 53%;
 		right: 35px; /* Match the slider's right value */

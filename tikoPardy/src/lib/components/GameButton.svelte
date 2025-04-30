@@ -15,7 +15,11 @@
 	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
 	button {
-		padding: 1.2rem 1.9rem;
+		width: 100%; /* Makes button fill its container */
+		max-width: 500px; /* Optional: prevents overly wide buttons on big screens */
+		white-space: normal; /* Allows multi-line answers */
+		text-align: center; /* Keeps text centered */
+		padding: 1.21rem 1.9rem;
 		color: white;
 		background-color: #7b1e1e;
 		font-family: 'Cascadia Mono', sans-serif;
