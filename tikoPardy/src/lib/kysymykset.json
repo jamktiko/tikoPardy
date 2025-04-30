@@ -1845,12 +1845,6 @@
 	},
 	{
 		"id": 4,
-		"sana": "IPv6",
-		"lyhenne": "",
-		"selitys": "Uudempi osoitejärjestelmä, jossa on enemmän osoitteita kuin edellisessä versiossa."
-	},
-	{
-		"id": 4,
 		"sana": "Network Adapter",
 		"lyhenne": "",
 		"selitys": "Laite, joka mahdollistaa tietokoneen yhdistämisen verkkoon."
