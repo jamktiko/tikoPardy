@@ -312,17 +312,12 @@
 	}
 
 	:global(.main-content) {
-<<<<<<< HEAD
 	padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 1rem;
 }
-=======
-		padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
-	}
->>>>>>> 59495e557fba860e18b7d4cc6af26112d062e15f
 
 	h1 {
 		text-align: center;
@@ -354,11 +349,7 @@
 	.question-box {
 		text-align: center;
 		margin-bottom: 0rem;
-<<<<<<< HEAD
 }
-=======
-	}
->>>>>>> 59495e557fba860e18b7d4cc6af26112d062e15f
 
 	.question-label {
 		font-size: 1.2rem;
@@ -367,11 +358,7 @@
 		text-transform: uppercase;
 		margin-bottom: -2rem;
 		letter-spacing: 0.05em;
-<<<<<<< HEAD
 }
-=======
-	}
->>>>>>> 59495e557fba860e18b7d4cc6af26112d062e15f
 
 	.game-info-side {
 		position: fixed;
