@@ -350,6 +350,8 @@
 }
 
 	.game-info-side {
+		position: fixed;
+		top: 53%;	
 		right: 35px; /* Match the slider's right value */
 		transform: translateY(-50%);
 		display: flex;
