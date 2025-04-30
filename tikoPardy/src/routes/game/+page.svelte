@@ -376,8 +376,8 @@
 
 	.audio-slider-container {
 		position: fixed;
-		top: 40%; /* Slightly above game-info box */
-		right: 15px; /* Moved left from right edge */
+		top: 40%; 
+		right: 15px; 
 		transform: translateY(-50%);
 		display: flex;
 		flex-direction: row;
@@ -415,9 +415,9 @@
 	}
 
 	:global(.volume-icon) {
-		width: 1.6rem; /* Adjust size of the icon */
-		height: 1.6rem; /* Adjust size of the icon */
-		color: rgb(89, 89, 89); /* Icon color */
+		width: 1.6rem; 
+		height: 1.6rem;
+		color: rgb(89, 89, 89); 
 		flex-shrink: 0; /* Prevent icon from shrinking */
 	}
 
