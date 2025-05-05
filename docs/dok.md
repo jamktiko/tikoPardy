@@ -80,6 +80,10 @@ _Dokumentteja hallinnoi dokumenttipäällikkö. Tämä projektidokumentaatio pid
 
 Esimerkiksi näin.
 
-| Riskit                                                  | Todennäköisyys | Impakti | Minimointi                        |
-| ------------------------------------------------------- | -------------- | ------- | --------------------------------- |
-| Aarnen koneen laturi on rikki ja uusi on vasta tulossa. | Keskikokoinen  | Suuri   | Aarne lataa tietokoneensa kotona. |
+| Riskit                                                      | Todennäköisyys | Impakti         | Minimointi                        |
+| ----------------------------------------------------------- | -------------- | --------------- | --------------------------------- |
+| Aarnen koneen laturi on rikki ja uusi on vasta tulossa.     | Keskikokoinen  | Suuri           | Aarne lataa tietokoneensa kotona. |
+| ----------------------------------------------------------- | -------------- | --------------- | --------------------------------- |
+| Jonkun tiimiläisen kipeäksi tuleminen tai pakolliset menot  | Keskikokoinen  | Keskikokoinen   | Jokainen syö sinkkiä joka päivä.  |
+| ----------------------------------------------------------- | -------------- | --------------- | --------------------------------- |
+
