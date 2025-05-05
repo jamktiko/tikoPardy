@@ -14,6 +14,7 @@
 	let isMuted = $state(false);
 
 	let otsikko: string = $state('');
+	let resetCounter = $state(0); // Counter for resetting the timer
 
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
@@ -192,6 +193,7 @@
 		if (lives > 0) {
 			randomKysymys = randomQuestion();
 			shuffledAnswers = randomizeAnswers();
+			resetTimer();
 		}
 	}
 
@@ -205,6 +207,7 @@
 		shuffledAnswers = randomizeAnswers();
 		closeModal();
 		showVictoryModal = false;
+		resetTimer();
 	}
 
 	function mainMenu() {
@@ -224,6 +227,16 @@
 	}
 
 	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
+
+	function handleTimeout() {
+		lives -= 1;
+		resetStreak();
+		openModal('Aika loppui!', 'Vastausaika loppui ennen kuin ehdit vastata.');
+	}
+
+	function resetTimer() {
+		resetCounter++;
+	}
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
@@ -231,7 +244,7 @@
 
 {#if ajastinPaalla.on}
 	<div>
-		<Timer duration={10000} />
+		<Timer duration={1000} reset={resetCounter} on:timeout={handleTimeout} />
 	</div>
 {/if}
 
