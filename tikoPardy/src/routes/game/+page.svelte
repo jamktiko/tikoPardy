@@ -7,11 +7,14 @@
 	import { onMount } from 'svelte';
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 	import kurssitData from '../../lib/kurssit.json';
+	import Timer from '../../lib/components/Timer.svelte';
+	import { ajastinPaalla } from '$lib/states.svelte';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
 
 	let otsikko: string = $state('');
+	let resetCounter = $state(0); // Counter for resetting the timer
 
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
@@ -26,6 +29,7 @@
 
 	let kysymykset: Kysymys[] = [];
 	let kurssiId = $state(0); // Kurssin ID otetaan suoraan URL-parametrista
+	let timerPaused = $state(false);
 
 	onMount(async () => {
 		try {
@@ -175,6 +179,9 @@
 	let wrongAnswers = $derived(randomKysymys.wrongAnswers || ['', '', '']);
 
 	function tarkistusVastaus(valinta: string) {
+		// Pysäytä ajastin heti kun käyttäjä vastaa
+		timerPaused = true;
+
 		if (valinta === randomKysymys.vastaus) {
 			openModal('Tulokset', 'Oikein!');
 			increaseScore();
@@ -190,6 +197,10 @@
 		if (lives > 0) {
 			randomKysymys = randomQuestion();
 			shuffledAnswers = randomizeAnswers();
+
+			// Nollaa ajastimen tila ja käynnistä se uudelleen
+			timerPaused = false;
+			resetTimer();
 		}
 	}
 
@@ -203,6 +214,8 @@
 		shuffledAnswers = randomizeAnswers();
 		closeModal();
 		showVictoryModal = false;
+		resetTimer();
+		timerPaused = false;
 	}
 
 	function mainMenu() {
@@ -222,10 +235,26 @@
 	}
 
 	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
+
+	function handleTimeout() {
+		lives -= 1;
+		resetStreak();
+		openModal('Aika loppui!', 'Vastausaika loppui ennen kuin ehdit vastata.');
+	}
+
+	function resetTimer() {
+		resetCounter++;
+	}
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
+
+{#if ajastinPaalla.on}
+	<div>
+		<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
+	</div>
+{/if}
 
 <div class="game-info-side">
 	<div class="info lives">❤️ {lives}</div>
@@ -368,7 +397,7 @@
 
 	.game-info-side {
 		position: fixed;
-		top: 53%;
+		top: 70%;
 		right: 35px; /* Match the slider's right value */
 		transform: translateY(-50%);
 		display: flex;
@@ -385,8 +414,8 @@
 
 	.audio-slider-container {
 		position: fixed;
-		top: 40%; 
-		right: 15px; 
+		top: 40%;
+		right: 15px;
 		transform: translateY(-50%);
 		display: flex;
 		flex-direction: row;
@@ -411,22 +440,28 @@
 	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
+		font-size: 2.5rem;
+		text-align: center;
 	}
 
 	.info.score {
 		background-color: #e8f5e9;
 		color: #2e7d32;
+		font-size: 2.5rem;
+		text-align: center;
 	}
 
 	.info.streak {
 		background-color: #e3f2fd;
 		color: #1565c0;
+		font-size: 2.5rem;
+		text-align: center;
 	}
 
 	:global(.volume-icon) {
-		width: 1.6rem; 
+		width: 1.6rem;
 		height: 1.6rem;
-		color: rgb(89, 89, 89); 
+		color: rgb(89, 89, 89);
 		flex-shrink: 0; /* Prevent icon from shrinking */
 	}
 

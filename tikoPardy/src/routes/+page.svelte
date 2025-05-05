@@ -4,6 +4,7 @@
 	import Modal from '../lib/components/Modal.svelte';
 	import kurssitData from '../lib/kurssit.json';
 	import { Coffee, HelpCircle, ArrowRight, ChevronDown, X } from '@lucide/svelte';
+	import { ajastinPaalla } from '$lib/states.svelte';
 
 	let kurssit: number = $state(1); // Default value
 
@@ -35,6 +36,11 @@
 		<div class="game-content">
 			<h1>TikoPardy</h1>
 			<p>Welcome to the ultimate quiz challenge!</p>
+		</div>
+
+		<div>
+			Ajastin:
+			<input type="checkbox" bind:checked={ajastinPaalla.on} id="ajastin" />
 		</div>
 
 		<p>Valitse Kurssi:</p>
