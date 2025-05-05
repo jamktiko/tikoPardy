@@ -29,6 +29,7 @@
 
 	let kysymykset: Kysymys[] = [];
 	let kurssiId = $state(0); // Kurssin ID otetaan suoraan URL-parametrista
+	let timerPaused = $state(false);
 
 	onMount(async () => {
 		try {
@@ -178,6 +179,9 @@
 	let wrongAnswers = $derived(randomKysymys.wrongAnswers || ['', '', '']);
 
 	function tarkistusVastaus(valinta: string) {
+		// Pysäytä ajastin heti kun käyttäjä vastaa
+		timerPaused = true;
+
 		if (valinta === randomKysymys.vastaus) {
 			openModal('Tulokset', 'Oikein!');
 			increaseScore();
@@ -193,6 +197,9 @@
 		if (lives > 0) {
 			randomKysymys = randomQuestion();
 			shuffledAnswers = randomizeAnswers();
+
+			// Nollaa ajastimen tila ja käynnistä se uudelleen
+			timerPaused = false;
 			resetTimer();
 		}
 	}
@@ -208,6 +215,7 @@
 		closeModal();
 		showVictoryModal = false;
 		resetTimer();
+		timerPaused = false;
 	}
 
 	function mainMenu() {
@@ -244,7 +252,7 @@
 
 {#if ajastinPaalla.on}
 	<div>
-		<Timer duration={1000} reset={resetCounter} on:timeout={handleTimeout} />
+		<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
 	</div>
 {/if}
 
@@ -380,7 +388,7 @@
 
 	.game-info-side {
 		position: fixed;
-		top: 53%;
+		top: 70%;
 		right: 35px; /* Match the slider's right value */
 		transform: translateY(-50%);
 		display: flex;
@@ -423,16 +431,22 @@
 	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
+		font-size: 2.5rem;
+		text-align: center;
 	}
 
 	.info.score {
 		background-color: #e8f5e9;
 		color: #2e7d32;
+		font-size: 2.5rem;
+		text-align: center;
 	}
 
 	.info.streak {
 		background-color: #e3f2fd;
 		color: #1565c0;
+		font-size: 2.5rem;
+		text-align: center;
 	}
 
 	:global(.volume-icon) {

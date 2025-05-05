@@ -1,57 +1,64 @@
 <script lang="ts">
-	import { onMount, createEventDispatcher } from 'svelte';
+	import { createEventDispatcher } from 'svelte';
 
-	let { duration, reset = 0 } = $props();
+	let { duration, reset = 0, pause = false } = $props(); // Lisää pause-prop
 	let remaining = $state(duration);
 	const dispatch = createEventDispatcher();
 	let frame: number;
-	let startingDelay = 500; // 500ms = 0.5 sekuntia
+	let isRunning = $state(false);
 
 	// Seuraa reset-parametria ja käynnistä ajastin uudelleen kun se muuttuu
 	$effect(() => {
 		if (reset) {
 			// Peruuta nykyinen animaatiokehys jos sellainen on
-			if (frame) {
-				cancelAnimationFrame(frame);
-			}
+			stopTimer();
 
 			// Resetoi jäljellä oleva aika
 			remaining = duration;
+		}
+	});
 
-			// Käynnistä ajastin uudelleen pienen viiveen jälkeen
-			setTimeout(() => {
-				startTimer();
-			}, startingDelay);
+	// Seuraa pause-parametria ja pysäytä/käynnistä ajastin sen mukaan
+	$effect(() => {
+		if (pause && isRunning) {
+			stopTimer();
+		} else if (!pause && !isRunning && remaining > 0) {
+			startTimer();
 		}
 	});
 
 	// Funktio ajastimen käynnistämiseen
 	function startTimer() {
+		if (isRunning) return; // Älä käynnistä jos jo käynnissä
+
+		isRunning = true;
 		let last_time = performance.now();
 
 		frame = requestAnimationFrame(function update(time) {
 			frame = requestAnimationFrame(update);
 
-			remaining = Math.max(remaining - (time - last_time), 0);
-			last_time = time;
+			// Vähennä jäljellä olevaa aikaa vain jos ajastin on käynnissä
+			if (isRunning) {
+				remaining = Math.max(remaining - (time - last_time), 0);
 
-			// Stop the animation when the countdown reaches 0
-			if (remaining <= 0) {
-				cancelAnimationFrame(frame);
-				dispatch('timeout');
+				// Pysäytä animaatio kun laskuri saavuttaa 0
+				if (remaining <= 0) {
+					stopTimer();
+					dispatch('timeout');
+				}
 			}
+
+			last_time = time;
 		});
 	}
 
-	onMount(() => {
-		setTimeout(() => {
-			startTimer();
-		}, startingDelay);
-
-		return () => {
+	// Funktio ajastimen pysäyttämiseen
+	function stopTimer() {
+		if (frame) {
 			cancelAnimationFrame(frame);
-		};
-	});
+		}
+		isRunning = false;
+	}
 </script>
 
 <div>
