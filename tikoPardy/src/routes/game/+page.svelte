@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 	import kurssitData from '../../lib/kurssit.json';
+	import Timer from '../../lib/components/Timer.svelte';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
@@ -227,6 +228,10 @@
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
 
+<div>
+	<Timer duration={10000} />
+</div>
+
 <div class="game-info-side">
 	<div class="info lives">❤️ {lives}</div>
 	<div class="info score">⭐ {score}</div>
@@ -376,8 +381,8 @@
 
 	.audio-slider-container {
 		position: fixed;
-		top: 40%; 
-		right: 15px; 
+		top: 40%;
+		right: 15px;
 		transform: translateY(-50%);
 		display: flex;
 		flex-direction: row;
@@ -415,9 +420,9 @@
 	}
 
 	:global(.volume-icon) {
-		width: 1.6rem; 
+		width: 1.6rem;
 		height: 1.6rem;
-		color: rgb(89, 89, 89); 
+		color: rgb(89, 89, 89);
 		flex-shrink: 0; /* Prevent icon from shrinking */
 	}
 
