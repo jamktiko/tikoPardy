@@ -2596,7 +2596,7 @@
 	{
 		"sana": "Hoisting",
 		"lyhenne": "",
-		"selitys": "Funktioiden määritteleminen deklaraatioina, jolloin funktiomäärittely nousevat näkyvyysalueen alkuun",
+		"selitys": "Funktioiden määritteleminen deklaraatioina, jolloin funktiomäärittelyt nousevat näkyvyysalueen alkuun",
 		"kurssi": 6,
 		"id": 376
 	},
