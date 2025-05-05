@@ -2673,7 +2673,7 @@
 	{
 		"sana": "Destructing assignment",
 		"lyhenne": "",
-		"selitys": "Syntaksi, jola voidaan ottaa objektista tai taulukosta käyttöön vain tietty osa",
+		"selitys": "Syntaksi, jolla voidaan ottaa objektista tai taulukosta käyttöön vain tietty osa",
 		"kurssi": 6,
 		"id": 387
 	},
