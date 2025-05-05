@@ -8,6 +8,7 @@
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 	import kurssitData from '../../lib/kurssit.json';
 	import Timer from '../../lib/components/Timer.svelte';
+	import { ajastinPaalla } from '$lib/states.svelte';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
@@ -228,9 +229,11 @@
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
 
-<div>
-	<Timer duration={10000} />
-</div>
+{#if ajastinPaalla.on}
+	<div>
+		<Timer duration={10000} />
+	</div>
+{/if}
 
 <div class="game-info-side">
 	<div class="info lives">❤️ {lives}</div>
