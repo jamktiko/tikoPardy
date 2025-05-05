@@ -46,7 +46,7 @@
 			// Suodatetaan kysymykset kurssin ID:n perusteella
 			if (Array.isArray(jsonData.default)) {
 				kysymykset = jsonData.default
-					.filter((item) => item.id === kurssiId) // Suodatetaan ID:n perusteella
+					.filter((item) => item.kurssi === kurssiId) // Suodatetaan ID:n perusteella
 					.map((item) => ({
 						kysymys: item.selitys,
 						vastaus: item.sana,
