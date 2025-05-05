@@ -2596,7 +2596,7 @@
 	{
 		"sana": "Hoisting",
 		"lyhenne": "",
-		"selitys": "Funktioiden määritteleminen deklaraatioina, jolloin funktiomäärittely nousevat näkyvyysalueen alkuun",
+		"selitys": "Funktioiden määritteleminen deklaraatioina, jolloin funktiomäärittelyt nousevat näkyvyysalueen alkuun",
 		"kurssi": 6,
 		"id": 376
 	},
@@ -2673,7 +2673,7 @@
 	{
 		"sana": "Destructing assignment",
 		"lyhenne": "",
-		"selitys": "Syntaksi, jola voidaan ottaa objektista tai taulukosta käyttöön vain tietty osa",
+		"selitys": "Syntaksi, jolla voidaan ottaa objektista tai taulukosta käyttöön vain tietty osa",
 		"kurssi": 6,
 		"id": 387
 	},
