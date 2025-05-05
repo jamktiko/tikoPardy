@@ -268,7 +268,7 @@
 		<header style="font-weight: bold;">{modalTitle}</header>
 		<div>{modalMessage}</div>
 		<div>Elämiä jäljellä: {lives}</div>
-		<footer><Button onclick={() => newQuestion()} text="Seuraava kysymys" /></footer>
+		<footer class="modal-buttons"><Button onclick={() => newQuestion()} text="Seuraava kysymys" /></footer>
 	</Modal>
 {/if}
 
@@ -277,9 +277,9 @@
 		<header style="font-weight: bold;">Game Over</header>
 		<div>Hävisit pelin!</div>
 		<div>Pisteet: {score}</div>
-		<footer>
-			<Button onclick={() => resetGame()} text="Yritä Uudelleen" />
-			<Button onclick={() => mainMenu()} text="Alkuruutuun" />
+		<footer class="modal-buttons">
+			<Button onclick={() => resetGame()} text="Yritä Uudelleen" type="retry" />
+			<Button onclick={() => mainMenu()} text="Alkuruutuun" type="main" />
 		</footer>
 	</Modal>
 {/if}
@@ -289,7 +289,7 @@
 		<header style="font-weight: bold;">Voitit Pelin!</header>
 		<div>Onneksi olkoon, selvisit kaikki kysymykset!</div>
 		<div>Pisteet: {score}</div>
-		<footer>
+		<footer class="modal-buttons">
 			<Button onclick={() => resetGame()} text="Pelaa Uudelleen" />
 			<Button onclick={() => mainMenu()} text="Alkuruutuun" />
 		</footer>
@@ -315,6 +315,15 @@
 		align-items: center;
 		gap: 1rem;
 	}
+	
+	.modal-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+	margin-top: 1rem;
+	flex-wrap: wrap;
+	}
+
 
 	h1 {
 		text-align: center;

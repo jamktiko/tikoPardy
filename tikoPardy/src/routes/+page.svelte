@@ -107,7 +107,6 @@
 		min-height: 100vh;
 		padding: 1rem;
 		background: #f5f0ec;
-		font-family: 'Arial', sans-serif;
 		color: #333;
 		box-sizing: border-box;
 	}
@@ -179,8 +178,8 @@
 		background-color: #fff;
 		color: #333;
 		cursor: pointer;
-		margin-top: -3rem;
-		margin-bottom: 1.5rem;
+		margin-top: -2rem;
+		margin-bottom: 5rem;
 		appearance: none;
 	}
 
@@ -192,7 +191,7 @@
 	:global(.dropdown-icon) {
 		position: absolute;
 		right: 0.8rem; /* Adjust this value to move it further left or right */
-		top: 17%; /* Move the icon higher (less than 50%) */
+		top: 8%; /* Move the icon higher (less than 50%) */
 		transform: translateY(-50%); /* Fine-tune centering */
 		pointer-events: none; /* Keeps it non-interactive */
 		color: #7b1e1e; /* Icon color */
