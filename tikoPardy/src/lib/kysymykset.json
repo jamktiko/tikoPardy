@@ -934,7 +934,7 @@
 		"kurssi": 2,
 		"sana": "Relative links",
 		"lyhenne": "",
-		"selitys": "Linkit, jotka määritellään suhteessa nykyiseen sivuun, esimerkiksi /kuvat/logo.png."
+		"selitys": "Linkit, jotka määritellään suhteessa nykyiseen sivuun, esimerkiksi ./kuvat/logo.png."
 	},
 	{
 		"kurssi": 2,

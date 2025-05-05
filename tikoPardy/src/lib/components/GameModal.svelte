@@ -43,7 +43,7 @@
 
   .modal {
       padding: 1.5rem;
-      position: relative;  /* Muutettu fixed → relative */
+      position: relative; 
       background-color: #F5F5F5;
       border-radius: 0.5rem;
       width: 90%;

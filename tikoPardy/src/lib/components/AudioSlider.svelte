@@ -82,7 +82,7 @@
 	/* slider thumb */
 	input[type='range']::-moz-range-thumb {
 		background-color: #aeaeae;
-		border: none; /*Removes extra border that FF applies*/
+		border: none; 
 		border-radius: 0.5rem;
 		height: 1rem;
 		width: 1rem;
