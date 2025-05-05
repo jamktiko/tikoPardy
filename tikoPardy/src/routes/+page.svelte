@@ -3,8 +3,8 @@
 	import Button from '../lib/components/Button.svelte';
 	import Modal from '../lib/components/Modal.svelte';
 	import kurssitData from '../lib/kurssit.json';
-	import { Coffee, HelpCircle, ArrowRight, ChevronDown, X } from '@lucide/svelte';
-	import { ajastinPaalla } from '$lib/states.svelte';
+	import { Coffee, HelpCircle, ArrowRight, ChevronDown, X, Cog } from '@lucide/svelte';
+	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
 
 	let kurssit: number = $state(1); // Default value
 
@@ -14,9 +14,15 @@
 		showInstructionsModal = !showInstructionsModal;
 	}
 
+	let showSettingsModal = $state(false);
+	function toggleSettings() {
+		showSettingsModal = !showSettingsModal;
+	}
 	function startGame() {
 		goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
 	}
+
+	$inspect(sDeath.on);
 </script>
 
 <main>
@@ -38,11 +44,6 @@
 			<p>Welcome to the ultimate quiz challenge!</p>
 		</div>
 
-		<div>
-			Ajastin:
-			<input type="checkbox" bind:checked={ajastinPaalla.on} id="ajastin" />
-		</div>
-
 		<p>Valitse Kurssi:</p>
 		<div class="select-wrapper">
 			<select bind:value={kurssit}>
@@ -62,6 +63,12 @@
 			<Button text="Aloita peli" onclick={startGame} type="primary">
 				<svelte:fragment slot="icon">
 					<ArrowRight size={20} />
+				</svelte:fragment>
+			</Button>
+
+			<Button text="Asetukset" onclick={toggleSettings} type="secondary">
+				<svelte:fragment slot="icon">
+					<Cog size={20} />
 				</svelte:fragment>
 			</Button>
 		</div>
@@ -93,6 +100,36 @@
 			</div>
 		</div>
 	</Modal>
+{/if}
+
+{#if showSettingsModal}
+	<Modal>
+		<div class="instructions">
+			<div class="modal-header">
+				<h2>Asetukset</h2>
+			</div>
+
+			<div class="settings-option">
+				<label for="ajastin"> Ajastin:</label>
+				<input type="checkbox" bind:checked={ajastinPaalla.on} id="ajastin" />
+				<br />
+				<label for="sDeath"> Sudden Death:</label>
+				<input type="checkbox" bind:checked={sDeath.on} id="sDeath" />
+				<br />
+				<label for="harkka"> Harjoittelu:</label>
+				<input type="checkbox" bind:checked={harkka.on} id="harkka" />
+				<br />
+			</div>
+
+			<div class="button-center">
+				<Button text="Close" onclick={toggleSettings} type="primary">
+					<svelte:fragment slot="icon">
+						<X size={24} />
+					</svelte:fragment>
+				</Button>
+			</div>
+		</div></Modal
+	>
 {/if}
 
 <style>
