@@ -23,6 +23,21 @@
 	}
 
 	$inspect(sDeath.on);
+	$inspect(harkka.on);
+
+	function settingsChange() {
+		// Jos harjoittelutila on päällä, varmista että muut ovat pois päältä
+		if (harkka.on) {
+			sDeath.on = false;
+			ajastinPaalla.on = false;
+		}
+	}
+
+	function asetusMuutos() {
+		if (sDeath.on || ajastinPaalla.on) {
+			harkka.on = false;
+		}
+	}
 </script>
 
 <main>
@@ -111,13 +126,18 @@
 
 			<div class="settings-option">
 				<label for="ajastin"> Ajastin:</label>
-				<input type="checkbox" bind:checked={ajastinPaalla.on} id="ajastin" />
+				<input
+					type="checkbox"
+					bind:checked={ajastinPaalla.on}
+					id="ajastin"
+					onchange={asetusMuutos}
+				/>
 				<br />
 				<label for="sDeath"> Sudden Death:</label>
-				<input type="checkbox" bind:checked={sDeath.on} id="sDeath" />
+				<input type="checkbox" bind:checked={sDeath.on} id="sDeath" onchange={asetusMuutos} />
 				<br />
 				<label for="harkka"> Harjoittelu:</label>
-				<input type="checkbox" bind:checked={harkka.on} id="harkka" />
+				<input type="checkbox" bind:checked={harkka.on} id="harkka" onchange={settingsChange} />
 				<br />
 			</div>
 
