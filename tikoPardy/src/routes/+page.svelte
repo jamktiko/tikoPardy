@@ -80,7 +80,9 @@
 				<li>Aloita peli</li>
 				<li>Valitse selitystä vastaava käsite</li>
 				<li>Saat pisteitä oikeasta vastauksesta ⭐, väärästä vastauksesta menetät elämän ❤️</li>
-				<li>Kasvatat oikeilla vastauksilla streakkiasi 🔥, jonka kasvattaa pisteesi saamista ⭐</li>
+				<li>
+					Kasvatat oikeilla vastauksilla streakkiasi 🔥, joka vastaavasti kasvattaa pistesaldoasi ⭐
+				</li>
 				<li>Peli loppuu, kun elämät ovat loppu</li>
 			</ol>
 
