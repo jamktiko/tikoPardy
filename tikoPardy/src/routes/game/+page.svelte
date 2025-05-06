@@ -8,7 +8,7 @@
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 	import kurssitData from '../../lib/kurssit.json';
 	import Timer from '../../lib/components/Timer.svelte';
-	import { ajastinPaalla } from '$lib/states.svelte';
+	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
@@ -25,6 +25,12 @@
 		kysymys: string;
 		vastaus: string;
 		lyhenne?: string;
+	}
+
+	function getInitialLives() {
+		if (harkka.on) return 999; // Harjoitusmoodi: lähes "rajaton" määrä elämiä
+		if (sDeath.on) return 1; // Sudden Death: vain yksi elämä
+		return 3; // Normaalimoodi: 3 elämää
 	}
 
 	let kysymykset: Kysymys[] = [];
@@ -62,6 +68,8 @@
 				kysymykset = [];
 			}
 
+			lives = getInitialLives(); // Elämien määrä, oletuksena 3
+
 			// Alustetaan ensimmäinen kysymys
 			randomKysymys = randomQuestion();
 			shuffledAnswers = randomizeAnswers();
@@ -72,7 +80,7 @@
 	});
 
 	let usedQuestionIndices: number[] = $state([]);
-	let lives = $state(3);
+	let lives = $state(sDeath.on ? 1 : 3); // Elämien määrä, oletuksena 3
 	let score = $state(0);
 
 	let showModal = $state(false);
@@ -205,7 +213,7 @@
 	}
 
 	function resetGame() {
-		lives = 3;
+		lives = getInitialLives();
 		score = 0;
 		streak = 0;
 		lastPoints = 100;
@@ -257,7 +265,9 @@
 {/if}
 
 <div class="game-info-side">
-	<div class="info lives">❤️ {lives}</div>
+	{#if !harkka.on}
+		<div class="info lives">❤️ {lives}</div>
+	{/if}
 	<div class="info score">⭐ {score}</div>
 	<div class="info streak">🔥 {streak}</div>
 </div>
@@ -296,8 +306,9 @@
 	<Modal>
 		<header style="font-weight: bold;">{modalTitle}</header>
 		<div>{modalMessage}</div>
-		<div>Elämiä jäljellä: {lives}</div>
-		<footer class="modal-buttons"><Button onclick={() => newQuestion()} text="Seuraava kysymys" /></footer>
+		<footer class="modal-buttons">
+			<Button onclick={() => newQuestion()} text="Seuraava kysymys" />
+		</footer>
 	</Modal>
 {/if}
 
@@ -344,15 +355,14 @@
 		align-items: center;
 		gap: 1rem;
 	}
-	
-	.modal-buttons {
-	display: flex;
-	justify-content: center;
-	gap: 1rem;
-	margin-top: 1rem;
-	flex-wrap: wrap;
-	}
 
+	.modal-buttons {
+		display: flex;
+		justify-content: center;
+		gap: 1rem;
+		margin-top: 1rem;
+		flex-wrap: wrap;
+	}
 
 	h1 {
 		text-align: center;
