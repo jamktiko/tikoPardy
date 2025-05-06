@@ -87,6 +87,17 @@
 	let modalMessage = $state('');
 	let modalTitle = $state('');
 
+	let correctEffect: any = $state();
+	let wrongEffect: any = $state();
+
+	function correctSound() {
+		correctEffect.play();
+	}
+
+	function wrongSound() {
+		wrongEffect.play();
+	}
+
 	function openModal(title: string, message: string) {
 		modalTitle = title;
 		modalMessage = message;
@@ -193,10 +204,12 @@
 		if (valinta === randomKysymys.vastaus) {
 			openModal('Tulokset', 'Oikein!');
 			increaseScore();
+			correctSound();
 		} else {
 			openModal('Tulokset', 'Väärin! Oikea vastaus on: ' + randomKysymys.vastaus);
 			lives -= 1;
 			resetStreak();
+			wrongSound();
 		}
 	}
 
@@ -335,6 +348,9 @@
 		</footer>
 	</Modal>
 {/if}
+
+<audio src="correct.mp3" bind:this={correctEffect} volume="1"></audio>
+<audio src="wrong.mp3" bind:this={wrongEffect} volume="1"></audio>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono&family=Roboto:wght@400;700&display=swap');
