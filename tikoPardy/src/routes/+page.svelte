@@ -127,20 +127,23 @@
 			</div>
 
 			<div class="settings-option">
-				<label for="ajastin"> Ajastin:</label>
-				<input
-					type="checkbox"
-					bind:checked={ajastinPaalla.on}
-					id="ajastin"
-					onchange={asetusMuutos}
-				/>
-				<br />
-				<label for="sDeath"> Sudden Death:</label>
-				<input type="checkbox" bind:checked={sDeath.on} id="sDeath" onchange={asetusMuutos} />
-				<br />
-				<label for="harkka"> Harjoittelu:</label>
-				<input type="checkbox" bind:checked={harkka.on} id="harkka" onchange={settingsChange} />
-				<br />
+				<label class="checkbox-wrapper">
+					<input type="checkbox" bind:checked={ajastinPaalla.on} onchange={asetusMuutos} />
+					<span class="custom-checkbox"></span>
+					<strong>Ajastin:</strong> 15s aikaa vastata.
+				</label>
+
+				<label class="checkbox-wrapper">
+					<input type="checkbox" bind:checked={sDeath.on} onchange={asetusMuutos} />
+					<span class="custom-checkbox"></span>
+					<strong>Sudden Death:</strong> Vain yksi elämä.
+				</label>
+
+				<label class="checkbox-wrapper">
+					<input type="checkbox" bind:checked={harkka.on} onchange={settingsChange} />
+					<span class="custom-checkbox"></span>
+					<strong>Harjoittelu:</strong> Loputtomat elämät, ei ajastinta.
+				</label>
 			</div>
 
 			<div class="button-center">
@@ -301,6 +304,59 @@
 		align-items: center;
 		border-bottom: 1px solid #7b1e1e;
 		color: #7b1e1e;
+	}
+
+	/* Checkbox tyylitys*/
+	.checkbox-wrapper {
+		position: relative;
+		padding-left: 32px;
+		cursor: pointer;
+		user-select: none;
+		display: block;
+		margin-bottom: 0.5rem;
+		font-family: 'Cascadia Mono', sans-serif;
+	}
+
+	.checkbox-wrapper input[type='checkbox'] {
+		position: absolute;
+		opacity: 0;
+		cursor: pointer;
+		height: 0;
+		width: 0;
+	}
+
+	.custom-checkbox {
+		position: absolute;
+		left: 0;
+		top: 2px;
+		height: 20px;
+		width: 20px;
+		background-color: white;
+		border: 2px solid #888;
+		border-radius: 4px;
+		transition: all 0.2s ease;
+	}
+
+	.checkbox-wrapper input:checked ~ .custom-checkbox {
+		background-color: #4caf50;
+		border-color: #4caf50;
+	}
+
+	.custom-checkbox::after {
+		content: '';
+		position: absolute;
+		display: none;
+		left: 6px;
+		top: 2px;
+		width: 5px;
+		height: 10px;
+		border: solid white;
+		border-width: 0 2px 2px 0;
+		transform: rotate(45deg);
+	}
+
+	.checkbox-wrapper input:checked ~ .custom-checkbox::after {
+		display: block;
 	}
 
 	/* ===== Responsive ===== */
