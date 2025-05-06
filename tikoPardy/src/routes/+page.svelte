@@ -56,10 +56,10 @@
 
 		<div class="game-content">
 			<h1>TikoPardy</h1>
-			<p>Welcome to the ultimate quiz challenge!</p>
+			<p>Tervetuloa testaamaan tietojenkäsittelyn tietämystäsi!</p>
 		</div>
 
-		<p>Valitse Kurssi:</p>
+		<p>Valitse kurssi:</p>
 		<div class="select-wrapper">
 			<select bind:value={kurssit}>
 				{#each kurssitData as kurssi}
