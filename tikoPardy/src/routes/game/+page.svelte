@@ -16,6 +16,27 @@
 	let otsikko: string = $state('');
 	let resetCounter = $state(0); // Counter for resetting the timer
 
+	let highScore = $state(0);
+
+	function getHighScore(): number {
+		if (typeof localStorage !== 'undefined') {
+			const storedScore = localStorage.getItem('tikoPardy_highScore');
+			return storedScore ? parseInt(storedScore, 10) : 0;
+		}
+		return 0;
+	}
+
+	function updateHighScore(newScore: number): void {
+		const currentHighScore = getHighScore();
+
+		if (newScore > currentHighScore) {
+			if (typeof localStorage !== 'undefined') {
+				localStorage.setItem('tikoPardy_highScore', newScore.toString());
+				highScore = newScore;
+			}
+		}
+	}
+
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
 		isMuted = audioVolume === 0;
@@ -69,6 +90,7 @@
 			}
 
 			lives = getInitialLives(); // Elämien määrä, oletuksena 3
+			highScore = getHighScore();
 
 			// Alustetaan ensimmäinen kysymys
 			randomKysymys = randomQuestion();
@@ -85,6 +107,7 @@
 
 	let showModal = $state(false);
 	let modalMessage = $state('');
+	let modalMessage2 = $state(); // Toiselle riville menevä viesti
 	let modalTitle = $state('');
 
 	let correctEffect: any = $state();
@@ -98,9 +121,10 @@
 		wrongEffect.play();
 	}
 
-	function openModal(title: string, message: string) {
+	function openModal(title: string, message: string, message2?: string | null) {
 		modalTitle = title;
 		modalMessage = message;
+		modalMessage2 = message2;
 		showModal = true;
 	}
 
@@ -202,14 +226,18 @@
 		timerPaused = true;
 
 		if (valinta === randomKysymys.vastaus) {
-			openModal('Tulokset', 'Oikein!');
+			openModal('Oikein!', 'Vastauksesi on oikein!');
 			increaseScore();
 			correctSound();
 		} else {
-			openModal('Tulokset', 'Väärin! Oikea vastaus on: ' + randomKysymys.vastaus);
+			openModal('Väärin', 'Vastasit väärin!', 'Oikea vastaus on: ' + randomKysymys.vastaus);
 			lives -= 1;
 			resetStreak();
 			wrongSound();
+
+			if (lives <= 0) {
+				updateHighScore(score);
+			}
 		}
 	}
 
@@ -226,6 +254,7 @@
 	}
 
 	function resetGame() {
+		updateHighScore(score);
 		lives = getInitialLives();
 		score = 0;
 		streak = 0;
@@ -240,6 +269,7 @@
 	}
 
 	function mainMenu() {
+		updateHighScore(score);
 		goto('/');
 	}
 
@@ -260,7 +290,11 @@
 	function handleTimeout() {
 		lives -= 1;
 		resetStreak();
-		openModal('Aika loppui!', 'Vastausaika loppui ennen kuin ehdit vastata.');
+		openModal('Aika loppui!', 'Vastausaika loppui ennen kuin ehdit vastata.', '');
+
+		if (lives <= 0) {
+			updateHighScore(score);
+		}
 	}
 
 	function resetTimer() {
@@ -283,6 +317,7 @@
 	{/if}
 	<div class="info score">⭐ {score}</div>
 	<div class="info streak">🔥 {streak}</div>
+	<div class="info highscore">🏆 {highScore}</div>
 </div>
 
 <div class="audio-slider-container">
@@ -322,8 +357,9 @@
 
 {#if showModal}
 	<Modal>
-		<header style="font-weight: bold;">{modalTitle}</header>
+		<header style="font-weight: bold; text-align: center; font-size: 3rem;">{modalTitle}</header>
 		<div>{modalMessage}</div>
+		<div>{modalMessage2}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => newQuestion()} text="Seuraava kysymys" />
 		</footer>
@@ -332,9 +368,10 @@
 
 {#if lives <= 0}
 	<Modal>
-		<header style="font-weight: bold;">Game Over</header>
+		<header style="font-weight: bold; text-align: center; font-size: 3rem">Game Over</header>
 		<div>Hävisit pelin!</div>
-		<div>Pisteet: {score}</div>
+		<div>⭐Pisteet: {score}</div>
+		<div>🏆Highscore: {highScore}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => resetGame()} text="Yritä Uudelleen" type="retry" />
 			<Button onclick={() => mainMenu()} text="Alkuruutuun" type="main" />
@@ -354,8 +391,8 @@
 	</Modal>
 {/if}
 
-<audio src="correct.mp3" bind:this={correctEffect} volume="1"></audio>
-<audio src="wrong.mp3" bind:this={wrongEffect} volume="1"></audio>
+<audio src="correct.mp3" bind:this={correctEffect} volume={audioVolume}></audio>
+<audio src="wrong.mp3" bind:this={wrongEffect} volume={audioVolume}></audio>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono&family=Roboto:wght@400;700&display=swap');
@@ -472,21 +509,28 @@
 	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
-		font-size: 2.5rem;
+		font-size: 2rem;
+		text-align: center;
+	}
+
+	.info.highscore {
+		background-color: #fff3e0;
+		color: #e65100;
+		font-size: 2rem;
 		text-align: center;
 	}
 
 	.info.score {
 		background-color: #e8f5e9;
 		color: #2e7d32;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		text-align: center;
 	}
 
 	.info.streak {
 		background-color: #e3f2fd;
 		color: #1565c0;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		text-align: center;
 	}
 

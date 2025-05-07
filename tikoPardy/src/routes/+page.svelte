@@ -22,9 +22,6 @@
 		goto(`/game?kurssi=${encodeURIComponent(kurssit)}`);
 	}
 
-	$inspect(sDeath.on);
-	$inspect(harkka.on);
-
 	function settingsChange() {
 		// Jos harjoittelutila on päällä, varmista että muut ovat pois päältä
 		if (harkka.on) {
@@ -38,6 +35,8 @@
 			harkka.on = false;
 		}
 	}
+
+	console.log(localStorage.getItem('tikoPardy_highScore'));
 </script>
 
 <main>
