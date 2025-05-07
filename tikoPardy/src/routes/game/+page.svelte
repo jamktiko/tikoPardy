@@ -353,8 +353,8 @@
 	</Modal>
 {/if}
 
-<audio src="correct.mp3" bind:this={correctEffect} volume="1"></audio>
-<audio src="wrong.mp3" bind:this={wrongEffect} volume="1"></audio>
+<audio src="correct.mp3" bind:this={correctEffect} volume={audioVolume}></audio>
+<audio src="wrong.mp3" bind:this={wrongEffect} volume={audioVolume}></audio>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono&family=Roboto:wght@400;700&display=swap');
