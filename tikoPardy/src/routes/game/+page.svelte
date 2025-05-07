@@ -9,42 +9,12 @@
 	import kurssitData from '../../lib/kurssit.json';
 	import Timer from '../../lib/components/Timer.svelte';
 	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
-	import { browser } from '$app/environment';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
 
 	let otsikko: string = $state('');
 	let resetCounter = $state(0); // Counter for resetting the timer
-
-	let highScore = $state(0);
-
-	function getHighScore(): number {
-		if (browser) {
-			try {
-				const storedScore = localStorage.getItem('tikoPardy_highScore');
-				return storedScore ? parseInt(storedScore, 10) : 0;
-			} catch (e) {
-				console.error('LocalStorage error:', e);
-				return 0;
-			}
-		}
-		return 0;
-	}
-
-	function updateHighScore(newScore: number): void {
-		if (browser) {
-			try {
-				const currentHighScore = getHighScore();
-				if (newScore > currentHighScore) {
-					localStorage.setItem('tikoPardy_highScore', newScore.toString());
-					highScore = newScore;
-				}
-			} catch (e) {
-				console.error('LocalStorage error:', e);
-			}
-		}
-	}
 
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
@@ -99,7 +69,6 @@
 			}
 
 			lives = getInitialLives(); // Elämien määrä, oletuksena 3
-			highScore = getHighScore();
 
 			// Alustetaan ensimmäinen kysymys
 			randomKysymys = randomQuestion();
@@ -116,7 +85,6 @@
 
 	let showModal = $state(false);
 	let modalMessage = $state('');
-	let modalMessage2 = $state(); // Toiselle riville menevä viesti
 	let modalTitle = $state('');
 
 	let correctEffect: any = $state();
@@ -130,10 +98,9 @@
 		wrongEffect.play();
 	}
 
-	function openModal(title: string, message: string, message2?: string | null) {
+	function openModal(title: string, message: string) {
 		modalTitle = title;
 		modalMessage = message;
-		modalMessage2 = message2;
 		showModal = true;
 	}
 
@@ -235,18 +202,14 @@
 		timerPaused = true;
 
 		if (valinta === randomKysymys.vastaus) {
-			openModal('Oikein!', 'Vastauksesi on oikein!');
+			openModal('Tulokset', 'Oikein!');
 			increaseScore();
 			correctSound();
 		} else {
-			openModal('Väärin', 'Vastasit väärin!', 'Oikea vastaus on: ' + randomKysymys.vastaus);
+			openModal('Tulokset', 'Väärin! Oikea vastaus on: ' + randomKysymys.vastaus);
 			lives -= 1;
 			resetStreak();
 			wrongSound();
-
-			if (lives <= 0) {
-				updateHighScore(score);
-			}
 		}
 	}
 
@@ -263,7 +226,6 @@
 	}
 
 	function resetGame() {
-		updateHighScore(score);
 		lives = getInitialLives();
 		score = 0;
 		streak = 0;
@@ -278,7 +240,6 @@
 	}
 
 	function mainMenu() {
-		updateHighScore(score);
 		goto('/');
 	}
 
@@ -299,11 +260,7 @@
 	function handleTimeout() {
 		lives -= 1;
 		resetStreak();
-		openModal('Aika loppui!', 'Vastausaika loppui ennen kuin ehdit vastata.', '');
-
-		if (lives <= 0) {
-			updateHighScore(score);
-		}
+		openModal('Aika loppui!', 'Vastausaika loppui ennen kuin ehdit vastata.');
 	}
 
 	function resetTimer() {
@@ -314,11 +271,11 @@
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
 
-<!-- {#if ajastinPaalla.on}
-	<div class="timer-placement">
+{#if ajastinPaalla.on}
+	<div>
 		<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
 	</div>
-{/if} -->
+{/if}
 
 <div class="game-info-side">
 	{#if !harkka.on}
@@ -326,7 +283,6 @@
 	{/if}
 	<div class="info score">⭐ {score}</div>
 	<div class="info streak">🔥 {streak}</div>
-	<div class="info highscore">🏆 {highScore}</div>
 </div>
 
 <div class="audio-slider-container">
@@ -349,11 +305,6 @@
 </div>
 
 <div class="main-content">
-	{#if ajastinPaalla.on}
-		<div class="timer-placement">
-			<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
-		</div>
-	{/if}
 	<div class="question-box">
 		<h3 class="question-label">Kysymys</h3>
 		<h2>{randomKysymys.kysymys}</h2>
@@ -366,9 +317,8 @@
 
 {#if showModal}
 	<Modal>
-		<header style="font-weight: bold; text-align: center; font-size: 3rem;">{modalTitle}</header>
+		<header style="font-weight: bold;">{modalTitle}</header>
 		<div>{modalMessage}</div>
-		<div>{modalMessage2}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => newQuestion()} text="Seuraava kysymys" />
 		</footer>
@@ -377,10 +327,9 @@
 
 {#if lives <= 0}
 	<Modal>
-		<header style="font-weight: bold; text-align: center; font-size: 3rem">Game Over</header>
+		<header style="font-weight: bold;">Game Over</header>
 		<div>Hävisit pelin!</div>
-		<div>⭐Pisteet: {score}</div>
-		<div>🏆Highscore: {highScore}</div>
+		<div>Pisteet: {score}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => resetGame()} text="Yritä Uudelleen" type="retry" />
 			<Button onclick={() => mainMenu()} text="Alkuruutuun" type="main" />
@@ -400,8 +349,8 @@
 	</Modal>
 {/if}
 
-<audio src="correct.mp3" bind:this={correctEffect} volume={audioVolume}></audio>
-<audio src="wrong.mp3" bind:this={wrongEffect} volume={audioVolume}></audio>
+<audio src="correct.mp3" bind:this={correctEffect} volume="1"></audio>
+<audio src="wrong.mp3" bind:this={wrongEffect} volume="1"></audio>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono&family=Roboto:wght@400;700&display=swap');
@@ -421,7 +370,6 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
-		padding-bottom: 2rem;
 	}
 
 	.modal-buttons {
@@ -518,28 +466,21 @@
 	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
-		font-size: 2rem;
-		text-align: center;
-	}
-
-	.info.highscore {
-		background-color: #fff3e0;
-		color: #e65100;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
 	.info.score {
 		background-color: #e8f5e9;
 		color: #2e7d32;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
 	.info.streak {
 		background-color: #e3f2fd;
 		color: #1565c0;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
@@ -570,11 +511,5 @@
 		cursor: pointer;
 		transform: scale(1.3);
 		border-radius: 0.5rem;
-	}
-
-	.timer-placement {
-		justify-content: center;
-		margin-bottom: 1.5rem; /* Tilaa ajastimen ja kysymyksen välille */
-		width: 100%;
 	}
 </style>

@@ -35,8 +35,6 @@
 			harkka.on = false;
 		}
 	}
-
-	console.log(localStorage.getItem('tikoPardy_highScore'));
 </script>
 
 <main>
