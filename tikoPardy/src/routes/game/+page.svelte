@@ -85,6 +85,7 @@
 
 	let showModal = $state(false);
 	let modalMessage = $state('');
+	let modalMessage2 = $state();
 	let modalTitle = $state('');
 
 	let correctEffect: any = $state();
@@ -98,9 +99,10 @@
 		wrongEffect.play();
 	}
 
-	function openModal(title: string, message: string) {
+	function openModal(title: string, message: string, message2?: string | null) {
 		modalTitle = title;
 		modalMessage = message;
+		modalMessage2 = message2;
 		showModal = true;
 	}
 
@@ -202,11 +204,11 @@
 		timerPaused = true;
 
 		if (valinta === randomKysymys.vastaus) {
-			openModal('Tulokset', 'Oikein!');
+			openModal('Oikein!', 'Vastasit oikein!');
 			increaseScore();
 			correctSound();
 		} else {
-			openModal('Tulokset', 'Väärin! Oikea vastaus on: ' + randomKysymys.vastaus);
+			openModal('Väärin', 'Vastasit väärin.', 'Oikea vastaus on: ' + randomKysymys.vastaus);
 			lives -= 1;
 			resetStreak();
 			wrongSound();
@@ -317,8 +319,9 @@
 
 {#if showModal}
 	<Modal>
-		<header style="font-weight: bold;">{modalTitle}</header>
+		<header style="font-weight: bold; text-align: center; font-size: 3rem">{modalTitle}</header>
 		<div>{modalMessage}</div>
+		<div>{modalMessage2}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => newQuestion()} text="Seuraava kysymys" />
 		</footer>
@@ -327,9 +330,9 @@
 
 {#if lives <= 0}
 	<Modal>
-		<header style="font-weight: bold;">Game Over</header>
+		<header style="font-weight: bold; font-size: 3rem; text-align: center;">Game Over</header>
 		<div>Hävisit pelin!</div>
-		<div>Pisteet: {score}</div>
+		<div>⭐Pisteet: {score}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => resetGame()} text="Yritä Uudelleen" type="retry" />
 			<Button onclick={() => mainMenu()} text="Alkuruutuun" type="main" />
@@ -339,9 +342,9 @@
 
 {#if showVictoryModal}
 	<Modal>
-		<header style="font-weight: bold;">Voitit Pelin!</header>
+		<header style="font-weight: bold; font-size: 3rem; text-align: center;">Voitit Pelin!</header>
 		<div>Onneksi olkoon, selvisit kaikki kysymykset!</div>
-		<div>Pisteet: {score}</div>
+		<div>⭐Pisteet: {score}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => resetGame()} text="Pelaa Uudelleen" />
 			<Button onclick={() => mainMenu()} text="Alkuruutuun" />
