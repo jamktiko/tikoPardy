@@ -9,6 +9,7 @@
 	import kurssitData from '../../lib/kurssit.json';
 	import Timer from '../../lib/components/Timer.svelte';
 	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
+	import { browser } from '$app/environment';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
@@ -36,6 +37,13 @@
 	let kysymykset: Kysymys[] = [];
 	let kurssiId = $state(0); // Kurssin ID otetaan suoraan URL-parametrista
 	let timerPaused = $state(false);
+
+	let highScore = $state(0); // Oletuksena 0, voitaisiin ladata paikallisesta tallennuksesta
+
+	if (browser) {
+		highScore = parseInt(localStorage.getItem('highScore') || '0',);
+	}
+
 
 	onMount(async () => {
 		try {
@@ -268,6 +276,13 @@
 	function resetTimer() {
 		resetCounter++;
 	}
+
+	$effect(() => {
+		if (browser && score > highScore) {
+			highScore = score;
+			localStorage.setItem('highScore', highScore.toString());
+		}
+	});
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
@@ -281,6 +296,7 @@
 	{/if}
 	<div class="info score">⭐ {score}</div>
 	<div class="info streak">🔥 {streak}</div>
+	<div class="info highscore">🏆 {highScore}</div>
 </div>
 
 <div class="audio-slider-container">
@@ -487,6 +503,13 @@
 		font-size: 2.5rem;
 		text-align: center;
 	}
+
+	.info.highscore {
+    background-color: #fff3e0;
+    color: #e2783e;
+    font-size: 2.5rem;
+    text-align: center;
+}
 
 	:global(.volume-icon) {
 		width: 1.6rem;
