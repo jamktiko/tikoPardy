@@ -350,6 +350,7 @@
 		<header style="font-weight: bold; font-size: 3rem; text-align: center;">Game Over</header>
 		<div>Hävisit pelin!</div>
 		<div>⭐Pisteet: {score}</div>
+		<div>🏆 Highscore: {highScore}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => resetGame()} text="Yritä Uudelleen" type="retry" />
 			<Button onclick={() => mainMenu()} text="Alkuruutuun" type="main" />
@@ -362,6 +363,7 @@
 		<header style="font-weight: bold; font-size: 3rem; text-align: center;">Voitit Pelin!</header>
 		<div>Onneksi olkoon, selvisit kaikki kysymykset!</div>
 		<div>⭐Pisteet: {score}</div>
+		<div>🏆 Highscore: {highScore}</div>
 		<footer class="modal-buttons">
 			<Button onclick={() => resetGame()} text="Pelaa Uudelleen" />
 			<Button onclick={() => mainMenu()} text="Alkuruutuun" />
