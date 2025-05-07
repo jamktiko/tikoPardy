@@ -9,6 +9,7 @@
 	import kurssitData from '../../lib/kurssit.json';
 	import Timer from '../../lib/components/Timer.svelte';
 	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
+	import { browser } from '$app/environment';
 
 	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
 	let isMuted = $state(false);
@@ -19,20 +20,28 @@
 	let highScore = $state(0);
 
 	function getHighScore(): number {
-		if (typeof localStorage !== 'undefined') {
-			const storedScore = localStorage.getItem('tikoPardy_highScore');
-			return storedScore ? parseInt(storedScore, 10) : 0;
+		if (browser) {
+			try {
+				const storedScore = localStorage.getItem('tikoPardy_highScore');
+				return storedScore ? parseInt(storedScore, 10) : 0;
+			} catch (e) {
+				console.error('LocalStorage error:', e);
+				return 0;
+			}
 		}
 		return 0;
 	}
 
 	function updateHighScore(newScore: number): void {
-		const currentHighScore = getHighScore();
-
-		if (newScore > currentHighScore) {
-			if (typeof localStorage !== 'undefined') {
-				localStorage.setItem('tikoPardy_highScore', newScore.toString());
-				highScore = newScore;
+		if (browser) {
+			try {
+				const currentHighScore = getHighScore();
+				if (newScore > currentHighScore) {
+					localStorage.setItem('tikoPardy_highScore', newScore.toString());
+					highScore = newScore;
+				}
+			} catch (e) {
+				console.error('LocalStorage error:', e);
 			}
 		}
 	}
