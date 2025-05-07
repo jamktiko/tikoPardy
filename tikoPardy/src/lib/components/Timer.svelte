@@ -1,68 +1,122 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { onMount, createEventDispatcher } from 'svelte';
 
-	let { duration, reset = 0, pause = false } = $props(); // Lisää pause-prop
+	let { duration, reset = 0, pause = false } = $props();
 	let remaining = $state(duration);
 	const dispatch = createEventDispatcher();
-	let frame: number;
+	let frame: number | undefined;
+	let startingDelay = 500; // 500ms = 0.5 sekuntia
 	let isRunning = $state(false);
+	let lastTime = 0;
 
-	// Seuraa reset-parametria ja käynnistä ajastin uudelleen kun se muuttuu
 	$effect(() => {
 		if (reset) {
-			// Peruuta nykyinen animaatiokehys jos sellainen on
 			stopTimer();
-
-			// Resetoi jäljellä oleva aika
 			remaining = duration;
+			setTimeout(() => {
+				startTimer();
+			}, startingDelay);
 		}
 	});
 
-	// Seuraa pause-parametria ja pysäytä/käynnistä ajastin sen mukaan
 	$effect(() => {
 		if (pause && isRunning) {
 			stopTimer();
 		} else if (!pause && !isRunning && remaining > 0) {
-			startTimer();
+			setTimeout(() => {
+				startTimer();
+			}, 50);
 		}
 	});
 
-	// Funktio ajastimen käynnistämiseen
 	function startTimer() {
-		if (isRunning) return; // Älä käynnistä jos jo käynnissä
-
+		if (isRunning) return;
 		isRunning = true;
-		let last_time = performance.now();
+		lastTime = 0;
 
 		frame = requestAnimationFrame(function update(time) {
-			frame = requestAnimationFrame(update);
-
-			// Vähennä jäljellä olevaa aikaa vain jos ajastin on käynnissä
-			if (isRunning) {
-				remaining = Math.max(remaining - (time - last_time), 0);
-
-				// Pysäytä animaatio kun laskuri saavuttaa 0
-				if (remaining <= 0) {
-					stopTimer();
-					dispatch('timeout');
-				}
+			if (lastTime === 0) {
+				lastTime = time;
+				frame = requestAnimationFrame(update);
+				return;
 			}
+			const elapsed = time - lastTime;
+			lastTime = time;
+			remaining = Math.max(remaining - elapsed, 0);
 
-			last_time = time;
+			if (remaining <= 0) {
+				stopTimer();
+				dispatch('timeout');
+				return;
+			}
+			frame = requestAnimationFrame(update);
 		});
 	}
 
-	// Funktio ajastimen pysäyttämiseen
 	function stopTimer() {
 		if (frame) {
 			cancelAnimationFrame(frame);
+			frame = undefined;
 		}
 		isRunning = false;
+		lastTime = 0;
 	}
+
+	onMount(() => {
+		if (!pause) {
+			setTimeout(() => {
+				startTimer();
+			}, startingDelay);
+		}
+		return () => {
+			stopTimer();
+		};
+	});
 </script>
 
-<div>
-	<label for="ajastin">Aikaa vastata:</label>
-	<progress id="ajastin" value={remaining / duration}></progress>
-	{(remaining / 1000).toFixed(1)}s
-</div>
+<label for="ajastin" class="timer-label">Aikaa vastata:</label>
+<progress id="ajastin" class="timer-progress" value={remaining / duration}></progress>
+<div class="timer-time">{(remaining / 1000).toFixed(1)}s</div>
+
+<style>
+	.timer-label {
+		font-size: 1rem; /* Pienennetty fonttikoko entisestään */
+		font-weight: 600;
+		color: #555;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.timer-progress {
+		width: 50%;
+		height: 5px; /* Pienennetty korkeus entisestään */
+		border-radius: 5px; /* Pienennetty pyöristys entisestään */
+		accent-color: #7b1e1e;
+		border: 1px solid #c8b8ae;
+	}
+
+	/* Webkit-selaimille (Chrome, Safari) */
+	.timer-progress::-webkit-progress-bar {
+		background-color: #f5f0ec;
+		border-radius: 5px; /* Pienennetty pyöristys */
+	}
+
+	.timer-progress::-webkit-progress-value {
+		background-color: #7b1e1e;
+		border-radius: 5px; /* Pienennetty pyöristys */
+		transition: width 0.1s linear;
+	}
+
+	/* Firefoxille */
+	.timer-progress::-moz-progress-bar {
+		background-color: #7b1e1e;
+		border-radius: 5px; /* Pienennetty pyöristys */
+		transition: width 0.1s linear;
+	}
+
+	.timer-time {
+		font-size: 1.2rem; /* Pienennetty fonttikoko entisestään */
+		font-weight: 700;
+		color: #7b1e1e;
+	}
+</style>

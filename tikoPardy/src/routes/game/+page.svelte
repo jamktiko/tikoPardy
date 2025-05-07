@@ -271,11 +271,11 @@
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
 
-{#if ajastinPaalla.on}
-	<div>
+<!-- {#if ajastinPaalla.on}
+	<div class="timer-placement">
 		<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
 	</div>
-{/if}
+{/if} -->
 
 <div class="game-info-side">
 	{#if !harkka.on}
@@ -305,6 +305,11 @@
 </div>
 
 <div class="main-content">
+	{#if ajastinPaalla.on}
+		<div class="timer-placement">
+			<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
+		</div>
+	{/if}
 	<div class="question-box">
 		<h3 class="question-label">Kysymys</h3>
 		<h2>{randomKysymys.kysymys}</h2>
@@ -370,6 +375,7 @@
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
+		padding-bottom: 2rem;
 	}
 
 	.modal-buttons {
@@ -511,5 +517,11 @@
 		cursor: pointer;
 		transform: scale(1.3);
 		border-radius: 0.5rem;
+	}
+
+	.timer-placement {
+		justify-content: center;
+		margin-bottom: 1.5rem; /* Tilaa ajastimen ja kysymyksen välille */
+		width: 100%;
 	}
 </style>
