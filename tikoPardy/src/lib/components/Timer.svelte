@@ -88,7 +88,7 @@
 	}
 
 	.timer-progress {
-		width: 50%;
+		width: 150%;
 		height: 5px; /* Pienennetty korkeus entisestään */
 		border-radius: 5px; /* Pienennetty pyöristys entisestään */
 		accent-color: #7b1e1e;

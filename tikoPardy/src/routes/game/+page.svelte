@@ -273,11 +273,7 @@
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
 
-{#if ajastinPaalla.on}
-	<div>
-		<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
-	</div>
-{/if}
+
 
 <div class="game-info-side">
 	{#if !harkka.on}
@@ -307,6 +303,11 @@
 </div>
 
 <div class="main-content">
+	{#if ajastinPaalla.on}
+	<div>
+		<Timer duration={15000} reset={resetCounter} pause={timerPaused} on:timeout={handleTimeout} />
+	</div>
+{/if}
 	<div class="question-box">
 		<h3 class="question-label">Kysymys</h3>
 		<h2>{randomKysymys.kysymys}</h2>
