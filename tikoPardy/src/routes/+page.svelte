@@ -42,7 +42,8 @@
 		<div class="top-left-button">
 			<Button
 				text="Buy Me A Coffee"
-				onclick={() => window.open('https://www.paypal.com/fi/home', '_blank')}
+				onclick={() =>
+					window.open('https://www.paypal.com/donate/?hosted_button_id=NX7NMSVBZG4QJ', '_blank')}
 				type="secondary"
 			>
 				<svelte:fragment slot="icon">
