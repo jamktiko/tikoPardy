@@ -26,7 +26,7 @@ Tekijät:
 
 ### Kuvaus
 
-_TIKOPARDY on Jeopardy-tyyppinen peli, jossa käytetään Jyväskylän ammattikorkeakoulun tietojenkäsittelyn fuksivuonna opittujen kurssien sanastoa ja sanojen merkitystä. Ensimmäisessä versiossa käytössä on ainoastaan Pilvipalveluiden perusteet -kurssiin liittyviä sanoja. Lisäksi ensimmäisessä versiossa on vain yksi pelimuoto, joka on tuttu Jeopardystä. Peli antaa pelaajalle sanan selityksen ja pelaajan tulee valita neljästä vaihtoehdosta, mihin sanaan kyseinen selitys liittyy. Muita ideoituja pelimuotoja on lyhennepeli, jossa peli antaa pelaajalle lyhenteen ja pelaajan pitää joko kirjoittaa tai valita vaihtoehdoista, mitä lyhenne tarkoittaa (esim. EC2 -> Elastic Compute Cloud). Lisäksi peli kertoo arvauksen jälkeen, mitä sana tarkoittaa (Tarjoaa virtuaalipalvelimia, joilla voi ajaa omia sovelluksia)._
+_TIKOPARDY on Jeopardy-tyyppinen peli, jossa käytetään Jyväskylän ammattikorkeakoulun tietojenkäsittelyn fuksivuonna opittujen kurssien sanastoa ja sanojen merkitystä. Pelimuoto on tuttu Jeopardystä. Peli antaa pelaajalle sanan selityksen ja pelaajan tulee valita neljästä vaihtoehdosta, mihin sanaan kyseinen selitys liittyy._
 
 ### Projektiryhmä
 
@@ -43,12 +43,13 @@ _Tavoite on tehdä toimiva projekti, josta voisi olla hyötyä tuleville tietoje
 
 ## Aikataulu
 
-| Tapahtuma        | Päivämäärä | Muut tiedot/osanottajat           |
-| ---------------- | ---------- | --------------------------------- |
-| Projekti alkaa   | 22.04.2025 | Ohjelmistoprojekti 1 alkaa        |
-| Idean valinta    | 24.04.2025 | Valittu tuotantoon TIKOPARDY-peli |
-| ............     | pvm        | Kaikki muut tapahtumat listattuna |
-| Projekti päättyy | 16.05.2025 | Ohjelmistoprojekti 1 päättyy      |
+| Tapahtuma          | Päivämäärä | Muut tiedot/osanottajat           |
+| ------------------ | ---------- | --------------------------------- |
+| Projekti alkaa     | 22.04.2025 | Ohjelmistoprojekti 1 alkaa        |
+| Idean valinta      | 24.04.2025 | Valittu tuotantoon TIKOPARDY-peli |
+| .jsonit valmiina   | 30.04.2025 | Pelin tietokannat kerätty         |
+| Perusversio valmis | 05.05.2025 | Pelin toiminta+ulkoasu valmis     |
+| Projekti päättyy   | 16.05.2025 | Ohjelmistoprojekti 1 päättyy      |
 
 ## Raportointi, kommunikointi ja dokumentointi
 
@@ -86,4 +87,5 @@ Esimerkiksi näin.
 | ----------------------------------------------------------- | -------------- | --------------- | --------------------------------- |
 | Jonkun tiimiläisen kipeäksi tuleminen tai pakolliset menot  | Keskikokoinen  | Keskikokoinen   | Jokainen syö sinkkiä joka päivä.  |
 | ----------------------------------------------------------- | -------------- | --------------- | --------------------------------- |
-
+| Tunnit eivät tule täyteen, koska projekti on valmis         | Suuri          | Suuri           | Keksitään uusia ominaisuuksia.    |
+| ----------------------------------------------------------- | -------------- | --------------- | --------------------------------- |
