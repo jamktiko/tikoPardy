@@ -5,10 +5,45 @@
 	import kurssitData from '../lib/kurssit.json';
 	import { Coffee, HelpCircle, ArrowRight, ChevronDown, X, Cog } from '@lucide/svelte';
 	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
+	import { browser } from '$app/environment';
+	import { onMount } from 'svelte';
+	import { afterNavigate } from '$app/navigation';
+
+	interface CourseHighscore {
+		id: number;
+		name: string;
+		score: number;
+	}
+
+	let highscores: CourseHighscore[] = $state([]);
 
 	let kurssit: number = $state(1); // Default value
 
 	let showInstructionsModal = $state(false);
+
+	function getAllHighscores(): CourseHighscore[] {
+		if (!browser) return [];
+
+		return kurssitData.map((course) => {
+			const score = localStorage.getItem(`tikoPardy_highScore_${course.id}`);
+			return {
+				id: course.id,
+				name: course.nimi,
+				score: score ? parseInt(score, 10) : 0
+			};
+		});
+	}
+	onMount(() => {
+		highscores = getAllHighscores();
+	});
+
+	function refreshHighscores() {
+		highscores = getAllHighscores();
+	}
+
+	afterNavigate(() => {
+		highscores = getAllHighscores();
+	});
 
 	function toggleInstructions() {
 		showInstructionsModal = !showInstructionsModal;
@@ -35,6 +70,8 @@
 			harkka.on = false;
 		}
 	}
+
+	$inspect(highscores);
 </script>
 
 <main>
