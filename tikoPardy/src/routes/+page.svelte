@@ -43,7 +43,10 @@
 			<Button
 				text="Buy Me A Coffee"
 				onclick={() =>
-					window.open('https://www.paypal.com/donate/?hosted_button_id=NX7NMSVBZG4QJ', '_blank')}
+					window.open(
+						'https://qr.mobilepay.fi/box/d95cf72b-2b55-4494-acc4-3ab617b0418f/pay-in',
+						'_blank'
+					)}
 				type="secondary"
 			>
 				<svelte:fragment slot="icon">
