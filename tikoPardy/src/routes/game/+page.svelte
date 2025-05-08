@@ -40,8 +40,31 @@
 
 	let highScore = $state(0); // Oletuksena 0, voitaisiin ladata paikallisesta tallennuksesta
 
-	if (browser) {
-		highScore = parseInt(localStorage.getItem('highScore') || '0');
+	function getHighScore(courseId: number): number {
+		if (browser) {
+			try {
+				const storedScore = localStorage.getItem(`tikoPardy_highScore_${courseId}`);
+				return storedScore ? parseInt(storedScore, 10) : 0;
+			} catch (e) {
+				console.error('LocalStorage error:', e);
+				return 0;
+			}
+		}
+		return 0;
+	}
+
+	function updateHighScore(newScore: number, courseId: number): void {
+		if (browser) {
+			try {
+				const currentHighScore = getHighScore(courseId);
+				if (newScore > currentHighScore) {
+					localStorage.setItem(`tikoPardy_highScore_${courseId}`, newScore.toString());
+					highScore = newScore;
+				}
+			} catch (e) {
+				console.error('LocalStorage error:', e);
+			}
+		}
 	}
 
 	onMount(async () => {
@@ -69,13 +92,14 @@
 						vastaus: item.sana,
 						lyhenne: item?.lyhenne // Voi olla undefined jossakin tiedostoissa
 					}));
-				console.log('Ladatut kysymykset:', kysymykset);
 			} else {
 				console.error('Virheellinen dataformaatti:', jsonData.default);
 				kysymykset = [];
 			}
 
 			lives = getInitialLives(); // Elämien määrä, oletuksena 3
+
+			highScore = getHighScore(kurssiId);
 
 			// Alustetaan ensimmäinen kysymys
 			randomKysymys = randomQuestion();
@@ -235,6 +259,9 @@
 	}
 
 	function resetGame() {
+		if (browser && score > highScore) {
+			updateHighScore(score, kurssiId);
+		}
 		lives = getInitialLives();
 		score = 0;
 		streak = 0;
@@ -249,6 +276,9 @@
 	}
 
 	function mainMenu() {
+		if (browser) {
+			updateHighScore(score, kurssiId);
+		}
 		goto('/');
 	}
 
@@ -267,6 +297,9 @@
 	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
 
 	function handleTimeout() {
+		if (lives <= 0 && browser) {
+			updateHighScore(score, kurssiId);
+		}
 		lives -= 1;
 		resetStreak();
 		openModal('Aika loppui!', 'Vastausaika loppui ennen kuin ehdit vastata.');
@@ -278,8 +311,7 @@
 
 	$effect(() => {
 		if (browser && score > highScore) {
-			highScore = score;
-			localStorage.setItem('highScore', highScore.toString());
+			updateHighScore(score, kurssiId);
 		}
 	});
 </script>
