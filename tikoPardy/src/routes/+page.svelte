@@ -15,6 +15,12 @@
 		score: number;
 	}
 
+	let showModal = $state(false);
+
+	function toggleModal() {
+		showModal = !showModal;
+	}
+
 	let highscores: CourseHighscore[] = $state([]);
 
 	let kurssit: number = $state(1); // Default value
@@ -36,10 +42,6 @@
 	onMount(() => {
 		highscores = getAllHighscores();
 	});
-
-	function refreshHighscores() {
-		highscores = getAllHighscores();
-	}
 
 	afterNavigate(() => {
 		highscores = getAllHighscores();
@@ -72,6 +74,7 @@
 	}
 
 	$inspect(highscores);
+	$inspect(showModal);
 </script>
 
 <main>
@@ -90,6 +93,10 @@
 					<Coffee size={20} />
 				</svelte:fragment>
 			</Button>
+		</div>
+
+		<div class="top-right-button">
+			<Button text=" 🏆 Parhaat Tuloksesi" onclick={toggleModal} type="secondary" />
 		</div>
 
 		<div class="game-content">
@@ -143,11 +150,15 @@
 				<li>
 					Kasvatat oikeilla vastauksilla streakkiasi 🔥, joka vastaavasti kasvattaa pistesaldoasi ⭐
 				</li>
+				<li>
+					Näet parhaat tuloksesi kursseittain alkuruudun napista. Pelissä näet valitsemasi kurssin
+					parhaan tuloksesi sivun oikealta. 🏆
+				</li>
 				<li>Peli loppuu, kun elämät ovat loppu</li>
 			</ol>
 
 			<div class="button-center">
-				<Button text="Close" onclick={toggleInstructions} type="primary">
+				<Button text="Sulje" onclick={toggleInstructions} type="primary">
 					<svelte:fragment slot="icon">
 						<X size={24} />
 					</svelte:fragment>
@@ -155,6 +166,32 @@
 			</div>
 		</div>
 	</Modal>
+{/if}
+
+{#if showModal}
+	<Modal>
+		<div class="instructions">
+			<div class="modal-header">
+				<h2>🏆 Parhaat tuloksesi</h2>
+			</div>
+			{#if highscores.length >= 0}
+				{#each highscores as course}
+					<div class="highscore-item">
+						<strong>{course.name}:</strong>
+						{course.score} pistettä ⭐
+					</div>
+				{/each}
+			{/if}
+
+			<div class="button-center">
+				<Button text="Sulje" onclick={toggleModal} type="primary">
+					<svelte:fragment slot="icon">
+						<X size={24} />
+					</svelte:fragment>
+				</Button>
+			</div>
+		</div></Modal
+	>
 {/if}
 
 {#if showSettingsModal}
@@ -185,7 +222,7 @@
 			</div>
 
 			<div class="button-center">
-				<Button text="Close" onclick={toggleSettings} type="primary">
+				<Button text="Sulje" onclick={toggleSettings} type="primary">
 					<svelte:fragment slot="icon">
 						<X size={24} />
 					</svelte:fragment>
@@ -263,10 +300,23 @@
 		padding: 3px;
 	}
 
+	.highscore-item {
+		font-size: 1.25rem;
+		font-family: 'Cascadia Mono', sans-serif;
+		padding: 3px;
+	}
+
 	.top-left-button {
 		position: absolute;
 		top: 1rem;
 		left: 1rem;
+		transform: scale(0.8);
+	}
+
+	.top-right-button {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
 		transform: scale(0.8);
 	}
 
