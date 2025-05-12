@@ -33,7 +33,6 @@
 />
 
 <style>
-	/*********** Baseline, reset styles ***********/
 	input[type='range'] {
 		-webkit-appearance: none;
 		appearance: none;
@@ -42,24 +41,20 @@
 		width: 7.5rem;
 	}
 
-	/* Removes default focus */
 	input[type='range']:focus {
 		outline: none;
 	}
 
-	/******** Chrome, Safari, Opera and Edge Chromium styles ********/
-	/* slider track */
 	input[type='range']::-webkit-slider-runnable-track {
 		background-color: #872121;
 		border-radius: 0.5rem;
 		height: 0.5rem;
 	}
 
-	/* slider thumb */
 	input[type='range']::-webkit-slider-thumb {
-		-webkit-appearance: none; /* Override default look */
+		-webkit-appearance: none;
 		appearance: none;
-		margin-top: -4px; /* Centers thumb on the track */
+		margin-top: -4px;
 		background-color: #6f6f6f;
 		border-radius: 0.5rem;
 		height: 1rem;
@@ -71,18 +66,15 @@
 		outline-offset: 0.125rem;
 	}
 
-	/*********** Firefox styles ***********/
-	/* slider track */
 	input[type='range']::-moz-range-track {
 		background-color: #872121;
 		border-radius: 0.5rem;
 		height: 0.5rem;
 	}
 
-	/* slider thumb */
 	input[type='range']::-moz-range-thumb {
 		background-color: #aeaeae;
-		border: none; 
+		border: none;
 		border-radius: 0.5rem;
 		height: 1rem;
 		width: 1rem;
@@ -92,4 +84,56 @@
 		outline: 3px solid #aeaeae;
 		outline-offset: 0.125rem;
 	}
+
+	/* ✅ Responsive styles for small screens */
+	@media (max-width: 1024px) {
+	.audio-slider-container {
+		bottom: 6rem; /* Raise it a bit from bottom */
+		top: auto;
+		right: 1rem;
+		transform: none;
+		position: fixed;
+	}
+
+	input[type='range'] {
+		width: 10rem;
+		height: 2rem;
+	}
+
+	input[type='range']::-webkit-slider-runnable-track {
+		height: 1rem;
+		background-color: #872121;
+		border-radius: 0.5rem;
+	}
+
+	input[type='range']::-webkit-slider-thumb {
+		-webkit-appearance: none;
+		width: 1.5rem;
+		height: 1.5rem;
+		background-color: #6f6f6f;
+		border-radius: 50%;
+		margin-top: -0.25rem; /* Centers correctly */
+	}
+
+	input[type='range']:focus::-webkit-slider-thumb {
+		outline: 3px solid #6f6f6f;
+		outline-offset: 0.125rem;
+	}
+
+	/* Firefox styles */
+	input[type='range']::-moz-range-track {
+		height: 1rem;
+		background-color: #872121;
+		border-radius: 0.5rem;
+	}
+
+	input[type='range']::-moz-range-thumb {
+		width: 1.5rem;
+		height: 1.5rem;
+		background-color: #aeaeae;
+		border-radius: 50%;
+		border: none;
+	}
+}
+
 </style>

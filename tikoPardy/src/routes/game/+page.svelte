@@ -470,8 +470,8 @@
 
 	.game-info-side {
 		position: fixed;
-		top: 65%;
-		right: 35px; /* Match the slider's right value */
+		top: 75%;
+		right: 20px; /* Match the slider's right value */
 		transform: translateY(-50%);
 		display: flex;
 		flex-direction: column;
@@ -480,7 +480,7 @@
 		padding: 0.6rem;
 		border-radius: 10px;
 		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-		gap: 0.3rem;
+		gap: 0.4rem;
 		min-width: 110px;
 		z-index: 10;
 	}
@@ -513,28 +513,28 @@
 	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
 	.info.score {
 		background-color: #e8f5e9;
 		color: #2e7d32;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
 	.info.streak {
 		background-color: #e3f2fd;
 		color: #1565c0;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
 	.info.highscore {
 		background-color: #fff3e0;
 		color: #e2783e;
-		font-size: 2rem;
+		font-size: 2.5rem;
 		text-align: center;
 	}
 
@@ -571,14 +571,25 @@
 	.game-info-side {
 		top: auto;
 		bottom: 10px;
-		right: 10px;
+		right: 50%;
 		transform: none;
 		flex-direction: row;
+		transform: translateX(50%); /* Center to right side */
 		align-items: center;
 		justify-content: space-between;
 		width: 90%;
 		min-width: auto;
 		padding: 0.4rem 0.6rem;
+	}
+
+	.audio-slider-container {
+		top: auto;
+		bottom: 105px;
+		right: 50%;
+		transform: translateX(50%);
+		flex-direction: row;
+		padding: 0.5rem 3rem;
+		font-size: 1.2rem;
 	}
 
 	.main-content {
@@ -601,13 +612,12 @@
 	}
 
 	:global(.volume-icon) {
-		width: 1.6rem;
-		height: 1.6rem;
+		width: 2.5rem;
+		height: 2.5rem;
 	}
 	}
 	/* Responsive Styles */
 	@media (max-width: 768px) {
-
     .main-content {
 			padding-right: 20px; /* Remove extra padding */
 			padding-left: 20px; /* Equalize left and right */
@@ -660,9 +670,52 @@
 			font-size: 1.2rem;
 		}
 
+		.audio-slider-container {
+		top: auto;
+		bottom: 470px;
+		right: 50%;
+		transform: translateX(50%);
+		flex-direction: row;
+		padding: 0.5rem 1rem;
+		font-size: 0rem;
+	}
+
 		.modal-buttons {
 			flex-direction: column;
 			align-items: center;
 		}
+
+		:global(.volume-icon) {
+		width: 1.5rem;
+		height: 1.5rem;
+	}
+
+		.info.lives {
+		background-color: #ffe5e5;
+		color: #c62828;
+		font-size: 2.5rem;
+		text-align: center;
+	}
+
+	.info.score {
+		background-color: #e8f5e9;
+		color: #2e7d32;
+		font-size: 2.5rem;
+		text-align: center;
+	}
+
+	.info.streak {
+		background-color: #e3f2fd;
+		color: #1565c0;
+		font-size: 2.5rem;
+		text-align: center;
+	}
+
+	.info.highscore {
+		background-color: #fff3e0;
+		color: #e2783e;
+		font-size: 2.5rem;
+		text-align: center;
+	}
 	}
 </style>	
