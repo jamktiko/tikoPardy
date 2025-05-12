@@ -313,36 +313,37 @@
 </script>
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
+<div class="footer-container">
+	<div class="audio-slider-container">
+		<button class="volume-button" onclick={toggleMute}>
+			{#if audioVolume <= 0}
+				<VolumeX class="volume-icon" />
+			{:else if audioVolume <= 0.5}
+				<Volume1 class="volume-icon" />
+			{:else}
+				<Volume2 class="volume-icon" />
+			{/if}
+		</button>
 
-<div class="game-info-side">
-	{#if !harkka.on}
-		<div class="info lives">❤️ {lives}</div>
-	{/if}
-	<div class="info score">⭐ {score}</div>
-	<div class="info streak">🔥 {streak}</div>
-	{#if !harkka.on}
-		<div class="info highscore">🏆 {highScore}</div>
-	{/if}
-</div>
-
-<div class="audio-slider-container">
-	<button class="volume-button" onclick={toggleMute}>
-		{#if audioVolume <= 0}
-			<VolumeX class="volume-icon" />
-		{:else if audioVolume <= 0.5}
-			<Volume1 class="volume-icon" />
-		{:else}
-			<Volume2 class="volume-icon" />
+		<AudioSlider
+			setVolume={audioVolume}
+			Mplay={false}
+			audioSrc="millionaireBackground.mp3"
+			on:volumechange={handleVolumeChange}
+		/>
+	</div>
+	<div class="game-info-side">
+		{#if !harkka.on}
+			<div class="info lives">❤️ {lives}</div>
 		{/if}
-	</button>
-
-	<AudioSlider
-		setVolume={audioVolume}
-		Mplay={false}
-		audioSrc="millionaireBackground.mp3"
-		on:volumechange={handleVolumeChange}
-	/>
+		<div class="info score">⭐ {score}</div>
+		<div class="info streak">🔥 {streak}</div>
+		{#if !harkka.on}
+			<div class="info highscore">🏆 {highScore}</div>
+		{/if}
+	</div>
 </div>
+
 
 <div class="main-content">
 	{#if ajastinPaalla.on}
@@ -416,7 +417,7 @@
 		padding-right: 70px;
 		padding-left: 70px; /* Leaves space so text doesn't overlap fixed boxes */
 		display: flex;
-		flex-direction: column;
+		flex-direction: column;	
 		align-items: center;
 		gap: 1rem;
 		padding-bottom: 2rem;
@@ -468,51 +469,44 @@
 		font-weight: 600;
 		text-transform: uppercase;
 		margin-bottom: -2rem;
+		transform: translateY(-50%);
 		letter-spacing: 0.05em;
 	}
 
-	.game-info-side {
-		position: fixed;
-		top: 75%;
-		right: 20px; /* Match the slider's right value */
-		transform: translateY(-50%);
-		display: flex;
-		flex-direction: column;
-		align-items: flex-end;
-		background-color: rgba(255, 255, 255, 0.85);
-		padding: 0.6rem;
-		border-radius: 10px;
-		box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
-		gap: 0.4rem;
-		min-width: 110px;
-		z-index: 10;
-	}
+	.footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+	border-radius: 10px;
+  padding: 12px 20px;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+  gap: 30px;
+}
 
+	.game-info-side,
 	.audio-slider-container {
-		position: fixed;
-		top: 45%;
-		right: 15px;
-		transform: translateY(-50%);
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		gap: 0.5rem;
-		background-color: rgba(255, 255, 255, 0.9);
-		padding: 0.5rem 0.75rem;
-		border-radius: 8px;
-		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-		z-index: 11;
+		gap: 15px;
 	}
 
 	.info {
-		font-size: 1rem;
+		font-size: 1.5rem;
 		font-weight: 600;
-		padding: 0.2rem 0.5rem;
-		border-radius: 6px;
-		width: 85%;
-		text-align: right;
+		padding: 0.2rem 0.8rem;
+		border-radius: 8px;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
-
 	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
@@ -571,29 +565,6 @@
 	}
 
 	@media (max-width: 1024px) {
-	.game-info-side {
-		top: auto;
-		bottom: 10px;
-		right: 50%;
-		transform: none;
-		flex-direction: row;
-		transform: translateX(50%); /* Center to right side */
-		align-items: center;
-		justify-content: space-between;
-		width: 90%;
-		min-width: auto;
-		padding: 0.4rem 0.6rem;
-	}
-
-	.audio-slider-container {
-		top: auto;
-		bottom: 105px;
-		right: 50%;
-		transform: translateX(50%);
-		flex-direction: row;
-		padding: 0.5rem 3rem;
-		font-size: 1.2rem;
-	}
 
 	.main-content {
 		padding-right: 20px; /* Remove extra padding */
@@ -612,6 +583,34 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+	}
+
+	.info.lives {
+		background-color: #ffe5e5;
+		color: #c62828;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+
+	.info.score {
+		background-color: #e8f5e9;
+		color: #2e7d32;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+
+	.info.streak {
+		background-color: #e3f2fd;
+		color: #1565c0;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+
+	.info.highscore {
+		background-color: #fff3e0;
+		color: #e2783e;
+		font-size: 3.5rem;
+		text-align: center;
 	}
 
 	:global(.volume-icon) {
@@ -633,7 +632,7 @@
     }
 
 		h1 {
-			font-size: 2rem;
+			font-size: 3rem;
 		}
 
 		h2 {
@@ -641,59 +640,50 @@
 			padding: 0.8rem;
 		}
 
-	.audio-slider-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 0.5rem;
-		margin-top: -2rem;
-		margin-bottom: 2rem;
-}
+		.info.lives {
+		background-color: #ffe5e5;
+		color: #c62828;
+		font-size: 3.5rem;
+		text-align: center;
+	}
 
-	.game-info-side {
-		top: auto;
-		bottom: 10px;
-		right: 10px;
-		transform: none;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-between;
-		width: 90%;
-		min-width: auto;
-		padding: 0.4rem 0.6rem;
+	.info.score {
+		background-color: #e8f5e9;
+		color: #2e7d32;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+
+	.info.streak {
+		background-color: #e3f2fd;
+		color: #1565c0;
+		font-size: 3.5rem;
+		text-align: center;
+	}
+
+	.info.highscore {
+		background-color: #fff3e0;
+		color: #e2783e;
+		font-size: 3.5rem;
+		text-align: center;
 	}
 }
 
 	@media (max-width: 480px) {
-		h1 {
-			font-size: 1.6rem;
-		}
-
-		h2 {
-			font-size: 1.2rem;
-		}
-
-		.audio-slider-container {
-		top: auto;
-		bottom: 470px;
-		right: 50%;
-		transform: translateX(50%);
-		flex-direction: row;
-		padding: 0.5rem 1rem;
-		font-size: 0rem;
+	h1 {
+		font-size: 2rem;
 	}
 
-		.modal-buttons {
-			flex-direction: column;
-			align-items: center;
-		}
+	h2 {
+		font-size: 1.5rem;
+	}
 
-		:global(.volume-icon) {
+	:global(.volume-icon) {
 		width: 1.5rem;
 		height: 1.5rem;
 	}
 
-		.info.lives {
+	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
 		font-size: 2.5rem;
