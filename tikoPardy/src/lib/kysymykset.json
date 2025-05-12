@@ -297,7 +297,7 @@
 		"kurssi": 1,
 		"sana": "Amazon S3 Glacier",
 		"lyhenne": "",
-		"selitys": "Tallennuspalvelu, joka soveltuu erityisesti harvoin käytettävän datan pitkäaikaiseen ja edulliseen säilytykseen.",
+		"selitys": "Tallennuspalvelu, joka soveltuu erityisesti harvoin käytettävän datan pitkäaikaiseen ja edulliseen säilytykseen",
 		"id": 43
 	},
 	{
@@ -1622,7 +1622,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Microsoft Windows",
+		"sana": "Windows",
 		"lyhenne": "",
 		"selitys": "Microsoftin kehittämä graafinen käyttöjärjestelmä, joka on laajasti käytössä henkilökohtaisissa tietokoneissa",
 		"id": 237
@@ -1685,7 +1685,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Desktop",
+		"sana": "Työpöytä",
 		"lyhenne": "",
 		"selitys": "Käyttöjärjestelmän graafinen pääikkuna, josta käyttäjä voi avata tiedostoja ja ohjelmia",
 		"id": 246
@@ -1701,21 +1701,21 @@
 		"kurssi": 4,
 		"sana": "Windows Hello",
 		"lyhenne": "",
-		"selitys": "Windowsin biometrinen kirjautumisjärjestelmä, joka mahdollistaa kasvojen, sormenjäljen tai PIN-koodin käytön",
+		"selitys": "Biometrinen kirjautumisjärjestelmä, joka mahdollistaa kasvojen, sormenjäljen tai PIN-koodin käytön",
 		"id": 248
 	},
 	{
 		"kurssi": 4,
 		"sana": "Microsoft Authenticator",
 		"lyhenne": "",
-		"selitys": "Mobiilisovellus, jolla voi vahvistaa kirjautumisia Microsoft-tileihin kaksivaiheisella tunnistuksella",
+		"selitys": "Mobiilisovellus, jolla voi vahvistaa kirjautumisia tileihin kaksivaiheisella tunnistuksella",
 		"id": 249
 	},
 	{
 		"kurssi": 4,
 		"sana": "Windows Defender",
 		"lyhenne": "",
-		"selitys": "Windowsin sisäänrakennettu virustorjuntaohjelmisto, joka suojaa haittaohjelmilta ja muilta uhkilta",
+		"selitys": "Virustorjuntaohjelmisto, joka suojaa haittaohjelmilta ja muilta uhkilta",
 		"id": 250
 	},
 	{
@@ -1727,7 +1727,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Network",
+		"sana": "Tietoverkko",
 		"lyhenne": "",
 		"selitys": "Tietokoneiden ja laitteiden muodostama järjestelmä, jossa ne voivat vaihtaa tietoa keskenään",
 		"id": 252
@@ -1741,7 +1741,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Protocol",
+		"sana": "Protokolla",
 		"lyhenne": "",
 		"selitys": "Säännöstö, jonka mukaan laitteet kommunikoivat ja vaihtavat tietoa verkossa",
 		"id": 254
@@ -1755,21 +1755,21 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Router",
+		"sana": "Reititin",
 		"lyhenne": "",
 		"selitys": "Laite, joka ohjaa verkkoliikennettä ja yhdistää kotiverkon Internetiin",
 		"id": 256
 	},
 	{
 		"kurssi": 4,
-		"sana": "Switch",
+		"sana": "Kytkin",
 		"lyhenne": "",
 		"selitys": "Verkkolaite, joka yhdistää useita laitteita lähiverkossa ja ohjaa tiedonsiirtoa tehokkaasti",
 		"id": 257
 	},
 	{
 		"kurssi": 4,
-		"sana": "Firewall",
+		"sana": "Palomuuri",
 		"lyhenne": "",
 		"selitys": "Tietoturvalaite tai ohjelma, joka valvoo ja rajoittaa verkkoliikennettä suojellakseen järjestelmää uhkilta",
 		"id": 258
@@ -1811,7 +1811,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "MAC address",
+		"sana": "MAC-osoite",
 		"lyhenne": "",
 		"selitys": "Laitteistokohtainen tunniste, joka yksilöi verkkolaitteen",
 		"id": 264
@@ -1874,35 +1874,35 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Package Manager",
+		"sana": "Paketinhallinta",
 		"lyhenne": "",
 		"selitys": "Ohjelma, joka hallitsee ohjelmistojen asennusta, päivittämistä ja poistamista Linux-järjestelmässä",
 		"id": 273
 	},
 	{
 		"kurssi": 4,
-		"sana": "Dual booting",
+		"sana": "Kaksoiskäynnistys",
 		"lyhenne": "",
 		"selitys": "Tietokoneeseen on asennettu kaksi käyttöjärjestelmää, ja käynnistettäessä voidaan valita kumpi käytetään",
 		"id": 274
 	},
 	{
 		"kurssi": 4,
-		"sana": "ISO image",
+		"sana": "ISO-levykuva",
 		"lyhenne": "",
 		"selitys": "Tiedostomuoto, joka sisältää täydellisen kopion optisesta levystä, kuten käyttöjärjestelmän asennusmedian",
 		"id": 275
 	},
 	{
 		"kurssi": 4,
-		"sana": "Root directory",
+		"sana": "Juurihakemisto",
 		"lyhenne": "",
 		"selitys": "Tiedostojärjestelmän ylin hakemisto, josta kaikki muut kansiot ja tiedostot haarautuvat",
 		"id": 276
 	},
 	{
 		"kurssi": 4,
-		"sana": "Directory tree",
+		"sana": "Hakemistopuu",
 		"lyhenne": "",
 		"selitys": "Hierarkkinen rakenne, jossa kansiot ja alikansiot muodostavat puumaisen tiedostojärjestelmän",
 		"id": 277
@@ -1923,7 +1923,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Terminal",
+		"sana": "Terminaali",
 		"lyhenne": "",
 		"selitys": "Sovellus, jonka kautta käyttäjä voi käyttää komentoriviä ja suorittaa komentoja",
 		"id": 280
@@ -2091,21 +2091,21 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Cloud",
+		"sana": "Pilvi",
 		"lyhenne": "",
 		"selitys": "Internetin kautta tarjottavat tietotekniikkapalvelut, kuten tallennus tai laskenta",
 		"id": 304
 	},
 	{
 		"kurssi": 4,
-		"sana": "Random access memory",
+		"sana": "Random Access Memory",
 		"lyhenne": "RAM",
 		"selitys": "Tietokoneen nopea väliaikainen muisti, jossa ohjelmat ja tiedot säilyvät käynnissä ollessa",
 		"id": 305
 	},
 	{
 		"kurssi": 4,
-		"sana": "Motherboard",
+		"sana": "Emolevy",
 		"lyhenne": "",
 		"selitys": "Tietokoneen keskuspiirilevy, johon kaikki muut komponentit liitetään",
 		"id": 306
@@ -2133,14 +2133,14 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Server",
+		"sana": "Palvelin",
 		"lyhenne": "",
 		"selitys": "Tietokone tai ohjelma, joka tarjoaa palveluita muille tietokoneille verkossa",
 		"id": 310
 	},
 	{
 		"kurssi": 4,
-		"sana": "Cloud computing",
+		"sana": "Pilvipalvelu",
 		"lyhenne": "",
 		"selitys": "Tietotekniikan resurssien, kuten laskennan ja tallennuksen, toimittaminen internetin kautta",
 		"id": 311
@@ -2154,7 +2154,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Network Adapter",
+		"sana": "Verkkoadapteri",
 		"lyhenne": "",
 		"selitys": "Laite, joka mahdollistaa tietokoneen yhdistämisen verkkoon",
 		"id": 313
@@ -2210,7 +2210,7 @@
 	},
 	{
 		"kurssi": 4,
-		"sana": "Domain name",
+		"sana": "Verkkotunnus",
 		"lyhenne": "",
 		"selitys": "Verkko-osoitteen ihmisen luettava nimi, joka vastaa IP-osoitetta",
 		"id": 321
@@ -2226,12 +2226,12 @@
 		"kurssi": 4,
 		"sana": "Virtual Private Server",
 		"lyhenne": "VPS",
-		"selitys": "Virtuaalinen palvelin, joka jakaa fyysisen palvelimen resurssit muiden kanssa, mutta toimii itsenäisesti",
+		"selitys": "Palvelin, joka jakaa fyysisen palvelimen resurssit muiden kanssa, mutta toimii itsenäisesti",
 		"id": 323
 	},
 	{
 		"kurssi": 4,
-		"sana": "Load balancers",
+		"sana": "Kuormantasaimet",
 		"lyhenne": "",
 		"selitys": "Laitteita tai ohjelmia, jotka jakavat verkkoliikenteen useille palvelimille tasaisesti",
 		"id": 324
