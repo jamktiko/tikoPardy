@@ -194,6 +194,7 @@
 			</div>
 
 			<div class="settings-option">
+				<br />
 				<label class="checkbox-wrapper">
 					<input type="checkbox" bind:checked={ajastinPaalla.on} onchange={asetusMuutos} />
 					<span class="custom-checkbox"></span>
@@ -209,7 +210,7 @@
 				<label class="checkbox-wrapper">
 					<input type="checkbox" bind:checked={harkka.on} onchange={settingsChange} />
 					<span class="custom-checkbox"></span>
-					<strong>Harjoittelu:</strong> Loputtomat elämät, ei ajastinta.
+					<strong>Harjoittelu:</strong> Loputtomat elämät, ei ajastinta. Highscore ei tallennu harjoittelussa.
 				</label>
 			</div>
 
