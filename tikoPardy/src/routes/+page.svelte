@@ -8,24 +8,19 @@
 	import { browser } from '$app/environment';
 	import { onMount } from 'svelte';
 	import { afterNavigate } from '$app/navigation';
-
-	interface CourseHighscore {
-		id: number;
-		name: string;
-		score: number;
-	}
+	import type { CourseHighscore } from '../lib/interfaces';
 
 	let showModal = $state(false);
-
-	function toggleModal() {
-		showModal = !showModal;
-	}
 
 	let highscores: CourseHighscore[] = $state([]);
 
 	let kurssit: number = $state(1); // Default value
 
 	let showInstructionsModal = $state(false);
+
+	function toggleModal() {
+		showModal = !showModal;
+	}
 
 	function getAllHighscores(): CourseHighscore[] {
 		if (!browser) return [];
@@ -72,9 +67,6 @@
 			harkka.on = false;
 		}
 	}
-
-	$inspect(highscores);
-	$inspect(showModal);
 </script>
 
 <main>

@@ -10,22 +10,46 @@
 	import Timer from '../../lib/components/Timer.svelte';
 	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
 	import { browser } from '$app/environment';
+	import type { Kysymys } from '../../lib/interfaces';
 
-	let audioVolume = $state(0.2); // Initial volume set to match the prop in AudioSlider
+	// Perusmuuttujat
+	let audioVolume = $state(0.2);
 	let isMuted = $state(false);
-
 	let otsikko: string = $state('');
 	let resetCounter = $state(0); // Counter for resetting the timer
+	let kysymykset: Kysymys[] = [];
+	let kurssiId = $state(0);
+	let timerPaused = $state(false);
+	let highScore = $state(0);
 
+	// Pelin tilamuuttujat
+	let usedQuestionIndices: number[] = $state([]);
+	let lives = $state(sDeath.on ? 1 : 3);
+	let score = $state(0);
+	let showModal = $state(false);
+	let modalMessage = $state('');
+	let modalMessage2 = $state();
+	let modalTitle = $state('');
+	let correctEffect: any = $state();
+	let wrongEffect: any = $state();
+	let streak = $state(0);
+	let lastPoints = $state(100);
+	let showVictoryModal = $state(false);
+
+	// Kysymysmuuttujat
+	let randomKysymys = $state({
+		kysymys: 'Ladataan kysymyksiä...',
+		vastaus: '',
+		wrongAnswers: ['', '', '']
+	});
+	let vastaus = $derived(randomKysymys.vastaus);
+	let wrongAnswers = $derived(randomKysymys.wrongAnswers || ['', '', '']);
+	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
+
+	// Funktiot
 	function handleVolumeChange(event: CustomEvent) {
 		audioVolume = event.detail.volume;
 		isMuted = audioVolume === 0;
-	}
-
-	interface Kysymys {
-		kysymys: string;
-		vastaus: string;
-		lyhenne?: string;
 	}
 
 	function getInitialLives() {
@@ -33,12 +57,6 @@
 		if (sDeath.on) return 1; // Sudden Death: vain yksi elämä
 		return 3; // Normaalimoodi: 3 elämää
 	}
-
-	let kysymykset: Kysymys[] = [];
-	let kurssiId = $state(0); // Kurssin ID otetaan suoraan URL-parametrista
-	let timerPaused = $state(false);
-
-	let highScore = $state(0); // Oletuksena 0, voitaisiin ladata paikallisesta tallennuksesta
 
 	function getHighScore(courseId: number): number {
 		if (browser) {
@@ -66,61 +84,6 @@
 			}
 		}
 	}
-
-	onMount(async () => {
-		try {
-			// Haetaan kurssin ID URL-parametrista
-			kurssiId = parseInt($page.url.searchParams.get('kurssi') || '0', 10);
-
-			const selectedCourse = kurssitData.find((course) => course.id === kurssiId);
-			if (selectedCourse) {
-				otsikko = selectedCourse.nimi;
-			} else {
-				console.error('Kurssia ei löytynyt ID:llä:', kurssiId);
-				otsikko = 'Tuntematon kurssi';
-			}
-
-			// Ladataan kaikki kysymykset yhdestä JSON-tiedostosta
-			const jsonData = await import('../../lib/kysymykset.json');
-
-			// Suodatetaan kysymykset kurssin ID:n perusteella
-			if (Array.isArray(jsonData.default)) {
-				kysymykset = jsonData.default
-					.filter((item) => item.kurssi === kurssiId) // Suodatetaan ID:n perusteella
-					.map((item) => ({
-						kysymys: item.selitys,
-						vastaus: item.sana,
-						lyhenne: item?.lyhenne // Voi olla undefined jossakin tiedostoissa
-					}));
-			} else {
-				console.error('Virheellinen dataformaatti:', jsonData.default);
-				kysymykset = [];
-			}
-
-			lives = getInitialLives(); // Elämien määrä, oletuksena 3
-
-			highScore = getHighScore(kurssiId);
-
-			// Alustetaan ensimmäinen kysymys
-			randomKysymys = randomQuestion();
-			shuffledAnswers = randomizeAnswers();
-		} catch (error) {
-			console.error('Virhe datan lataamisessa:', error);
-			openModal('Virhe', 'Kysymysten lataaminen epäonnistui!');
-		}
-	});
-
-	let usedQuestionIndices: number[] = $state([]);
-	let lives = $state(sDeath.on ? 1 : 3); // Elämien määrä, oletuksena 3
-	let score = $state(0);
-
-	let showModal = $state(false);
-	let modalMessage = $state('');
-	let modalMessage2 = $state();
-	let modalTitle = $state('');
-
-	let correctEffect: any = $state();
-	let wrongEffect: any = $state();
 
 	function correctSound() {
 		correctEffect.play();
@@ -151,10 +114,6 @@
 		showModal = false;
 	}
 
-	let streak = $state(0);
-	let lastPoints = $state(100);
-	let showVictoryModal = $state(false);
-
 	function increaseScore() {
 		streak++;
 		if (streak === 1) {
@@ -176,6 +135,7 @@
 		lastPoints = 100;
 	}
 
+	// Funktio satunnaisten väärien vastausten saamiseksi
 	function getRandomWrongAnswers(correctAnswer: string, count: number = 3) {
 		const otherAnswers = kysymykset
 			.filter((q) => q.vastaus !== correctAnswer)
@@ -184,6 +144,8 @@
 		const result = [];
 		const availableAnswers = [...otherAnswers];
 
+		// Kolme random väärää vastausta
+		// Varmistetaan, että ei valita samaa kuin oikea vastaus
 		for (let i = 0; i < count && availableAnswers.length > 0; i++) {
 			const randomIndex = Math.floor(Math.random() * availableAnswers.length);
 			result.push(availableAnswers[randomIndex]);
@@ -219,16 +181,6 @@
 
 		return { ...kysymys, wrongAnswers };
 	}
-
-	let randomKysymys = $state({
-		kysymys: 'Ladataan kysymyksiä...',
-		vastaus: '',
-
-		wrongAnswers: ['', '', '']
-	});
-
-	let vastaus = $derived(randomKysymys.vastaus);
-	let wrongAnswers = $derived(randomKysymys.wrongAnswers || ['', '', '']);
 
 	function tarkistusVastaus(valinta: string) {
 		// Pysäytä ajastin heti kun käyttäjä vastaa
@@ -285,7 +237,6 @@
 	function randomizeAnswers() {
 		const answers = [
 			{ text: vastaus, isCorrect: true },
-
 			{ text: wrongAnswers[0], isCorrect: false },
 			{ text: wrongAnswers[1], isCorrect: false },
 			{ text: wrongAnswers[2], isCorrect: false }
@@ -293,8 +244,6 @@
 
 		return answers.sort(() => Math.random() - 0.5);
 	}
-
-	let shuffledAnswers = $state<{ text: string; isCorrect: boolean }[]>([]);
 
 	function handleTimeout() {
 		if (lives <= 0 && browser) {
@@ -309,9 +258,55 @@
 		resetCounter++;
 	}
 
+	// Effect-hooks
 	$effect(() => {
 		if (browser && score > highScore) {
 			updateHighScore(score, kurssiId);
+		}
+	});
+
+	// onMount
+	onMount(async () => {
+		try {
+			// Haetaan kurssin ID URL-parametrista
+			kurssiId = parseInt($page.url.searchParams.get('kurssi') || '0', 10);
+
+			// Ladataan kurssin nimi kurssit.json-tiedostosta
+			const selectedCourse = kurssitData.find((course) => course.id === kurssiId);
+			if (selectedCourse) {
+				otsikko = selectedCourse.nimi;
+			} else {
+				console.error('Kurssia ei löytynyt ID:llä:', kurssiId);
+				otsikko = 'Tuntematon kurssi';
+			}
+
+			// Odotetaan kysymykset JSON-tiedostosta
+			const jsonData = await import('../../lib/kysymykset.json');
+
+			// Suodatetaan kysymykset kurssin ID:n perusteella
+			if (Array.isArray(jsonData.default)) {
+				kysymykset = jsonData.default
+					.filter((item) => item.kurssi === kurssiId) // Suodatetaan ID:n perusteella
+					.map((item) => ({
+						kysymys: item.selitys,
+						vastaus: item.sana,
+						lyhenne: item?.lyhenne
+					}));
+			} else {
+				console.error('Virheellinen dataformaatti:', jsonData.default);
+				kysymykset = [];
+			}
+
+			lives = getInitialLives(); // Elämien määrä, oletuksena 3
+
+			highScore = getHighScore(kurssiId);
+
+			// Alustetaan ensimmäinen kysymys
+			randomKysymys = randomQuestion();
+			shuffledAnswers = randomizeAnswers();
+		} catch (error) {
+			console.error('Virhe datan lataamisessa:', error);
+			openModal('Virhe', 'Kysymysten lataaminen epäonnistui!');
 		}
 	});
 </script>
