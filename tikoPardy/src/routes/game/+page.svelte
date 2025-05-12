@@ -72,6 +72,7 @@
 	}
 
 	function updateHighScore(newScore: number, courseId: number): void {
+		if (harkka.on) return; // Harjoitusmoodissa ei päivitetä highscorea
 		if (browser) {
 			try {
 				const currentHighScore = getHighScore(courseId);
@@ -319,7 +320,9 @@
 	{/if}
 	<div class="info score">⭐ {score}</div>
 	<div class="info streak">🔥 {streak}</div>
-	<div class="info highscore">🏆 {highScore}</div>
+	{#if !harkka.on}
+		<div class="info highscore">🏆 {highScore}</div>
+	{/if}
 </div>
 
 <div class="audio-slider-container">
