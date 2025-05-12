@@ -315,7 +315,6 @@
 		}
 	});
 </script>
-
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
 
@@ -416,7 +415,8 @@
 	}
 
 	:global(.main-content) {
-		padding-right: 70px; /* Leaves space so text doesn't overlap fixed boxes */
+		padding-right: 70px;
+		padding-left: 70px; /* Leaves space so text doesn't overlap fixed boxes */
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -456,7 +456,7 @@
 		align-items: center;
 		gap: 1rem;
 		margin: 0 auto;
-		max-width: 950px;
+		max-width: 1200px;
 	}
 
 	.question-box {
@@ -475,7 +475,7 @@
 
 	.game-info-side {
 		position: fixed;
-		top: 70%;
+		top: 65%;
 		right: 35px; /* Match the slider's right value */
 		transform: translateY(-50%);
 		display: flex;
@@ -492,7 +492,7 @@
 
 	.audio-slider-container {
 		position: fixed;
-		top: 40%;
+		top: 45%;
 		right: 15px;
 		transform: translateY(-50%);
 		display: flex;
@@ -518,28 +518,28 @@
 	.info.lives {
 		background-color: #ffe5e5;
 		color: #c62828;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		text-align: center;
 	}
 
 	.info.score {
 		background-color: #e8f5e9;
 		color: #2e7d32;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		text-align: center;
 	}
 
 	.info.streak {
 		background-color: #e3f2fd;
 		color: #1565c0;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		text-align: center;
 	}
 
 	.info.highscore {
 		background-color: #fff3e0;
 		color: #e2783e;
-		font-size: 2.5rem;
+		font-size: 2rem;
 		text-align: center;
 	}
 
@@ -571,4 +571,103 @@
 		transform: scale(1.3);
 		border-radius: 0.5rem;
 	}
-</style>
+
+	@media (max-width: 1024px) {
+	.game-info-side {
+		top: auto;
+		bottom: 10px;
+		right: 10px;
+		transform: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 90%;
+		min-width: auto;
+		padding: 0.4rem 0.6rem;
+	}
+
+	.main-content {
+		padding-right: 20px; /* Remove extra padding */
+		padding-left: 20px; /* Equalize left and right */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+		max-height: calc(100vh - 20px); /* Ensure no vertical scroll */
+		overflow-y: hidden;
+    }
+
+	.volume-button {
+		position: relative;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	:global(.volume-icon) {
+		width: 1.6rem;
+		height: 1.6rem;
+	}
+	}
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+
+    .main-content {
+			padding-right: 20px; /* Remove extra padding */
+			padding-left: 20px; /* Equalize left and right */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+			max-height: calc(100vh - 20px); /* Ensure no vertical scroll */
+			overflow-y: hidden;
+    }
+
+		h1 {
+			font-size: 2rem;
+		}
+
+		h2 {
+			font-size: 1.5rem;
+			padding: 0.8rem;
+		}
+
+	.audio-slider-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: -2rem;
+		margin-bottom: 2rem;
+}
+
+	.game-info-side {
+		top: auto;
+		bottom: 10px;
+		right: 10px;
+		transform: none;
+		flex-direction: row;
+		align-items: center;
+		justify-content: space-between;
+		width: 90%;
+		min-width: auto;
+		padding: 0.4rem 0.6rem;
+	}
+}
+
+	@media (max-width: 480px) {
+		h1 {
+			font-size: 1.6rem;
+		}
+
+		h2 {
+			font-size: 1.2rem;
+		}
+
+		.modal-buttons {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+</style>	

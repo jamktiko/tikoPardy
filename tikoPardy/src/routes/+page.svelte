@@ -235,244 +235,245 @@
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
 
-	:global(html, body) {
-		height: 100%;
-		margin: 0;
-		padding: 0;
-		background: #f5f0ec;
-		overflow-x: hidden;
-	}
+:global(html, body) {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background: #f5f0ec;
+	overflow-x: hidden;
+}
 
-	main {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		min-height: 100vh;
-		padding: 1rem;
-		background: #f5f0ec;
-		color: #333;
-		box-sizing: border-box;
-	}
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	padding: 1rem;
+	background: #f5f0ec;
+	color: #333;
+	box-sizing: border-box;
+}
 
-	.game-container {
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		padding: 3rem;
-		background-color: #f5f5f5;
-		border-radius: 1.5rem;
-		box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-		width: 100%;
-		max-width: 1200px;
-		min-height: 70vh;
-		text-align: center;
-		position: relative;
-	}
+.game-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3rem;
+	background-color: #f5f5f5;
+	border-radius: 1.5rem;
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 1200px;
+	min-height: 70vh;
+	text-align: center;
+	position: relative;
+}
 
-	.game-content {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-	}
+.game-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
 
+h1 {
+	color: #7b1e1e;
+	font-family: 'Cascadia Mono', sans-serif;
+	font-size: 96px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1;
+	letter-spacing: 1px;
+	margin: 0;
+}
+
+p {
+	font-size: 1.5rem;
+	font-family: 'Cascadia Mono', sans-serif;
+	margin: 0;
+}
+
+li {
+	font-size: 1rem;
+	font-family: 'Cascadia Mono', sans-serif;
+	padding: 3px;
+}
+
+.highscore-item {
+	font-size: 1.25rem;
+	font-family: 'Cascadia Mono', sans-serif;
+	padding: 3px;
+}
+
+.top-left-button {
+	position: absolute;
+	top: 1rem;
+	left: 1rem;
+	transform: scale(0.8);
+}
+
+.top-right-button {
+	position: absolute;
+	top: 1rem;
+	right: 1rem;
+	transform: scale(0.8);
+}
+
+:global(.select-wrapper) {
+	position: relative;
+	display: inline-block;
+}
+
+select {
+	font-family: 'Cascadia Mono', sans-serif;
+	font-size: 1.25rem;
+	padding: 0.5rem 2.5rem 0.5rem 1rem;
+	border: 2px solid #7b1e1e;
+	border-radius: 0.75rem;
+	background-color: #fff;
+	color: #333;
+	cursor: pointer;
+	margin-top: -2rem;
+	margin-bottom: 5rem;
+	appearance: none;
+}
+
+select:focus {
+	outline: none;
+	border-color: #a83232;
+}
+
+:global(.dropdown-icon) {
+	position: absolute;
+	right: 0.8rem;
+	top: 8%;
+	transform: translateY(-50%);
+	pointer-events: none;
+	color: #7b1e1e;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 8rem;
+	margin-bottom: 2rem;
+	transform: scale(1.2);
+}
+
+.instructions {
+	text-align: left;
+}
+
+.instructions h3 {
+	color: #7b1e1e;
+	margin-bottom: 1rem;
+}
+
+.instructions ol {
+	padding-left: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.instructions li {
+	margin-bottom: 0.5rem;
+}
+
+.button-center {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #7b1e1e;
+	color: #7b1e1e;
+}
+
+/* Checkbox tyylitys */
+.checkbox-wrapper {
+	position: relative;
+	padding-left: 32px;
+	cursor: pointer;
+	user-select: none;
+	display: block;
+	margin-bottom: 0.5rem;
+	font-family: 'Cascadia Mono', sans-serif;
+}
+
+.checkbox-wrapper input[type='checkbox'] {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+}
+
+.custom-checkbox {
+	position: absolute;
+	left: 0;
+	top: 2px;
+	height: 20px;
+	width: 20px;
+	background-color: white;
+	border: 2px solid #888;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+}
+
+.checkbox-wrapper input:checked ~ .custom-checkbox {
+	background-color: #4caf50;
+	border-color: #4caf50;
+}
+
+.custom-checkbox::after {
+	content: '';
+	position: absolute;
+	display: none;
+	left: 6px;
+	top: 2px;
+	width: 5px;
+	height: 10px;
+	border: solid white;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+}
+
+.checkbox-wrapper input:checked ~ .custom-checkbox::after {
+	display: block;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
 	h1 {
-		color: #7b1e1e;
-		font-family: 'Cascadia Mono', sans-serif;
-		font-size: 96px;
-		font-style: normal;
-		font-weight: 500;
-		line-height: 1;
-		letter-spacing: 1px;
-		margin: 0;
+		font-size: 48px;
 	}
 
 	p {
-		font-size: 1.5rem;
-		font-family: 'Cascadia Mono', sans-serif;
-		margin: 0;
-	}
-
-	li {
 		font-size: 1rem;
-		font-family: 'Cascadia Mono', sans-serif;
-		padding: 3px;
-	}
-
-	.highscore-item {
-		font-size: 1.25rem;
-		font-family: 'Cascadia Mono', sans-serif;
-		padding: 3px;
-	}
-
-	.top-left-button {
-		position: absolute;
-		top: 1rem;
-		left: 1rem;
-		transform: scale(0.8);
-	}
-
-	.top-right-button {
-		position: absolute;
-		top: 1rem;
-		right: 1rem;
-		transform: scale(0.8);
-	}
-
-	:global(.select-wrapper) {
-		position: relative;
-		display: inline-block;
 	}
 
 	select {
-		font-family: 'Cascadia Mono', sans-serif;
-		font-size: 1.25rem;
-		padding: 0.5rem 2.5rem 0.5rem 1rem;
-		border: 2px solid #7b1e1e;
-		border-radius: 0.75rem;
-		background-color: #fff;
-		color: #333;
-		cursor: pointer;
-		margin-top: -2rem;
-		margin-bottom: 5rem;
-		appearance: none;
-	}
-
-	select:focus {
-		outline: none;
-		border-color: #a83232;
-	}
-
-	:global(.dropdown-icon) {
-		position: absolute;
-		right: 0.8rem; /* Adjust this value to move it further left or right */
-		top: 8%; /* Move the icon higher (less than 50%) */
-		transform: translateY(-50%); /* Fine-tune centering */
-		pointer-events: none; /* Keeps it non-interactive */
-		color: #7b1e1e; /* Icon color */
+		font-size: 1rem;
+		padding: 0.5rem 2rem 0.5rem 1rem;
 	}
 
 	.button-container {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-		gap: 8rem;
-		margin-bottom: 2rem;
-		transform: scale(1.2);
-	}
-
-	.instructions {
-		text-align: left;
-	}
-
-	.instructions h3 {
-		color: #7b1e1e;
-		margin-bottom: 1rem;
-	}
-
-	.instructions ol {
-		padding-left: 1.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.instructions li {
-		margin-bottom: 0.5rem;
-	}
-
-	.button-center {
-		display: flex;
-		justify-content: center;
-		margin-top: 1.5rem;
-	}
-
-	.modal-header {
-		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
 		align-items: center;
-		border-bottom: 1px solid #7b1e1e;
-		color: #7b1e1e;
+		transform: scale(1);
+		gap: 1.5rem;
 	}
 
-	/* Checkbox tyylitys*/
-	.checkbox-wrapper {
-		position: relative;
-		padding-left: 32px;
-		cursor: pointer;
-		user-select: none;
-		display: block;
-		margin-bottom: 0.5rem;
-		font-family: 'Cascadia Mono', sans-serif;
+	.top-left-button {
+		transform: scale(0.7);
+		top: 0.5rem;
+		left: 0.5rem;
 	}
+}
 
-	.checkbox-wrapper input[type='checkbox'] {
-		position: absolute;
-		opacity: 0;
-		cursor: pointer;
-		height: 0;
-		width: 0;
-	}
-
-	.custom-checkbox {
-		position: absolute;
-		left: 0;
-		top: 2px;
-		height: 20px;
-		width: 20px;
-		background-color: white;
-		border: 2px solid #888;
-		border-radius: 4px;
-		transition: all 0.2s ease;
-	}
-
-	.checkbox-wrapper input:checked ~ .custom-checkbox {
-		background-color: #4caf50;
-		border-color: #4caf50;
-	}
-
-	.custom-checkbox::after {
-		content: '';
-		position: absolute;
-		display: none;
-		left: 6px;
-		top: 2px;
-		width: 5px;
-		height: 10px;
-		border: solid white;
-		border-width: 0 2px 2px 0;
-		transform: rotate(45deg);
-	}
-
-	.checkbox-wrapper input:checked ~ .custom-checkbox::after {
-		display: block;
-	}
-
-	/* ===== Responsive ===== */
-	@media (max-width: 768px) {
-		h1 {
-			font-size: 48px;
-		}
-
-		p {
-			font-size: 1rem;
-		}
-
-		select {
-			font-size: 1rem;
-			padding: 0.5rem 2rem 0.5rem 1rem;
-		}
-
-		.button-container {
-			flex-direction: column;
-			align-items: center;
-			transform: scale(1);
-			gap: 1.5rem;
-		}
-
-		.top-left-button {
-			transform: scale(0.7);
-			top: 0.5rem;
-			left: 0.5rem;
-		}
-	}
 </style>
