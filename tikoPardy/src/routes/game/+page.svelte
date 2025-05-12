@@ -313,37 +313,6 @@
 </script>
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
-<div class="footer-container">
-	<div class="audio-slider-container">
-		<button class="volume-button" onclick={toggleMute}>
-			{#if audioVolume <= 0}
-				<VolumeX class="volume-icon" />
-			{:else if audioVolume <= 0.5}
-				<Volume1 class="volume-icon" />
-			{:else}
-				<Volume2 class="volume-icon" />
-			{/if}
-		</button>
-
-		<AudioSlider
-			setVolume={audioVolume}
-			Mplay={false}
-			audioSrc="millionaireBackground.mp3"
-			on:volumechange={handleVolumeChange}
-		/>
-	</div>
-	<div class="game-info-side">
-		{#if !harkka.on}
-			<div class="info lives">❤️ {lives}</div>
-		{/if}
-		<div class="info score">⭐ {score}</div>
-		<div class="info streak">🔥 {streak}</div>
-		{#if !harkka.on}
-			<div class="info highscore">🏆 {highScore}</div>
-		{/if}
-	</div>
-</div>
-
 
 <div class="main-content">
 	{#if ajastinPaalla.on}
@@ -400,6 +369,37 @@
 
 <audio src="correct.mp3" bind:this={correctEffect} volume={audioVolume}></audio>
 <audio src="wrong.mp3" bind:this={wrongEffect} volume={audioVolume}></audio>
+
+<div class="footer-container">
+	<div class="audio-slider-container">
+		<button class="volume-button" onclick={toggleMute}>
+			{#if audioVolume <= 0}
+				<VolumeX class="volume-icon" />
+			{:else if audioVolume <= 0.5}
+				<Volume1 class="volume-icon" />
+			{:else}
+				<Volume2 class="volume-icon" />
+			{/if}
+		</button>
+
+		<AudioSlider
+			setVolume={audioVolume}
+			Mplay={false}
+			audioSrc="millionaireBackground.mp3"
+			on:volumechange={handleVolumeChange}
+		/>
+	</div>
+	<div class="game-info-side">
+		{#if !harkka.on}
+			<div class="info lives">❤️ {lives}</div>
+		{/if}
+		<div class="info score">⭐ {score}</div>
+		<div class="info streak">🔥 {streak}</div>
+		{#if !harkka.on}
+			<div class="info highscore">🏆 {highScore}</div>
+		{/if}
+	</div>
+</div>
 
 <style>
 	@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono&family=Roboto:wght@400;700&display=swap');
@@ -481,7 +481,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-	border-radius: 10px;
+  border-radius: 10px;
   padding: 12px 20px;
   z-index: 100;
   background-color: rgba(255, 255, 255, 0.9);
@@ -710,5 +710,20 @@
 		font-size: 2.5rem;
 		text-align: center;
 	}
+
+	:global(.main-content) {
+		padding-right: 70px;
+		padding-left: 70px; /* Leaves space so text doesn't overlap fixed boxes */
+		display: flex;
+		flex-direction: column;	
+		align-items: center;
+		gap: 1rem;
+		padding-bottom: 20rem;
+	}
+
+	.footer-container {
+  position: relative;
+  padding: 10px 0px;
+}
 	}
 </style>	
