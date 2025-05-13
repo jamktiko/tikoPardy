@@ -617,7 +617,11 @@
 			width: 2.5rem;
 			height: 2.5rem;
 		}
+
+		.audio-slider-container {
+		display: none;
 	}
+}
 	/* Responsive Styles */
 	@media (max-width: 768px) {
 		.main-content {
@@ -671,7 +675,10 @@
 			font-size: 2.5rem;
 			text-align: center;
 		}
+		.audio-slider-container {
+			display: none;
 	}
+}
 
 	@media (max-width: 480px) {
 		h1 {
@@ -729,5 +736,8 @@
 			position: relative;
 			padding: 10px 20px;
 		}
+	.audio-slider-container {
+		display: none;
 	}
+}
 </style>

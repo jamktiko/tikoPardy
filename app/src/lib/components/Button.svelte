@@ -57,7 +57,7 @@
     display: inline-flex;
     margin-right: 8px;
   }
-
+  
   @media (max-width: 768px) {
     button {  
       font-size: 1.3rem;

@@ -440,6 +440,48 @@ select:focus {
 	display: block;
 }
 
+@media (max-width: 1024px) {
+	h1 {
+		font-size: 82px;
+		line-height: 2;
+	}
+
+	p {
+		font-size: 2.6rem;
+	}
+
+	li {
+		font-size: 1.5rem;
+	}
+
+	.top-left-button {
+		transform: scale(1.1);
+		top: 2rem;
+		left: 2.5rem;
+	}
+
+	.top-right-button {
+		transform: scale(1.1);
+		top: 2rem;
+		right: 2.5rem;
+	}
+
+	.button-container {
+		gap: 4rem;
+		transform: scale(1.4);
+	}
+
+	select {
+	font-size: 2.2rem;
+}
+
+	:global(.dropdown-icon) {
+		position: absolute;
+		right: 1rem;
+		top: 2%;
+	}
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
 	h1 {
