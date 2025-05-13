@@ -447,12 +447,12 @@ select:focus {
 	}
 
 	p {
-		font-size: 1rem;
+		font-size: 1.5rem;
 	}
 
 	select {
-		font-size: 1rem;
-		padding: 0.5rem 2rem 0.5rem 1rem;
+		font-size: 1.1rem;
+		padding: 0.6rem 2rem 0.5rem 1rem;
 	}
 
 	.button-container {
@@ -464,9 +464,21 @@ select:focus {
 
 	.top-left-button {
 		transform: scale(0.7);
-		top: 0.5rem;
+		top: 0.2rem;
 		left: 0.5rem;
 	}
+
+	.top-right-button {
+	transform: scale(0.7);
+	top: 0.1rem;
+	right: 0.3rem;
+}
+
+:global(.select-wrapper) {
+	position: relative;
+	display: inline-block;
+}
+
 }
 
 </style>
