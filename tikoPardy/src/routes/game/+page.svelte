@@ -311,6 +311,7 @@
 		}
 	});
 </script>
+
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
 <h1 class="">TikoPardy - {otsikko}</h1>
 
@@ -417,7 +418,7 @@
 		padding-right: 70px;
 		padding-left: 70px; /* Leaves space so text doesn't overlap fixed boxes */
 		display: flex;
-		flex-direction: column;	
+		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
 		padding-bottom: 2rem;
@@ -474,27 +475,23 @@
 	}
 
 	.footer-container {
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  padding: 12px 20px;
-  z-index: 100;
-  background-color: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
-  gap: 30px;
-}
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		padding: 12px 20px;
+		z-index: 100;
+		background-color: rgba(255, 255, 255, 0.9);
+		box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+		width: 50%;
+	}
 
 	.game-info-side,
 	.audio-slider-container {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		gap: 15px;
 	}
 
 	.info {
@@ -565,62 +562,7 @@
 	}
 
 	@media (max-width: 1024px) {
-
-	.main-content {
-		padding-right: 20px; /* Remove extra padding */
-		padding-left: 20px; /* Equalize left and right */
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 1rem;
-		max-height: calc(100vh - 20px); /* Ensure no vertical scroll */
-		overflow-y: hidden;
-    }
-
-	.volume-button {
-		position: relative;
-		padding: 0;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.info.lives {
-		background-color: #ffe5e5;
-		color: #c62828;
-		font-size: 3.5rem;
-		text-align: center;
-	}
-
-	.info.score {
-		background-color: #e8f5e9;
-		color: #2e7d32;
-		font-size: 3.5rem;
-		text-align: center;
-	}
-
-	.info.streak {
-		background-color: #e3f2fd;
-		color: #1565c0;
-		font-size: 3.5rem;
-		text-align: center;
-	}
-
-	.info.highscore {
-		background-color: #fff3e0;
-		color: #e2783e;
-		font-size: 3.5rem;
-		text-align: center;
-	}
-
-	:global(.volume-icon) {
-		width: 2.5rem;
-		height: 2.5rem;
-	}
-	}
-	/* Responsive Styles */
-	@media (max-width: 768px) {
-    .main-content {
+		.main-content {
 			padding-right: 20px; /* Remove extra padding */
 			padding-left: 20px; /* Equalize left and right */
 			display: flex;
@@ -629,101 +571,163 @@
 			gap: 1rem;
 			max-height: calc(100vh - 20px); /* Ensure no vertical scroll */
 			overflow-y: hidden;
-    }
+		}
+
+		.footer-container {
+			width: 75%;
+		}
+
+		.volume-button {
+			position: relative;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.info.lives {
+			background-color: #ffe5e5;
+			color: #c62828;
+			font-size: 2.5rem;
+			text-align: center;
+		}
+
+		.info.score {
+			background-color: #e8f5e9;
+			color: #2e7d32;
+			font-size: 2.5rem;
+			text-align: center;
+		}
+
+		.info.streak {
+			background-color: #e3f2fd;
+			color: #1565c0;
+			font-size: 2.5rem;
+			text-align: center;
+		}
+
+		.info.highscore {
+			background-color: #fff3e0;
+			color: #e2783e;
+			font-size: 2.5rem;
+			text-align: center;
+		}
+
+		:global(.volume-icon) {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+	}
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		.main-content {
+			padding-right: 20px; /* Remove extra padding */
+			padding-left: 20px; /* Equalize left and right */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 1rem;
+			max-height: calc(100vh - 20px);
+			overflow-y: hidden;
+		}
+
+		.footer-container {
+			width: 75%;
+		}
 
 		h1 {
-			font-size: 3rem;
+			font-size: 1.5rem;
 		}
 
 		h2 {
-			font-size: 1.5rem;
+			font-size: 2.5rem;
 			padding: 0.8rem;
 		}
 
 		.info.lives {
-		background-color: #ffe5e5;
-		color: #c62828;
-		font-size: 3.5rem;
-		text-align: center;
-	}
+			background-color: #ffe5e5;
+			color: #c62828;
+			font-size: 2.5rem;
+			text-align: center;
+		}
 
-	.info.score {
-		background-color: #e8f5e9;
-		color: #2e7d32;
-		font-size: 3.5rem;
-		text-align: center;
-	}
+		.info.score {
+			background-color: #e8f5e9;
+			color: #2e7d32;
+			font-size: 2.5rem;
+			text-align: center;
+		}
 
-	.info.streak {
-		background-color: #e3f2fd;
-		color: #1565c0;
-		font-size: 3.5rem;
-		text-align: center;
-	}
+		.info.streak {
+			background-color: #e3f2fd;
+			color: #1565c0;
+			font-size: 2.5rem;
+			text-align: center;
+		}
 
-	.info.highscore {
-		background-color: #fff3e0;
-		color: #e2783e;
-		font-size: 3.5rem;
-		text-align: center;
+		.info.highscore {
+			background-color: #fff3e0;
+			color: #e2783e;
+			font-size: 2.5rem;
+			text-align: center;
+		}
 	}
-}
 
 	@media (max-width: 480px) {
-	h1 {
-		font-size: 2rem;
-	}
+		h1 {
+			font-size: 1.7rem;
+		}
 
-	h2 {
-		font-size: 1.5rem;
-	}
+		h2 {
+			font-size: 1.5rem;
+		}
 
-	:global(.volume-icon) {
-		width: 1.5rem;
-		height: 1.5rem;
-	}
+		.footer-container {
+			width: 90%;
+		}
 
-	.info.lives {
-		background-color: #ffe5e5;
-		color: #c62828;
-		font-size: 2.5rem;
-		text-align: center;
-	}
+		:global(.volume-icon) {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
 
-	.info.score {
-		background-color: #e8f5e9;
-		color: #2e7d32;
-		font-size: 2.5rem;
-		text-align: center;
-	}
+		.info.lives {
+			background-color: #ffe5e5;
+			color: #c62828;
+			font-size: 1.5rem;
+			text-align: center;
+		}
 
-	.info.streak {
-		background-color: #e3f2fd;
-		color: #1565c0;
-		font-size: 2.5rem;
-		text-align: center;
-	}
+		.info.score {
+			background-color: #e8f5e9;
+			color: #2e7d32;
+			font-size: 1.5rem;
+			text-align: center;
+		}
 
-	.info.highscore {
-		background-color: #fff3e0;
-		color: #e2783e;
-		font-size: 2.5rem;
-		text-align: center;
-	}
+		.info.streak {
+			background-color: #e3f2fd;
+			color: #1565c0;
+			font-size: 1.5rem;
+			text-align: center;
+		}
 
-	:global(.main-content) {
-		padding-right: 70px;
-		padding-left: 70px; /* Leaves space so text doesn't overlap fixed boxes */
-		display: flex;
-		flex-direction: column;	
-		align-items: center;
-		gap: 1rem;
-		padding-bottom: 20rem;
-	}
+		.info.highscore {
+			background-color: #fff3e0;
+			color: #e2783e;
+			font-size: 1.5rem;
+			text-align: center;
+		}
 
-	.footer-container {
-  position: relative;
-  padding: 10px 0px;
-}
+		:global(.main-content) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.footer-container {
+			position: relative;
+			padding: 10px 20px;
+		}
 	}
-</style>	
+</style>
