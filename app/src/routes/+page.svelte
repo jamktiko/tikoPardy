@@ -532,6 +532,11 @@ select:focus {
 		font-size: 1.4rem;
 		padding-top: 15px;
 	}
+
+	li {
+		font-size: 1.2rem;
+	}
+
 	select {
 		font-size: 1.1rem;
 		padding: 0.6rem 2rem 0.5rem 1rem;
