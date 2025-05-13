@@ -57,4 +57,30 @@
     display: inline-flex;
     margin-right: 8px;
   }
+
+  @media (max-width: 768px) {
+    button {  
+      font-size: 1.3rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    
+  }
+
+    @media (max-width: 400px) {
+    button {  
+      font-size: 1.25rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    
+  }
 </style>

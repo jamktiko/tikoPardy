@@ -444,10 +444,11 @@ select:focus {
 @media (max-width: 768px) {
 	h1 {
 		font-size: 48px;
+		line-height: 2;
 	}
 
 	p {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
 	}
 
 	select {
@@ -464,19 +465,58 @@ select:focus {
 
 	.top-left-button {
 		transform: scale(0.7);
-		top: 0.2rem;
-		left: 0.5rem;
+		top: 0.25rem;
+		left: -0.5rem;
 	}
 
 	.top-right-button {
 	transform: scale(0.7);
 	top: 0.1rem;
-	right: 0.3rem;
+	right: -0.5rem;
 }
 
 :global(.select-wrapper) {
 	position: relative;
 	display: inline-block;
+}
+
+@media (max-width: 400px) {
+
+	h1 {
+		font-size: 42px;
+	}
+
+	p {
+		font-size: 1.4rem;
+		padding-top: 15px;
+	}
+	select {
+		font-size: 1.1rem;
+		padding: 0.6rem 2rem 0.5rem 1rem;
+		margin-top: 40px;
+	}
+
+	.top-left-button {
+		transform: scale(0.6);
+		top: 0.2rem;
+		left: -0.5rem;
+	}
+
+	.top-right-button {
+		transform: scale(0.6);
+		top: 0.1rem;
+		right: -0.5rem;
+	}
+
+	:global(.dropdown-icon) {
+		position: absolute;
+		margin-top: 48px;
+		right: 0.8rem;
+		top: 8%;
+		transform: translateY(-50%);
+		pointer-events: none;
+		color: #7b1e1e;
+	}
 }
 
 }
