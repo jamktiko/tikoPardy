@@ -1,0 +1,2729 @@
+[
+	{
+		"kurssi": 1,
+		"sana": "Amazon Web Services",
+		"lyhenne": "AWS",
+		"selitys": "Amazonin tarjoama pilvipalvelualusta",
+		"id": 1
+	},
+	{
+		"kurssi": 1,
+		"sana": "Infrastructure as a Service",
+		"lyhenne": "IAAS",
+		"selitys": "Sinä hallitset lähes kaiken, paitsi fyysisen laitteiston",
+		"id": 2
+	},
+	{
+		"kurssi": 1,
+		"sana": "Platform as a Service",
+		"lyhenne": "PaaS",
+		"selitys": "Tarjoaa kehitysalustan ja työkalut sovellusten kehittämiseen ja ajamiseen ilman, että sinun tarvitsee hallita infrastruktuuria",
+		"id": 3
+	},
+	{
+		"kurssi": 1,
+		"sana": "Software as a Service",
+		"lyhenne": "SaaS",
+		"selitys": "Käytät valmista sovellusta netin kautta",
+		"id": 4
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Elastic Block Store",
+		"lyhenne": "EBS",
+		"selitys": "Tarjoaa pysyviä lohkotallennuslevyjä EC2-palvelimille",
+		"id": 5
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Elastic Compute Cloud",
+		"lyhenne": "EC2",
+		"selitys": "Tarjoaa virtuaalipalvelimia, joilla voi ajaa omia sovelluksia",
+		"id": 6
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Elastic Container Registry",
+		"lyhenne": "ECR",
+		"selitys": "Docker-kuvien säilytyspaikka AWS:ssä",
+		"id": 7
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Elastic Container Service",
+		"lyhenne": "ECS",
+		"selitys": "Konttien hallinta- ja orkestrointipalvelu",
+		"id": 8
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Elastic File System",
+		"lyhenne": "EFS",
+		"selitys": "Skaalautuva ja jaettu tiedostojärjestelmä, jota useat EC2-instanssit voivat käyttää samanaikaisesti",
+		"id": 9
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Elastic Kubernetes Service",
+		"lyhenne": "EKS",
+		"selitys": "Palvelu, joka helpottaa konttisovellusten ajamista, hallintaa ja skaalaamista ilman omaa Kubernetes-infrastruktuuria.",
+		"id": 10
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Relational Database Service",
+		"lyhenne": "RDS",
+		"selitys": "Hallittu relaatiotietokantapalvelu (esim. MySQL, PostreSQL, Oracle, SQL Server",
+		"id": 11
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Simple Storage Service",
+		"lyhenne": "S3",
+		"selitys": "Skaalautuva objektipohjainen tallennusratkaisu esimerkiksi kuville, videoille ja varmuuskopioille",
+		"id": 12
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Virtual Private Cloud",
+		"lyhenne": "VPC",
+		"selitys": "Virtuaalinen eristetty verkkoympäristö AWS:ssä",
+		"id": 13
+	},
+	{
+		"kurssi": 1,
+		"sana": "Identity and Access Management",
+		"lyhenne": "IAM",
+		"selitys": "Palvelu, jolla hallitaan käyttäjien ja resurssien oikeuksia AWS-ympäristössä.",
+		"id": 14
+	},
+	{
+		"kurssi": 1,
+		"sana": "Key Management Service",
+		"lyhenne": "KMS",
+		"selitys": "AWS:n avaintenhallintapalvelu salaukseen",
+		"id": 15
+	},
+	{
+		"kurssi": 1,
+		"sana": "Command Line Interface",
+		"lyhenne": "CLI",
+		"selitys": "Työkalu AWS:n hallintaan komentoriviltä",
+		"id": 16
+	},
+	{
+		"kurssi": 1,
+		"sana": "Software Development Kit",
+		"lyhenne": "SDK",
+		"selitys": "Ohjelmistokehitystyökalut, joilla voi kirjoittaa sovelluksia, jotka käyttävät AWS-palveluita",
+		"id": 17
+	},
+	{
+		"kurssi": 1,
+		"sana": "Cloud Adoption Framework",
+		"lyhenne": "CAF",
+		"selitys": "Viitekehys, joka auttaa organisaatioita siirtymään pilveen",
+		"id": 18
+	},
+	{
+		"kurssi": 1,
+		"sana": "All Upfront Reserved Instance",
+		"lyhenne": "AURI",
+		"selitys": "Täysin etukäteen maksettu varaus, jolla saa alennetun hinnan EC2-palvelimista",
+		"id": 19
+	},
+	{
+		"kurssi": 1,
+		"sana": "Partial Upfront Reserved Instance",
+		"lyhenne": "PURI",
+		"selitys": "Osa palvelun hinnasta maksetaan etukäteen, loput ajan kuluessa",
+		"id": 20
+	},
+	{
+		"kurssi": 1,
+		"sana": "No Upfront Payment Reserved Instance",
+		"lyhenne": "NURI",
+		"selitys": "Ei ennakkomaksua, mutta silti alennettu hinta palvelun pitkäaikaisesta käytöstä",
+		"id": 21
+	},
+	{
+		"kurssi": 1,
+		"sana": "Total Cost of Ownership",
+		"lyhenne": "TCO",
+		"selitys": "Kokonaiskustannukset palvelun ylläpidosta ja käytöstä",
+		"id": 22
+	},
+	{
+		"kurssi": 1,
+		"sana": "Service Control Policy",
+		"lyhenne": "SCP",
+		"selitys": "Säännöt, joilla rajoitetaan, mitä AWS-resursseja organisaation yksiköt voivat käyttää",
+		"id": 23
+	},
+	{
+		"kurssi": 1,
+		"sana": "Organizational Unit",
+		"lyhenne": "OU",
+		"selitys": "AWS-organisaation alayksikkö, joka voi sisältää tilejä ja soveltaa niihin yhteisiä sääntöjä",
+		"id": 24
+	},
+	{
+		"kurssi": 1,
+		"sana": "Content Delivery Network",
+		"lyhenne": "CDN",
+		"selitys": "Sisällönjakeluverkko, joka nopeuttaa sivustojen latausta lähettämällä sisältöä käyttäjää lähimmältä palvelimelta",
+		"id": 25
+	},
+	{
+		"kurssi": 1,
+		"sana": "Network Access Control List",
+		"lyhenne": "Network ACL",
+		"selitys": "Palomuuritasoinen sääntösarja, joka kontrolloi saapuvaa ja lähtevää liikennettä aliverkossa",
+		"id": 26
+	},
+	{
+		"kurssi": 1,
+		"sana": "Access Control List",
+		"lyhenne": "ACL",
+		"selitys": "Käyttöoikeusmekanismi, jolla määritetään, mitkä käyttäjät tai järjestelmät saavat käyttää tiettyä resurssia ja miten",
+		"id": 27
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Machine Image",
+		"lyhenne": "AMI",
+		"selitys": "Esiasetettu levykuva, jonka avulla voidaan käynnistää uusia EC2-palvelimia tietyillä asetuksilla ja ohjelmistoilla",
+		"id": 28
+	},
+	{
+		"kurssi": 1,
+		"sana": "Direct Attached Storage",
+		"lyhenne": "DAS",
+		"selitys": "Tallennusmuoto, jossa levy on liitetty yksittäiseen tietokoneeseen tai palvelimeen ilman verkkoyhteyttä",
+		"id": 29
+	},
+	{
+		"kurssi": 1,
+		"sana": "Storage Area Network",
+		"lyhenne": "SAN",
+		"selitys": "Suorituskykyinen tallennusverkko, jota useat palvelimet voivat käyttää",
+		"id": 30
+	},
+	{
+		"kurssi": 1,
+		"sana": "Network Attached Storage",
+		"lyhenne": "NAS",
+		"selitys": "Verkossa jaettu tallennus, jota käytetään tiedostojen jakamiseen",
+		"id": 31
+	},
+	{
+		"kurssi": 1,
+		"sana": "Relational Database Management Service",
+		"lyhenne": "RDBMS",
+		"selitys": "Järjestelmä, joka hallitsee relaatiotietokantoja taulukoiden ja SQL-kyselyiden avulla",
+		"id": 32
+	},
+	{
+		"kurssi": 1,
+		"sana": "Web Service",
+		"lyhenne": "",
+		"selitys": "Verkkopalvelu, joka tarjoaa toimintoja HTTP:n kautta",
+		"id": 33
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Lambda",
+		"lyhenne": "",
+		"selitys": "Palvelu, jolla voit suorittaa koodia ilman palvelinten hallintaa",
+		"id": 34
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Elastic Beanstalk",
+		"lyhenne": "",
+		"selitys": "Alusta, joka automatisoi sovellusten käyttöönoton ja skaalauksen",
+		"id": 35
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Lightsail",
+		"lyhenne": "",
+		"selitys": "Palvelu, jolla voit nopeasti käynnistää virtuaalipalvelimia ja yksinkertaisia verkkosovelluksia",
+		"id": 36
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Batch",
+		"lyhenne": "",
+		"selitys": "Palvelu, joka helpottaa suurten eräajotöiden suorittamista automaattisesti skaalautuvassa ympäristössä.",
+		"id": 37
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Outposts",
+		"lyhenne": "",
+		"selitys": "AWS-palvelut toimitettuna asiakkaan omaan konesaliin",
+		"id": 38
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Fargate",
+		"lyhenne": "",
+		"selitys": "Konttien ajamiseen tarkoitettu palvelu ilman, että tarvitsee hallita palvelimia",
+		"id": 39
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Cognito",
+		"lyhenne": "",
+		"selitys": "Käyttäjien hallintaan ja autentikointiin liittyvä palvelu mobiili- ja web-sovelluksille",
+		"id": 40
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Shield",
+		"lyhenne": "",
+		"selitys": "Palvelunestohyökkäyksiltä suojaava palvelu",
+		"id": 41
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Artifact",
+		"lyhenne": "",
+		"selitys": "AWS:n turvallisuusraporttien ja vaatimustenmukaisuusdokumenttien hallintapaikka",
+		"id": 42
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon S3 Glacier",
+		"lyhenne": "",
+		"selitys": "Tallennuspalvelu, joka soveltuu erityisesti harvoin käytettävän datan pitkäaikaiseen ja edulliseen säilytykseen",
+		"id": 43
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon DynamoDB",
+		"lyhenne": "",
+		"selitys": "Hallittu NoSQL-tietokanta, joka tarjoaa matalan latenssin ja korkean skaalautuvuuden nopeaan datan käsittelyyn",
+		"id": 44
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Redshift",
+		"lyhenne": "",
+		"selitys": "Skaalautuva tietovarastointipalvelu, joka mahdollistaa suurten tietomäärien nopean analysoinnin",
+		"id": 45
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Aurora",
+		"lyhenne": "",
+		"selitys": "Tehokas relaatiotietokanta, joka on yhteensopiva MySQL:n ja PostgreSQL:n kanssa",
+		"id": 46
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon CloudFront",
+		"lyhenne": "",
+		"selitys": "Sisällönjakeluverkko, joka nopeuttaa staattisen ja dynaamisen sisällön toimitusta vähentäen latenssia ja parantaen suorituskykyä",
+		"id": 47
+	},
+	{
+		"kurssi": 1,
+		"sana": "Elastic Load Balancing",
+		"lyhenne": "",
+		"selitys": "Kuormantasaaja, joka jakaa liikenteen usealle instanssille",
+		"id": 48
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Trusted Advisor",
+		"lyhenne": "",
+		"selitys": "Analysoi AWS-ympäristöäsi ja suosittelee parannuksia esimerkiksi turvallisuuteen ja suorituskykyyn",
+		"id": 49
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS CloudWatch",
+		"lyhenne": "",
+		"selitys": "Monitorointi- ja lokipalvelu resursseille ja sovelluksille",
+		"id": 50
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS CloudTrail",
+		"lyhenne": "",
+		"selitys": "Seuraa ja tallentaa tilin tapahtumia ja API-kutsuja",
+		"id": 51
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Well-Architected Tool",
+		"lyhenne": "",
+		"selitys": "Arvioi infrastruktuuriasi ja antaa suosituksia parantamiseen",
+		"id": 52
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Auto Scaling",
+		"lyhenne": "",
+		"selitys": "Skaalaa resursseja automaattisesti kuormituksen mukaan",
+		"id": 53
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Config",
+		"lyhenne": "",
+		"selitys": "Seuraa AWS-resurssien tilaa ja muutosta",
+		"id": 54
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Management Console",
+		"lyhenne": "",
+		"selitys": "Graafinen käyttöliittymä AWS-palveluiden hallintaan",
+		"id": 55
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Organizations",
+		"lyhenne": "",
+		"selitys": "Mahdollistaa useiden AWS-tilien keskitetyn hallinnan ja hallintakäytännöt",
+		"id": 56
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Cost & Usage Report",
+		"lyhenne": "",
+		"selitys": "Yksityiskohtainen raportti kustannuksista ja käytöstä",
+		"id": 57
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Budgets",
+		"lyhenne": "",
+		"selitys": "Budjettien ja kulutusrajojen määrittely ja valvonta",
+		"id": 58
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Cost Explorer",
+		"lyhenne": "",
+		"selitys": "Visualisointi- ja analyysityökalu kustannusten seuraamiseen",
+		"id": 59
+	},
+	{
+		"kurssi": 1,
+		"sana": "Reserved Instance",
+		"lyhenne": "RI",
+		"selitys": "Edullisempi tapa käyttää EC2-palvelimia sitoutumalla pidempään käyttöön",
+		"id": 60
+	},
+	{
+		"kurssi": 1,
+		"sana": "Consolidated Billing",
+		"lyhenne": "",
+		"selitys": "Usean tilin laskutuksen yhdistäminen yhteen tiliin",
+		"id": 61
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS OpsWorks",
+		"lyhenne": "",
+		"selitys": "Konfiguraationhallintatyökalu, joka perustuu Chef-/Puppet-tekniikoihin",
+		"id": 62
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Pricing Calculator",
+		"lyhenne": "",
+		"selitys": "Laskuri, jolla voi arvioida palveluiden kustannuksia",
+		"id": 63
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Billing and Cost Management",
+		"lyhenne": "",
+		"selitys": "Portaali kustannusten ja laskujen hallintaan",
+		"id": 64
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Cost and Usage Report Tool",
+		"lyhenne": "",
+		"selitys": "Työkalu, jolla voi analysoida kustannusraportteja tarkemmin",
+		"id": 65
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Simple Notification Service",
+		"lyhenne": "SNS",
+		"selitys": "Palvelu, joka mahdollistaa viestien ja ilmoitusten lähettämisen eri kanavien kautta",
+		"id": 66
+	},
+	{
+		"kurssi": 1,
+		"sana": "Technical Account Manager",
+		"lyhenne": "TAM",
+		"selitys": "Nimetty AWS-tukihenkilö isommille asiakkaille",
+		"id": 67
+	},
+	{
+		"kurssi": 1,
+		"sana": "Support Concierge",
+		"lyhenne": "",
+		"selitys": "AWS-tuen erityispalvelu yritysasiakkaille",
+		"id": 68
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Global Infrastructure",
+		"lyhenne": "",
+		"selitys": "AWS:n fyysinen ja tekninen infrastruktuuri, johon kuuluu datakeskuksia, alueita ja reitityspisteitä",
+		"id": 69
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Region",
+		"lyhenne": "",
+		"selitys": "Maantieteellinen alue, jossa on useita erillisiä saatavuusalueita",
+		"id": 70
+	},
+	{
+		"kurssi": 1,
+		"sana": "Availability Zone",
+		"lyhenne": "",
+		"selitys": "Fyysisesti erilliset tietokeskukset, jotka ovat yhteydessä toisiinsa nopeilla yhteyksillä",
+		"id": 71
+	},
+	{
+		"kurssi": 1,
+		"sana": "Data Center",
+		"lyhenne": "",
+		"selitys": "Tietokeskus, jossa fyysiset palvelimet sijaitsevat",
+		"id": 72
+	},
+	{
+		"kurssi": 1,
+		"sana": "Point of Presence",
+		"lyhenne": "",
+		"selitys": "Verkkoyhteyspiste, joka nopeuttaa pääsyä AWS-palveluihin",
+		"id": 73
+	},
+	{
+		"kurssi": 1,
+		"sana": "Edge Location",
+		"lyhenne": "",
+		"selitys": "Paikka, jossa CDN palvelee sisältöä mahdollisimman lähellä käyttäjää",
+		"id": 74
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Transit Gateway",
+		"lyhenne": "",
+		"selitys": "Yhdistää VPC:t ja paikalliset verkot keskitetysti ja hallitusti",
+		"id": 75
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Route 53",
+		"lyhenne": "",
+		"selitys": "DNS-palvelu, jolla hallitaan verkkotunnusten nimeämistä ja reititystä",
+		"id": 76
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Direct Connect",
+		"lyhenne": "",
+		"selitys": "Yksityinen ja nopea yhteys organisaation datakeskuksesta AWS:ään",
+		"id": 77
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS VPN",
+		"lyhenne": "",
+		"selitys": "Salaamaton tai salattu yhteys AWS:n ja oman verkon välillä",
+		"id": 78
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon Chime",
+		"lyhenne": "",
+		"selitys": "AWS:n oma viestintä- ja videokokouspalvelu",
+		"id": 79
+	},
+	{
+		"kurssi": 1,
+		"sana": "Secure Shell",
+		"lyhenne": "SSH",
+		"selitys": "Protokolla turvalliseen yhteyteen palvelimiin",
+		"id": 80
+	},
+	{
+		"kurssi": 1,
+		"sana": "Account Root User",
+		"lyhenne": "",
+		"selitys": "Tilin pääkäyttäjä, jolla on pääsy kaikkiin toimintoihin",
+		"id": 81
+	},
+	{
+		"kurssi": 1,
+		"sana": "Customer Master Key",
+		"lyhenne": "CMK",
+		"selitys": "Asiakkaan hallitsema avain AWS Key Management Servicessä",
+		"id": 82
+	},
+	{
+		"kurssi": 1,
+		"sana": "Security Assertion Markup Language",
+		"lyhenne": "SAML",
+		"selitys": "Protokolla kertakirjautumiseen",
+		"id": 83
+	},
+	{
+		"kurssi": 1,
+		"sana": "Secure HTTP",
+		"lyhenne": "HTTPS",
+		"selitys": "Salausprotokolla verkkoliikenteelle",
+		"id": 84
+	},
+	{
+		"kurssi": 1,
+		"sana": "IP-address",
+		"lyhenne": "",
+		"selitys": "Osoite, joka yksilöi laitteen verkossa",
+		"id": 85
+	},
+	{
+		"kurssi": 1,
+		"sana": "Classless Inter-Domain Routing",
+		"lyhenne": "CIDR",
+		"selitys": "Verkon IP-osoitteiden esitystapa",
+		"id": 86
+	},
+	{
+		"kurssi": 1,
+		"sana": "Open Systems Interconnection",
+		"lyhenne": "OSI",
+		"selitys": "Viitearkkitehtuuri, joka määrittelee seitsemän kerrosta tietoverkkojen kommunikointiprosessien hallintaan ja standardointiin",
+		"id": 87
+	},
+	{
+		"kurssi": 1,
+		"sana": "Independent Computing Architecture",
+		"lyhenne": "ICA",
+		"selitys": "Protokolla, jota Citrix käyttää - liittyy etätyöpöytäratkaisuihin",
+		"id": 88
+	},
+	{
+		"kurssi": 1,
+		"sana": "Subnet",
+		"lyhenne": "",
+		"selitys": "Aliverkko, jossa instanssit sijaitsevat",
+		"id": 89
+	},
+	{
+		"kurssi": 1,
+		"sana": "Domain Name System",
+		"lyhenne": "DNS",
+		"selitys": "Nimi- ja osoitepalvelu - muuntaa domainit IP-osoitteiksi",
+		"id": 90
+	},
+	{
+		"kurssi": 1,
+		"sana": "Network Address Translation",
+		"lyhenne": "NAT",
+		"selitys": "Mahdollistaa instanssien pääsyn internetiin piilottaen sisäverkon osoitteet",
+		"id": 91
+	},
+	{
+		"kurssi": 1,
+		"sana": "Security Group",
+		"lyhenne": "",
+		"selitys": "Virtuaalinen palomuuri, joka määrittelee säännöt verkkoliikenteelle, joka saa saapua ja poistua AWS-resursseista",
+		"id": 92
+	},
+	{
+		"kurssi": 1,
+		"sana": "Simple routing",
+		"lyhenne": "",
+		"selitys": "Yksinkertainen DNS-reititys yhdelle resurssille",
+		"id": 93
+	},
+	{
+		"kurssi": 1,
+		"sana": "Weighted round robin routing",
+		"lyhenne": "",
+		"selitys": "Jakaa liikennettä useaan resurssiin painotuksen mukaan",
+		"id": 94
+	},
+	{
+		"kurssi": 1,
+		"sana": "Latency routing",
+		"lyhenne": "LBR",
+		"selitys": "Ohjaa liikenteen alueelle, jossa vasteaika on pienin",
+		"id": 95
+	},
+	{
+		"kurssi": 1,
+		"sana": "Geolocation routing",
+		"lyhenne": "",
+		"selitys": "Reititys käyttäjän sijainnin perusteella",
+		"id": 96
+	},
+	{
+		"kurssi": 1,
+		"sana": "Geoproximity routing",
+		"lyhenne": "",
+		"selitys": "Reititys maantieteellisen etäisyyden perusteella",
+		"id": 97
+	},
+	{
+		"kurssi": 1,
+		"sana": "Failover routing",
+		"lyhenne": "",
+		"selitys": "Ohjaa reitityksen toiseen resurssiin, jos ensisijainen epäonnistuu",
+		"id": 98
+	},
+	{
+		"kurssi": 1,
+		"sana": "Multivalue answer routing",
+		"lyhenne": "",
+		"selitys": "Palauttaa useita IP-osoitteita eri palvelimille DNS-vastauksessa",
+		"id": 99
+	},
+	{
+		"kurssi": 1,
+		"sana": "Launch Instance Wizard",
+		"lyhenne": "",
+		"selitys": "Ohjattu työkalu EC2-instanssien luontiin",
+		"id": 100
+	},
+	{
+		"kurssi": 1,
+		"sana": "Amazon EC2 Instance Store",
+		"lyhenne": "",
+		"selitys": "Väliaikainen levytila, joka katoaa instanssin sammuttua",
+		"id": 101
+	},
+	{
+		"kurssi": 1,
+		"sana": "Per Second Billing",
+		"lyhenne": "",
+		"selitys": "EC2-laskutus sekunnin tarkkuudella",
+		"id": 102
+	},
+	{
+		"kurssi": 1,
+		"sana": "On-Demand",
+		"lyhenne": "",
+		"selitys": "Maksat käytön mukaan ilman pitkäaikaista sitoutumista",
+		"id": 103
+	},
+	{
+		"kurssi": 1,
+		"sana": "Dedicated Host",
+		"lyhenne": "",
+		"selitys": "Fyysinen palvelin, joka on varattu yhdelle asiakkaalle",
+		"id": 104
+	},
+	{
+		"kurssi": 1,
+		"sana": "Dedicated Instance",
+		"lyhenne": "",
+		"selitys": "Virtuaalikone, joka toimii fyysisellä laitteella muiden dedikoitujen instanssien kanssa",
+		"id": 105
+	},
+	{
+		"kurssi": 1,
+		"sana": "Scheduled Reserved Instance",
+		"lyhenne": "",
+		"selitys": "Varattu käyttöaika tietyille ajanjaksoille",
+		"id": 106
+	},
+	{
+		"kurssi": 1,
+		"sana": "Spot Instance",
+		"lyhenne": "",
+		"selitys": "Edullinen EC2-resurssi, joka voidaan keskeyttää, jos kapasiteettia tarvitaan muuhun",
+		"id": 107
+	},
+	{
+		"kurssi": 1,
+		"sana": "Cost Optimization",
+		"lyhenne": "",
+		"selitys": "Parhaiden hintaratkaisujen etsiminen AWS-käytölle",
+		"id": 108
+	},
+	{
+		"kurssi": 1,
+		"sana": "Docker",
+		"lyhenne": "",
+		"selitys": "Konttiteknologia sovellusten paketoimiseen ja ajamiseen kevyesti",
+		"id": 109
+	},
+	{
+		"kurssi": 1,
+		"sana": "Input/Output Operations Per Second",
+		"lyhenne": "IOPS",
+		"selitys": "Levyjärjestelmän suorituskykymittari",
+		"id": 110
+	},
+	{
+		"kurssi": 1,
+		"sana": "Hypertext Transfer Protocol",
+		"lyhenne": "HTTP",
+		"selitys": "Verkkosivujen perustason protokolla",
+		"id": 111
+	},
+	{
+		"kurssi": 1,
+		"sana": "Bucket",
+		"lyhenne": "",
+		"selitys": "Amazon S3:n säiliö, johon tallennetaan tiedostoja",
+		"id": 112
+	},
+	{
+		"kurssi": 1,
+		"sana": "Operating System",
+		"lyhenne": "OS",
+		"selitys": "Ohjelmisto, joka hallitsee tietokoneen laitteistoa, mahdollistaa muiden ohjelmien ajamisen ja tarjoaa käyttöliittymän",
+		"id": 113
+	},
+	{
+		"kurssi": 1,
+		"sana": "Database Instance",
+		"lyhenne": "",
+		"selitys": "Yksittäinen tietokantaympäristö Amazon RDS-palvelussa",
+		"id": 114
+	},
+	{
+		"kurssi": 1,
+		"sana": "Relational Database",
+		"lyhenne": "RDB",
+		"selitys": "Relaatiotietokanta, joka perustuu taulukoihin ja relaatiomalleihin",
+		"id": 115
+	},
+	{
+		"kurssi": 1,
+		"sana": "Non-Relational Database",
+		"lyhenne": "",
+		"selitys": "NoSQL-tietokanta, joka ei käytä perinteistä relaatiomallia",
+		"id": 116
+	},
+	{
+		"kurssi": 1,
+		"sana": "Structured Query Language",
+		"lyhenne": "SQL",
+		"selitys": "Kyselykieli relaatiotietokantojen käsittelyyn",
+		"id": 117
+	},
+	{
+		"kurssi": 1,
+		"sana": "Solid State Drive",
+		"lyhenne": "SSD",
+		"selitys": "Nopeampi ja luotettavampi tallennuslevy, joka on usein käytössä instanssien levyjärjestelmissä",
+		"id": 118
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Database Migration Service",
+		"lyhenne": "DMS",
+		"selitys": "Palvelu, jolla siirretään tietokantoja AWS:ään tai AWS:n sisällä",
+		"id": 119
+	},
+	{
+		"kurssi": 1,
+		"sana": "AWS Well-Architected Framework",
+		"lyhenne": "",
+		"selitys": "Kokoelma parhaita käytäntöjä skaalautuvan, turvallisen ja tehokkaan arkkitehtuurin rakentamiseen",
+		"id": 120
+	},
+	{
+		"kurssi": 1,
+		"sana": "Cloud architecture",
+		"lyhenne": "",
+		"selitys": "Yleinen termi pilvi-infrastruktuurin suunnittelulle",
+		"id": 121
+	},
+	{
+		"kurssi": 1,
+		"sana": "Operational excellence",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - jatkuva parantaminen ja automaatio",
+		"id": 122
+	},
+	{
+		"kurssi": 1,
+		"sana": "Security",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - suojaus, salaus, käyttöoikeudet",
+		"id": 123
+	},
+	{
+		"kurssi": 1,
+		"sana": "Reliability",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - järjestelmien kyky toipua häiriöistä ja pysyä toiminnassa",
+		"id": 124
+	},
+	{
+		"kurssi": 1,
+		"sana": "Performance Efficiency",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - resurssien tehokas hyödyntäminen",
+		"id": 125
+	},
+	{
+		"kurssi": 1,
+		"sana": "Cost Optimization",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - kustannusten minimointi ilman toiminnallisuuden menettämistä",
+		"id": 126
+	},
+	{
+		"kurssi": 1,
+		"sana": "Sustainability",
+		"lyhenne": "",
+		"selitys": "Yksi Well-Architected Frameworkin pilareista - ympäristövaikutusten minimointi pilvi-infrastruktuurissa",
+		"id": 127
+	},
+	{
+		"kurssi": 1,
+		"sana": "Mean Time Between Failures",
+		"lyhenne": "MTBF",
+		"selitys": "Keskimääräinen aika vikojen välillä - mittaa luotettavuutta",
+		"id": 128
+	},
+	{
+		"kurssi": 1,
+		"sana": "Mean Time To Failure",
+		"lyhenne": "MTTF",
+		"selitys": "Keskimääräinen aika siihen, että komponentti epäonnistuu",
+		"id": 129
+	},
+	{
+		"kurssi": 1,
+		"sana": "Mean Time To Repair",
+		"lyhenne": "MTTR",
+		"selitys": "Keskimääräinen korjaukseen kuluva aika - mittaa huollettavuutta",
+		"id": 130
+	},
+	{
+		"kurssi": 1,
+		"sana": "Application Load Balancer",
+		"lyhenne": "",
+		"selitys": "Reitittää liikennettä sovellustasolla ja tukee monimutkaisempia sääntöjä",
+		"id": 131
+	},
+	{
+		"kurssi": 1,
+		"sana": "Secure Sockets Layer",
+		"lyhenne": "SSL",
+		"selitys": "Vanhempi salausprotokolla, joka on korvattu pääosin TLS:llä",
+		"id": 132
+	},
+	{
+		"kurssi": 1,
+		"sana": "Transport Layer Security",
+		"lyhenne": "TLS",
+		"selitys": "Moderni salausprotokolla verkkoliikenteelle",
+		"id": 133
+	},
+	{
+		"kurssi": 1,
+		"sana": "Network Load Balancer",
+		"lyhenne": "",
+		"selitys": "Kuormantasaaja, joka toimii verkkotasolla ja soveltuu erittäin nopeatempoiseen liikenteeseen",
+		"id": 134
+	},
+	{
+		"kurssi": 1,
+		"sana": "User Datagram Protocol",
+		"lyhenne": "UDP",
+		"selitys": "Nopea yhteydetön verkkoprotokolla, jota käytetään esim. reaaliaikaisissa sovelluksissa",
+		"id": 135
+	},
+	{
+		"kurssi": 1,
+		"sana": "Classic Load Balancer",
+		"lyhenne": "",
+		"selitys": "Vanhempi kuormantasaaja, joka tukee sekä sovellus- että verkkotason reititystä",
+		"id": 136
+	},
+	{
+		"kurssi": 1,
+		"sana": "Spot Fleet",
+		"lyhenne": "",
+		"selitys": "Kokoelma Spot-instansseja, joita voidaan käyttää tietyn tehtävän suorittamiseen mahdollisimman kustannustehokkaasti",
+		"id": 137
+	},
+	{
+		"kurssi": 2,
+		"sana": "Internet",
+		"lyhenne": "",
+		"selitys": "Globaali verkosto tietokoneita ja palvelimia, joka mahdollistaa tiedon jakamisen ja viestinnän",
+		"id": 138
+	},
+	{
+		"kurssi": 2,
+		"sana": "IP-Osoite",
+		"lyhenne": "",
+		"selitys": "Yksilöllinen numerosarja, joka tunnistaa laitteen Internetissä tai paikallisverkossa",
+		"id": 139
+	},
+	{
+		"kurssi": 2,
+		"sana": "Internet-selain",
+		"lyhenne": "",
+		"selitys": "Ohjelma, jolla käyttäjä voi selata verkkosivuja Internetissä",
+		"id": 140
+	},
+	{
+		"kurssi": 2,
+		"sana": "HTTP",
+		"lyhenne": "",
+		"selitys": "Protokolla, jolla verkkoselaimet ja palvelimet kommunikoivat tiedonsiirrossa",
+		"id": 141
+	},
+	{
+		"kurssi": 2,
+		"sana": "HTTPS",
+		"lyhenne": "",
+		"selitys": "Salattu ja suojattu versio protokollasta, jolla verkkoselaimet ja palvelimet kommunikoivat tiedonsiirrossa",
+		"id": 142
+	},
+	{
+		"kurssi": 2,
+		"sana": "Verkkodokumentti",
+		"lyhenne": "",
+		"selitys": "Yksi tai useampi web-tekniikoilla tehty tiedosto, jotka liittyvät toisiinsa",
+		"id": 143
+	},
+	{
+		"kurssi": 2,
+		"sana": "HTML",
+		"lyhenne": "",
+		"selitys": "Verkkosivujen rakennekieli, jolla määritellään sivun sisältö, kuten otsikot, kappaleet, kuvat ja linkit",
+		"id": 144
+	},
+	{
+		"kurssi": 2,
+		"sana": "Verkkosivusto",
+		"lyhenne": "",
+		"selitys": "Yksi tai useampi toisiinsa liittyvä verkkosivu, jotka sijaitsevat samassa verkkotunnuksessa",
+		"id": 145
+	},
+	{
+		"kurssi": 2,
+		"sana": "Webbipalvelin",
+		"lyhenne": "",
+		"selitys": "Palvelin, joka vastaanottaa ja vastaa HTTP-pyyntöihin ja toimittaa verkkosivuja selaimille",
+		"id": 146
+	},
+	{
+		"kurssi": 2,
+		"sana": "Element",
+		"lyhenne": "",
+		"selitys": "HTML:n rakenneosa, kuten <p>, <div> tai <img>",
+		"id": 147
+	},
+	{
+		"kurssi": 2,
+		"sana": "Tag",
+		"lyhenne": "",
+		"selitys": "HTML-elementin aloitus- ja lopetusmerkintä, esimerkiksi <h2> ja </h2>",
+		"id": 148
+	},
+	{
+		"kurssi": 2,
+		"sana": "Void element",
+		"lyhenne": "",
+		"selitys": "HTML-elementti, joka ei sisällä sisältöä eikä lopetustägiä, esimerkiksi <img> tai <br>",
+		"id": 149
+	},
+	{
+		"kurssi": 2,
+		"sana": "Block element",
+		"lyhenne": "",
+		"selitys": "HTML-elementti, joka alkaa uudelta riviltä ja vie koko rivin leveyden, kuten <div> tai <p>",
+		"id": 150
+	},
+	{
+		"kurssi": 2,
+		"sana": "Inline element",
+		"lyhenne": "",
+		"selitys": "HTML-elementti, joka ei katkaise riviä ja vie vain tarvittavan tilan, kuten <span> tai <a>",
+		"id": 151
+	},
+	{
+		"kurssi": 2,
+		"sana": "Attribute",
+		"lyhenne": "",
+		"selitys": "Elementille annettava lisätieto, esimerkiksi href linkissä tai src kuvassa",
+		"id": 152
+	},
+	{
+		"kurssi": 2,
+		"sana": "Entity",
+		"lyhenne": "",
+		"selitys": "Merkintä, jolla esitetään erikoismerkkejä HTML:ssä: esimerkiksi &amp; tarkoittaa &-merkkiä",
+		"id": 153
+	},
+	{
+		"kurssi": 2,
+		"sana": "Metadata",
+		"lyhenne": "",
+		"selitys": "Tietoa tiedosta, kuten verkkosivun otsikko, kuvaukset ja avainsanat",
+		"id": 154
+	},
+	{
+		"kurssi": 2,
+		"sana": "Open Graph protocol",
+		"lyhenne": "",
+		"selitys": "Protokolla, joka määrittelee miten verkkosivu näytetään ja jaetaan sosiaalisessa mediassa",
+		"id": 155
+	},
+	{
+		"kurssi": 2,
+		"sana": "Relative links",
+		"lyhenne": "",
+		"selitys": "Linkit, jotka määritellään suhteessa nykyiseen sivuun, esimerkiksi ./kuvat/logo.png",
+		"id": 156
+	},
+	{
+		"kurssi": 2,
+		"sana": "Absolute links",
+		"lyhenne": "",
+		"selitys": "Linkit, joissa on koko polku, mukaan lukien verkkotunnus, esimerkiksi https://esimerkki.fi/kuva.jpg",
+		"id": 157
+	},
+	{
+		"kurssi": 2,
+		"sana": "Ordered lists",
+		"lyhenne": "",
+		"selitys": "Numeroitu luettelo HTML:ssä, luodaan <ol> ja <li> elementeillä",
+		"id": 158
+	},
+	{
+		"kurssi": 2,
+		"sana": "Unordered lists",
+		"lyhenne": "",
+		"selitys": "Pisteillä merkitty luettelo HTML:ssä, luodaan <ul> ja <li> elementeillä",
+		"id": 159
+	},
+	{
+		"kurssi": 2,
+		"sana": "Description lists",
+		"lyhenne": "",
+		"selitys": "Luettelo, joka näyttää termit ja niiden kuvaukset HTML:ssä (<dl>, <dt>, <dd>)",
+		"id": 160
+	},
+	{
+		"kurssi": 2,
+		"sana": "Table",
+		"lyhenne": "",
+		"selitys": "HTML-rakenne tietojen taulukkomuotoiseen esittämiseen",
+		"id": 161
+	},
+	{
+		"kurssi": 2,
+		"sana": "Semantic elements",
+		"lyhenne": "",
+		"selitys": "HTML-elementtejä, jotka kuvaavat sisällön merkitystä, kuten <article>, <section> ja <nav>",
+		"id": 162
+	},
+	{
+		"kurssi": 2,
+		"sana": "Media elements",
+		"lyhenne": "",
+		"selitys": "HTML-elementtejä median, kuten äänen ja videon esittämiseen, esimerkiksi <audio> ja <video>",
+		"id": 163
+	},
+	{
+		"kurssi": 2,
+		"sana": "Cascading Style Sheets",
+		"lyhenne": "CSS",
+		"selitys": "Tyylikieli, jolla hallitaan HTML-sivujen ulkoasua ja asettelua",
+		"id": 164
+	},
+	{
+		"kurssi": 2,
+		"sana": "Element selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka kohdistuu tiettyihin HTML-elementteihin nimen perusteella",
+		"id": 165
+	},
+	{
+		"kurssi": 2,
+		"sana": "Pseudo Classes",
+		"lyhenne": "",
+		"selitys": "CSS-luokkia, jotka vaikuttavat elementin erityistiloihin, kuten :hover tai :focus",
+		"id": 166
+	},
+	{
+		"kurssi": 2,
+		"sana": "Classes",
+		"lyhenne": "",
+		"selitys": "HTML-attribuutti, jonka avulla määritellään ryhmiä elementeille, joita voidaan muotoilla CSS:llä",
+		"id": 167
+	},
+	{
+		"kurssi": 2,
+		"sana": "ID’s",
+		"lyhenne": "",
+		"selitys": "Yksilöllisiä tunnisteita HTML-elementeille, joita käytetään CSS- ja JavaScript-tarkoituksiin",
+		"id": 168
+	},
+	{
+		"kurssi": 2,
+		"sana": "Class selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka valitsee kaikki elementit tietyn luokan perusteella (.luokka)",
+		"id": 169
+	},
+	{
+		"kurssi": 2,
+		"sana": "ID selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka valitsee tietyn elementin ID-tunnisteen perusteella (#id)",
+		"id": 170
+	},
+	{
+		"kurssi": 2,
+		"sana": "Contextual selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka perustuu elementtien suhteeseen toisiinsa",
+		"id": 171
+	},
+	{
+		"kurssi": 2,
+		"sana": "Attribute selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka kohdistuu elementteihin niiden attribuuttien perusteella",
+		"id": 172
+	},
+	{
+		"kurssi": 2,
+		"sana": "Pseudo-class selector",
+		"lyhenne": "",
+		"selitys": "CSS-valitsin, joka perustuu elementin tilaan, kuten :hover tai :first-child",
+		"id": 173
+	},
+	{
+		"kurssi": 2,
+		"sana": "Display-parameter",
+		"lyhenne": "",
+		"selitys": "CSS:n display-ominaisuus määrittelee, miten elementti käyttäytyy ja sijoittuu sivulla",
+		"id": 174
+	},
+	{
+		"kurssi": 2,
+		"sana": "Padding",
+		"lyhenne": "",
+		"selitys": "Sisätila elementin sisällön ja reunojen välillä",
+		"id": 175
+	},
+	{
+		"kurssi": 2,
+		"sana": "Border",
+		"lyhenne": "",
+		"selitys": "Elementin reuna, jonka tyyli ja väri voidaan määrittää CSS:llä",
+		"id": 176
+	},
+	{
+		"kurssi": 2,
+		"sana": "Margin",
+		"lyhenne": "",
+		"selitys": "Tyhjä tila elementin ulkopuolella muihin elementteihin nähden",
+		"id": 177
+	},
+	{
+		"kurssi": 2,
+		"sana": "position: static",
+		"lyhenne": "",
+		"selitys": "Elementin oletussijoittelu normaalissa dokumenttivirrassa",
+		"id": 178
+	},
+	{
+		"kurssi": 2,
+		"sana": "Dynamic pseudo-class",
+		"lyhenne": "",
+		"selitys": "Reagoi käyttäjän toimintaan, kuten :hover",
+		"id": 179
+	},
+	{
+		"kurssi": 2,
+		"sana": "State-based pseudo class",
+		"lyhenne": "",
+		"selitys": "Perustuu elementin tilaan, kuten :checked",
+		"id": 180
+	},
+	{
+		"kurssi": 2,
+		"sana": "Structural pseudo class",
+		"lyhenne": "",
+		"selitys": "Kohdistuu elementin rakenteelliseen asemaan, kuten :first-child",
+		"id": 181
+	},
+	{
+		"kurssi": 2,
+		"sana": "Form",
+		"lyhenne": "",
+		"selitys": "HTML-rakenne, jolla kerätään käyttäjän syötteitä ja lähetetään ne palvelimelle",
+		"id": 182
+	},
+	{
+		"kurssi": 2,
+		"sana": "Viewport",
+		"lyhenne": "",
+		"selitys": "Näkymäalue, jossa verkkosivu näkyy selaimessa",
+		"id": 183
+	},
+	{
+		"kurssi": 2,
+		"sana": "Breakpoint",
+		"lyhenne": "",
+		"selitys": "Näytön leveyspiste, jossa verkkosivun ulkoasu muuttuu responsiiviseksi",
+		"id": 184
+	},
+	{
+		"kurssi": 2,
+		"sana": "Responsive images",
+		"lyhenne": "",
+		"selitys": "Kuvat, jotka mukautuvat automaattisesti eri näyttökokoihin ja laitteisiin",
+		"id": 185
+	},
+	{
+		"kurssi": 2,
+		"sana": "Relative units",
+		"lyhenne": "",
+		"selitys": "CSS-yksiköt, jotka perustuvat toisiin arvoihin, kuten prosentti (%) tai em",
+		"id": 186
+	},
+	{
+		"kurssi": 2,
+		"sana": "Absolute units",
+		"lyhenne": "",
+		"selitys": "Kiinteät CSS-yksiköt, kuten pikselit (px) tai tuumat (in)",
+		"id": 187
+	},
+	{
+		"kurssi": 2,
+		"sana": "Media Queries",
+		"lyhenne": "",
+		"selitys": "CSS:n ominaisuus, joka mahdollistaa tyylien soveltamisen näytön ominaisuuksien perusteella",
+		"id": 188
+	},
+	{
+		"kurssi": 2,
+		"sana": "display: float",
+		"lyhenne": "",
+		"selitys": "Vanha tapa asettaa elementtejä vierekkäin 'kelluttamalla' niitä vasemmalle tai oikealle",
+		"id": 189
+	},
+	{
+		"kurssi": 2,
+		"sana": "display: flexbox",
+		"lyhenne": "",
+		"selitys": "Nykyaikainen CSS-asettelumenetelmä joustavien rivien ja sarakkeiden hallintaan",
+		"id": 190
+	},
+	{
+		"kurssi": 2,
+		"sana": "Multicolumn layout",
+		"lyhenne": "",
+		"selitys": "Asettelu, jossa teksti tai sisältö jaetaan useampaan sarakkeeseen",
+		"id": 191
+	},
+	{
+		"kurssi": 2,
+		"sana": "Single/one column",
+		"lyhenne": "",
+		"selitys": "Sivun asettelu yhdellä pystysarakkeella",
+		"id": 192
+	},
+	{
+		"kurssi": 2,
+		"sana": "Hero layout",
+		"lyhenne": "",
+		"selitys": "Sivun yläosan korostettu alue, jossa on yleensä suuri kuva ja tärkeä viesti",
+		"id": 193
+	},
+	{
+		"kurssi": 2,
+		"sana": "F-shape layout",
+		"lyhenne": "",
+		"selitys": "Tätä asettelua käytetään yleisesti verkkosivustojen selaamista koskevien tutkimusten tuloksena",
+		"id": 194
+	},
+	{
+		"kurssi": 2,
+		"sana": "Z-shape layout",
+		"lyhenne": "",
+		"selitys": "Skannauskuvio, jota käytetään enimmäkseen paljon kuvia sisältävillä verkkosivuilla",
+		"id": 195
+	},
+	{
+		"kurssi": 2,
+		"sana": "Grid",
+		"lyhenne": "",
+		"selitys": "CSS-asettelutekniikka, jossa sisältö sijoitetaan riveihin ja sarakkeisiin",
+		"id": 196
+	},
+	{
+		"kurssi": 2,
+		"sana": "Card",
+		"lyhenne": "",
+		"selitys": "Pieni itsenäinen sisältölohko, jossa on esimerkiksi kuva ja teksti",
+		"id": 197
+	},
+	{
+		"kurssi": 2,
+		"sana": "CSS preprocessor",
+		"lyhenne": "",
+		"selitys": "Työkalu, joka lisää ominaisuuksia CSS:ään ja muuntaa sen tavalliseksi CSS:ksi",
+		"id": 198
+	},
+	{
+		"kurssi": 2,
+		"sana": "Transpiler",
+		"lyhenne": "",
+		"selitys": "Ohjelma, joka muuntaa ohjelmakoodia yhdestä versiosta tai kielestä toiseen",
+		"id": 199
+	},
+	{
+		"kurssi": 2,
+		"sana": "Syntatically Awesome Style Sheet",
+		"lyhenne": "SASS",
+		"selitys": "CSS-esiprosessori, joka mahdollistaa muuttujat, sisäkkäisyyden ja funktiot tyyleissä",
+		"id": 200
+	},
+	{
+		"kurssi": 2,
+		"sana": "Leaner Style Sheets",
+		"lyhenne": "LESS",
+		"selitys": "CSS-esiprosessori, joka tarjoaa lisäominaisuuksia kuten muuttujat ja funktiot",
+		"id": 201
+	},
+	{
+		"kurssi": 2,
+		"sana": "CSS frameworks",
+		"lyhenne": "",
+		"selitys": "Kokoelmia valmiita CSS-tyylejä ja komponentteja, jotka nopeuttavat verkkosivujen kehittämistä",
+		"id": 202
+	},
+	{
+		"kurssi": 2,
+		"sana": "Tailwind CSS",
+		"lyhenne": "",
+		"selitys": "Utility-first-periaatteella toimiva CSS-kehys, joka tarjoaa käyttöluokkia nopeaan suunnitteluun",
+		"id": 203
+	},
+	{
+		"kurssi": 2,
+		"sana": "Bootstrap",
+		"lyhenne": "",
+		"selitys": "Laajalti käytetty responsiivinen CSS- ja JavaScript-kehys verkkosivujen rakentamiseen",
+		"id": 204
+	},
+	{
+		"kurssi": 2,
+		"sana": "Bulma",
+		"lyhenne": "",
+		"selitys": "Moderni responsiivinen CSS-kehys, joka pohjautuu Flexboxiin",
+		"id": 205
+	},
+	{
+		"kurssi": 3,
+		"sana": "Tietoturvallisuus",
+		"selitys": "Suojellaan tietoa luvattomalta käytöltä, muuttamiselta tai tuhoamiselta",
+		"id": 206
+	},
+	{
+		"kurssi": 3,
+		"sana": "Kyberturvallisuus",
+		"selitys": "Verkkojen, järjestelmien ja digitaalisen omaisuuden suojelua",
+		"id": 207
+	},
+	{
+		"kurssi": 3,
+		"sana": "Tietosuoja",
+		"selitys": "Varmistaa, että henkilökohtaista tietoa ja dataa käsitellään turvallisesti ja laillisesti",
+		"id": 208
+	},
+	{
+		"kurssi": 3,
+		"sana": "CIA-triadi",
+		"selitys": "Varmistaa tiedon luottamuksellisuuden, eheyden ja saatavuuden",
+		"id": 209
+	},
+	{
+		"kurssi": 3,
+		"sana": "Kryptaus",
+		"selitys": "Arkaluontoisten tiedostojen salaus",
+		"id": 210
+	},
+	{
+		"kurssi": 3,
+		"sana": "Malware",
+		"selitys": "Pahantahtoiset ohjelmistot, kuten virukset, madot ja lunnasvaatimuksia asettavat ohjelmistot",
+		"id": 211
+	},
+	{
+		"kurssi": 3,
+		"sana": "Ransomware",
+		"selitys": "Lunnasvaatimuksia asettavat ohjelmistot",
+		"id": 212
+	},
+	{
+		"kurssi": 3,
+		"sana": "Phishing",
+		"selitys": "Tietojenkalastelu",
+		"id": 213
+	},
+	{
+		"kurssi": 3,
+		"sana": "Palvelunestohyökkäys",
+		"selitys": "Järjestelmän kuormittaminen siten, ettei se ole enää saatavilla",
+		"id": 214
+	},
+	{
+		"kurssi": 3,
+		"sana": "MFA",
+		"selitys": "Monivaiheinen tunnistautuminen",
+		"id": 215
+	},
+	{
+		"kurssi": 3,
+		"sana": "GDPR",
+		"selitys": "Euroopan Unionin sisällä vaikuttava yleinen lainsäädännöllinen tietosuoja-asetus",
+		"id": 216
+	},
+	{
+		"kurssi": 3,
+		"sana": "Data Subject",
+		"selitys": "Yksilö, jonka dataa käsitellään",
+		"id": 217
+	},
+	{
+		"kurssi": 3,
+		"sana": "Data Controller",
+		"selitys": "Päättää siitä, miksi ja miten dataa käsitellään",
+		"id": 218
+	},
+	{
+		"kurssi": 3,
+		"sana": "Data Processor",
+		"selitys": "Käsittelee dataa datan hallinnoijan puolesta",
+		"id": 219
+	},
+	{
+		"kurssi": 3,
+		"sana": "Fyysinen tietoturva",
+		"selitys": "Turvaa tilat, rakennukset, laitteet ja tallennusvälineet",
+		"id": 220
+	},
+	{
+		"kurssi": 3,
+		"sana": "Tailgating",
+		"selitys": "Pyrkiminen tiloihin luvallisten käyttäjien mukana",
+		"id": 221
+	},
+	{
+		"kurssi": 3,
+		"sana": "Social Engineering",
+		"selitys": "Inhimilliseen päätöksentekoprosessiin perustuva pyrkimys taivutella ihmiset tekemään jotain",
+		"id": 222
+	},
+	{
+		"kurssi": 3,
+		"sana": "OSINT/Intel",
+		"selitys": "Tiedustelu- ja tiedonhankintavaihe, avointen lähteiden tiedonkeruu",
+		"id": 223
+	},
+	{
+		"kurssi": 3,
+		"sana": "Henkilötieto",
+		"selitys": "Kaikki tiedot, jotka liittyvät tunnistettuun tai tunnistettavissa olevaan luonnolliseen henkilöön",
+		"id": 224
+	},
+	{
+		"kurssi": 3,
+		"sana": "Pseudonymisointi",
+		"selitys": "Henkilötietojen käsitteleminen siten, että henkilötietoja ei voida yhdistää tiettyyn henkilöön ilman lisätietoja",
+		"id": 225
+	},
+	{
+		"kurssi": 3,
+		"sana": "Anonymisointi",
+		"selitys": "Henkilötietojen käsitteleminen siten, ettei henkilöä voi tunnistaa niistä",
+		"id": 226
+	},
+	{
+		"kurssi": 3,
+		"sana": "Nimenomaisuuden vaatimus",
+		"selitys": "Tapa, jolla rekisteröity ilmaisee suostumuksensa henkilötietojen käsittelylle",
+		"id": 227
+	},
+	{
+		"kurssi": 3,
+		"sana": "Hajauttaminen",
+		"selitys": "Prosessi, jossa syötteestä luodaan kiinteän pituinen merkkijono käyttäen erityistä algoritmia",
+		"id": 228
+	},
+	{
+		"kurssi": 3,
+		"sana": "Suolaus",
+		"selitys": "Satunnaisen tiedon lisäämistä ennen salasanan hash-käsittelyä, jotta estetään samojen salasanojen tuottaminen samoilla arvoilla",
+		"id": 229
+	},
+	{
+		"kurssi": 3,
+		"sana": "Pippurointi",
+		"selitys": "Prosessi, jossa käytetään lisättyä salaisuutta ja satunnaisuutta, joka on pysyvä ja ei tallenneta tietokantaan",
+		"id": 230
+	},
+	{
+		"kurssi": 3,
+		"sana": "Palomuuri",
+		"selitys": "Estää luvattoman liikenteen verkkoon ja sieltä pois",
+		"id": 231
+	},
+	{
+		"kurssi": 3,
+		"sana": "VPN",
+		"selitys": "Virtuaalinen verkko verkon sisällä, ei salli mitään autentikoimatonta liikennettä verkon ulkopuolelta",
+		"id": 232
+	},
+	{
+		"kurssi": 3,
+		"sana": "Hardening",
+		"selitys": "Tietoturva-asetusten tarkennus ja tiukennus",
+		"id": 233
+	},
+	{
+		"kurssi": 3,
+		"sana": "Man In The Middle",
+		"selitys": "Hyökkäystyyppi, jossa arkaluontoista tietoa hankitaan salakuuntelemalla viestintää kahden kohteen välillä",
+		"id": 234
+	},
+	{
+		"kurssi": 3,
+		"sana": "SQL-injektio",
+		"selitys": "Yksi yleisimmistä hyökkäystavoista, joka pystyy tuhoamaan kokonaisen tietokannan",
+		"id": 235
+	},
+	{
+		"kurssi": 3,
+		"sana": "Cross-Site Scripting",
+		"selitys": "Hyökkääjä liittää haitallista koodia harmittomalle verkkosivulle ja koodi ajetaan, kun hyökkäyksen kohde lataa verkkosivun",
+		"id": 236
+	},
+	{
+		"kurssi": 4,
+		"sana": "Windows",
+		"lyhenne": "",
+		"selitys": "Microsoftin kehittämä graafinen käyttöjärjestelmä, joka on laajasti käytössä henkilökohtaisissa tietokoneissa",
+		"id": 237
+	},
+	{
+		"kurssi": 4,
+		"sana": "macOS",
+		"lyhenne": "",
+		"selitys": "Applen kehittämä käyttöjärjestelmä, joka on tunnettu sulavasta käyttöliittymästä ja vakaudesta",
+		"id": 238
+	},
+	{
+		"kurssi": 4,
+		"sana": "VirtualBox",
+		"lyhenne": "",
+		"selitys": "Oraclen tarjoama avoimen lähdekoodin virtualisointiohjelma, jolla voi ajaa useita käyttöjärjestelmiä yhdellä tietokoneella",
+		"id": 239
+	},
+	{
+		"kurssi": 4,
+		"sana": "Virtualisointi",
+		"lyhenne": "",
+		"selitys": "Tekniikka, jonka avulla voidaan luoda virtuaalisia laitteisto- tai ohjelmistoympäristöjä, kuten virtuaalikoneita",
+		"id": 240
+	},
+	{
+		"kurssi": 4,
+		"sana": "BIOS",
+		"lyhenne": "",
+		"selitys": "Emolevyn perusohjelmisto, joka käynnistää tietokoneen ja alustaa laitteistot ennen käyttöjärjestelmää",
+		"id": 241
+	},
+	{
+		"kurssi": 4,
+		"sana": "UEFI",
+		"lyhenne": "",
+		"selitys": "Moderni BIOSin korvaaja, joka tarjoaa laajennetut ominaisuudet ja nopeamman käynnistyksen",
+		"id": 242
+	},
+	{
+		"kurssi": 4,
+		"sana": "Hyper-V",
+		"lyhenne": "",
+		"selitys": "Microsoftin virtualisointialusta, joka mahdollistaa virtuaalikoneiden ajamisen Windows-ympäristössä",
+		"id": 243
+	},
+	{
+		"kurssi": 4,
+		"sana": "Kernel",
+		"lyhenne": "",
+		"selitys": "Käyttöjärjestelmän ydin, joka hallitsee laitteistoa ja toimii rajapintana sovellusten ja laitteiden välillä",
+		"id": 244
+	},
+	{
+		"kurssi": 4,
+		"sana": "Virtual Desktops",
+		"lyhenne": "",
+		"selitys": "Toiminto, jonka avulla käyttäjä voi luoda useita työpöytätiloja ja järjestellä sovelluksia loogisiin ryhmiin",
+		"id": 245
+	},
+	{
+		"kurssi": 4,
+		"sana": "Työpöytä",
+		"lyhenne": "",
+		"selitys": "Käyttöjärjestelmän graafinen pääikkuna, josta käyttäjä voi avata tiedostoja ja ohjelmia",
+		"id": 246
+	},
+	{
+		"kurssi": 4,
+		"sana": "Hidden files",
+		"lyhenne": "",
+		"selitys": "Tiedostoja, jotka on merkitty näkymättömiksi käyttäjältä, usein järjestelmän toiminnan suojaamiseksi",
+		"id": 247
+	},
+	{
+		"kurssi": 4,
+		"sana": "Windows Hello",
+		"lyhenne": "",
+		"selitys": "Biometrinen kirjautumisjärjestelmä, joka mahdollistaa kasvojen, sormenjäljen tai PIN-koodin käytön",
+		"id": 248
+	},
+	{
+		"kurssi": 4,
+		"sana": "Microsoft Authenticator",
+		"lyhenne": "",
+		"selitys": "Mobiilisovellus, jolla voi vahvistaa kirjautumisia tileihin kaksivaiheisella tunnistuksella",
+		"id": 249
+	},
+	{
+		"kurssi": 4,
+		"sana": "Windows Defender",
+		"lyhenne": "",
+		"selitys": "Virustorjuntaohjelmisto, joka suojaa haittaohjelmilta ja muilta uhkilta",
+		"id": 250
+	},
+	{
+		"kurssi": 4,
+		"sana": "PowerToys",
+		"lyhenne": "",
+		"selitys": "Microsoftin tarjoama kokoelma edistyneitä työkaluja Windows-käyttökokemuksen parantamiseen",
+		"id": 251
+	},
+	{
+		"kurssi": 4,
+		"sana": "Tietoverkko",
+		"lyhenne": "",
+		"selitys": "Tietokoneiden ja laitteiden muodostama järjestelmä, jossa ne voivat vaihtaa tietoa keskenään",
+		"id": 252
+	},
+	{
+		"kurssi": 4,
+		"sana": "Node",
+		"lyhenne": "",
+		"selitys": "Verkon yksittäinen laite, kuten tietokone, reititin tai palvelin, joka on osa verkkoa",
+		"id": 253
+	},
+	{
+		"kurssi": 4,
+		"sana": "Protokolla",
+		"lyhenne": "",
+		"selitys": "Säännöstö, jonka mukaan laitteet kommunikoivat ja vaihtavat tietoa verkossa",
+		"id": 254
+	},
+	{
+		"kurssi": 4,
+		"sana": "IP-osoite",
+		"lyhenne": "",
+		"selitys": "Yksilöllinen numerosarja, joka tunnistaa laitteen verkossa",
+		"id": 255
+	},
+	{
+		"kurssi": 4,
+		"sana": "Reititin",
+		"lyhenne": "",
+		"selitys": "Laite, joka ohjaa verkkoliikennettä ja yhdistää kotiverkon Internetiin",
+		"id": 256
+	},
+	{
+		"kurssi": 4,
+		"sana": "Kytkin",
+		"lyhenne": "",
+		"selitys": "Verkkolaite, joka yhdistää useita laitteita lähiverkossa ja ohjaa tiedonsiirtoa tehokkaasti",
+		"id": 257
+	},
+	{
+		"kurssi": 4,
+		"sana": "Palomuuri",
+		"lyhenne": "",
+		"selitys": "Tietoturvalaite tai ohjelma, joka valvoo ja rajoittaa verkkoliikennettä suojellakseen järjestelmää uhkilta",
+		"id": 258
+	},
+	{
+		"kurssi": 4,
+		"sana": "DNS",
+		"lyhenne": "",
+		"selitys": "Järjestelmä, joka muuntaa verkkotunnukset IP-osoitteiksi",
+		"id": 259
+	},
+	{
+		"kurssi": 4,
+		"sana": "LAN",
+		"lyhenne": "",
+		"selitys": "Paikallinen verkko, joka yhdistää laitteet pienellä alueella, kuten kotona tai toimistossa",
+		"id": 260
+	},
+	{
+		"kurssi": 4,
+		"sana": "WAN",
+		"lyhenne": "",
+		"selitys": "Laaja tietoverkko, joka kattaa suuria maantieteellisiä alueita",
+		"id": 261
+	},
+	{
+		"kurssi": 4,
+		"sana": "DHCP",
+		"lyhenne": "",
+		"selitys": "Protokolla, joka jakaa automaattisesti IP-osoitteet verkkolaitteille",
+		"id": 262
+	},
+	{
+		"kurssi": 4,
+		"sana": "TCP/IP",
+		"lyhenne": "",
+		"selitys": "Perusprotokollat Internet-liikenteelle ja tiedonsiirrolle",
+		"id": 263
+	},
+	{
+		"kurssi": 4,
+		"sana": "MAC-osoite",
+		"lyhenne": "",
+		"selitys": "Laitteistokohtainen tunniste, joka yksilöi verkkolaitteen",
+		"id": 264
+	},
+	{
+		"kurssi": 4,
+		"sana": "UUID",
+		"lyhenne": "",
+		"selitys": "Ainutlaatuinen tunniste, jota käytetään tunnistamaan kohteita yksiselitteisesti",
+		"id": 265
+	},
+	{
+		"kurssi": 4,
+		"sana": "CMD",
+		"lyhenne": "",
+		"selitys": "Windowsin komentoriviohjelma, jonka avulla voi suorittaa komentorivipohjaisia toimintoja ja skriptejä",
+		"id": 266
+	},
+	{
+		"kurssi": 4,
+		"sana": "PowerShell",
+		"lyhenne": "",
+		"selitys": "Windowsin tehokas komentorivityökalu ja skriptikieli järjestelmänhallintaan ja automaatioon",
+		"id": 267
+	},
+	{
+		"kurssi": 4,
+		"sana": "Linux",
+		"lyhenne": "",
+		"selitys": "Avoimen lähdekoodin käyttöjärjestelmäydin, jota käytetään monissa eri käyttöjärjestelmäjakeluissa",
+		"id": 268
+	},
+	{
+		"kurssi": 4,
+		"sana": "Free and Open Source Software",
+		"lyhenne": "",
+		"selitys": "Ohjelmistoja, joiden lähdekoodi on vapaasti saatavilla, muokattavissa ja jaettavissa",
+		"id": 269
+	},
+	{
+		"kurssi": 4,
+		"sana": "GNU",
+		"lyhenne": "",
+		"selitys": "Avoimen lähdekoodin ohjelmistoprojekti, joka pyrkii tarjoamaan vapaasti käytettävän Unix-tyyppisen käyttöjärjestelmän",
+		"id": 270
+	},
+	{
+		"kurssi": 4,
+		"sana": "Unix",
+		"lyhenne": "",
+		"selitys": "Moniajo- ja monikäyttäjäkäyttöjärjestelmä, joka vaikutti monien modernien järjestelmien, kuten Linuxin, kehitykseen",
+		"id": 271
+	},
+	{
+		"kurssi": 4,
+		"sana": "Distribution",
+		"lyhenne": "",
+		"selitys": "Linux-järjestelmän eri versio, joka koostuu ytimestä ja ohjelmistoista, kuten Ubuntu, Fedora tai Debian",
+		"id": 272
+	},
+	{
+		"kurssi": 4,
+		"sana": "Paketinhallinta",
+		"lyhenne": "",
+		"selitys": "Ohjelma, joka hallitsee ohjelmistojen asennusta, päivittämistä ja poistamista Linux-järjestelmässä",
+		"id": 273
+	},
+	{
+		"kurssi": 4,
+		"sana": "Kaksoiskäynnistys",
+		"lyhenne": "",
+		"selitys": "Tietokoneeseen on asennettu kaksi käyttöjärjestelmää, ja käynnistettäessä voidaan valita kumpi käytetään",
+		"id": 274
+	},
+	{
+		"kurssi": 4,
+		"sana": "ISO-levykuva",
+		"lyhenne": "",
+		"selitys": "Tiedostomuoto, joka sisältää täydellisen kopion optisesta levystä, kuten käyttöjärjestelmän asennusmedian",
+		"id": 275
+	},
+	{
+		"kurssi": 4,
+		"sana": "Juurihakemisto",
+		"lyhenne": "",
+		"selitys": "Tiedostojärjestelmän ylin hakemisto, josta kaikki muut kansiot ja tiedostot haarautuvat",
+		"id": 276
+	},
+	{
+		"kurssi": 4,
+		"sana": "Hakemistopuu",
+		"lyhenne": "",
+		"selitys": "Hierarkkinen rakenne, jossa kansiot ja alikansiot muodostavat puumaisen tiedostojärjestelmän",
+		"id": 277
+	},
+	{
+		"kurssi": 4,
+		"sana": "Command Line Interface",
+		"lyhenne": "",
+		"selitys": "Käyttöliittymä, jossa käyttäjä antaa käskyjä tekstimuotoisina komentoina",
+		"id": 278
+	},
+	{
+		"kurssi": 4,
+		"sana": "Command options",
+		"lyhenne": "",
+		"selitys": "Komennon lisäparametreja, joilla voidaan muuttaa sen toimintaa (esim. `ls -l`)",
+		"id": 279
+	},
+	{
+		"kurssi": 4,
+		"sana": "Terminaali",
+		"lyhenne": "",
+		"selitys": "Sovellus, jonka kautta käyttäjä voi käyttää komentoriviä ja suorittaa komentoja",
+		"id": 280
+	},
+	{
+		"kurssi": 4,
+		"sana": "Shell",
+		"lyhenne": "",
+		"selitys": "Komentotulkki, joka vastaanottaa käyttäjän komennot ja suorittaa ne (esim. Bash)",
+		"id": 281
+	},
+	{
+		"kurssi": 4,
+		"sana": "cd",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, jolla siirrytään toiseen hakemistoon",
+		"id": 282
+	},
+	{
+		"kurssi": 4,
+		"sana": "pwd",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka tulostaa nykyisen hakemiston polun",
+		"id": 283
+	},
+	{
+		"kurssi": 4,
+		"sana": "mkdir",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka luo uuden hakemiston",
+		"id": 284
+	},
+	{
+		"kurssi": 4,
+		"sana": "rmdir",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka poistaa tyhjän hakemiston",
+		"id": 285
+	},
+	{
+		"kurssi": 4,
+		"sana": "ls",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka luettelee nykyisen tai määritetyn hakemiston sisällön",
+		"id": 286
+	},
+	{
+		"kurssi": 4,
+		"sana": "cp",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka kopioi tiedostoja tai hakemistoja",
+		"id": 287
+	},
+	{
+		"kurssi": 4,
+		"sana": "mv",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka siirtää tai nimeää tiedoston tai hakemiston",
+		"id": 288
+	},
+	{
+		"kurssi": 4,
+		"sana": "touch",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka luo tyhjän tiedoston tai päivittää olemassa olevan tiedoston aikaleiman",
+		"id": 289
+	},
+	{
+		"kurssi": 4,
+		"sana": "rm",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka poistaa tiedostoja tai hakemistoja",
+		"id": 290
+	},
+	{
+		"kurssi": 4,
+		"sana": "cat",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka tulostaa tiedoston sisällön komentoriville",
+		"id": 291
+	},
+	{
+		"kurssi": 4,
+		"sana": "grep",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka hakee rivejä, jotka sisältävät tietyn merkkijonon, tiedostoista tai syötteestä",
+		"id": 292
+	},
+	{
+		"kurssi": 4,
+		"sana": "Pipe operator",
+		"lyhenne": "",
+		"selitys": "Merkki (|), joka ohjaa yhden komennon tulosteen toisen komennon syötteeksi",
+		"id": 293
+	},
+	{
+		"kurssi": 4,
+		"sana": "su",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, jolla vaihdetaan käyttäjää, usein käytetään siirtymiseen pääkäyttäjäksi",
+		"id": 294
+	},
+	{
+		"kurssi": 4,
+		"sana": "sudo",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka suorittaa komennon järjestelmänvalvojan oikeuksilla",
+		"id": 295
+	},
+	{
+		"kurssi": 4,
+		"sana": "chmod",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka muuttaa tiedoston tai hakemiston käyttöoikeuksia",
+		"id": 296
+	},
+	{
+		"kurssi": 4,
+		"sana": "chown",
+		"lyhenne": "",
+		"selitys": "Komentorivikomento, joka muuttaa tiedoston tai hakemiston omistajaa",
+		"id": 297
+	},
+	{
+		"kurssi": 4,
+		"sana": "Tietokone",
+		"lyhenne": "",
+		"selitys": "Elektroninen laite, joka käsittelee tietoa tai dataa",
+		"id": 298
+	},
+	{
+		"kurssi": 4,
+		"sana": "Hardware",
+		"lyhenne": "",
+		"selitys": "Tietokoneen fyysiset osat, kuten emolevy, prosessori ja muisti",
+		"id": 299
+	},
+	{
+		"kurssi": 4,
+		"sana": "Software",
+		"lyhenne": "",
+		"selitys": "Ohjelmat ja käyttöjärjestelmät, jotka ohjaavat laitteiston toimintaa",
+		"id": 300
+	},
+	{
+		"kurssi": 4,
+		"sana": "Universal Serial Bus",
+		"lyhenne": "USB",
+		"selitys": "Yleinen liitäntästandardi oheislaitteiden yhdistämiseen tietokoneeseen",
+		"id": 301
+	},
+	{
+		"kurssi": 4,
+		"sana": "Internet Service Provider",
+		"lyhenne": "ISP",
+		"selitys": "Yritys, joka tarjoaa asiakkailleen internetyhteyden",
+		"id": 302
+	},
+	{
+		"kurssi": 4,
+		"sana": "Central Processing Unit",
+		"lyhenne": "CPU",
+		"selitys": "Tietokoneen keskusyksikkö, joka suorittaa käskyt ja laskutoimitukset",
+		"id": 303
+	},
+	{
+		"kurssi": 4,
+		"sana": "Pilvi",
+		"lyhenne": "",
+		"selitys": "Internetin kautta tarjottavat tietotekniikkapalvelut, kuten tallennus tai laskenta",
+		"id": 304
+	},
+	{
+		"kurssi": 4,
+		"sana": "Random Access Memory",
+		"lyhenne": "RAM",
+		"selitys": "Tietokoneen nopea väliaikainen muisti, jossa ohjelmat ja tiedot säilyvät käynnissä ollessa",
+		"id": 305
+	},
+	{
+		"kurssi": 4,
+		"sana": "Emolevy",
+		"lyhenne": "",
+		"selitys": "Tietokoneen keskuspiirilevy, johon kaikki muut komponentit liitetään",
+		"id": 306
+	},
+	{
+		"kurssi": 4,
+		"sana": "HD/SSD",
+		"lyhenne": "",
+		"selitys": "Massamuistit, joita käytetään tietojen pysyvään tallennukseen",
+		"id": 307
+	},
+	{
+		"kurssi": 4,
+		"sana": "x86_64",
+		"lyhenne": "",
+		"selitys": "64-bittinen suoritinarkkitehtuuri, jota käytetään yleisesti pöytäkoneissa ja palvelimissa",
+		"id": 308
+	},
+	{
+		"kurssi": 4,
+		"sana": "ARM",
+		"lyhenne": "",
+		"selitys": "Suoritinarkkitehtuuri, joka on energiatehokas ja yleinen mobiililaitteissa",
+		"id": 309
+	},
+	{
+		"kurssi": 4,
+		"sana": "Palvelin",
+		"lyhenne": "",
+		"selitys": "Tietokone tai ohjelma, joka tarjoaa palveluita muille tietokoneille verkossa",
+		"id": 310
+	},
+	{
+		"kurssi": 4,
+		"sana": "Pilvipalvelu",
+		"lyhenne": "",
+		"selitys": "Tietotekniikan resurssien, kuten laskennan ja tallennuksen, toimittaminen internetin kautta",
+		"id": 311
+	},
+	{
+		"kurssi": 4,
+		"sana": "IPv4",
+		"lyhenne": "",
+		"selitys": "Osoitejärjestelmä joka mahdollistaa laitteiden yhdistämisen verkkoon",
+		"id": 312
+	},
+	{
+		"kurssi": 4,
+		"sana": "Verkkoadapteri",
+		"lyhenne": "",
+		"selitys": "Laite, joka mahdollistaa tietokoneen yhdistämisen verkkoon",
+		"id": 313
+	},
+	{
+		"kurssi": 4,
+		"sana": "Network Address Translation",
+		"lyhenne": "NAT",
+		"selitys": "Tekniikka, jolla yksityisen verkon IP-osoitteet muunnetaan julkisiksi osoitteiksi",
+		"id": 314
+	},
+	{
+		"kurssi": 4,
+		"sana": "Dynamic Host Configuration Protocol",
+		"lyhenne": "DHCP",
+		"selitys": "Protokolla, joka jakaa laitteille automaattisesti IP-osoitteet verkossa",
+		"id": 315
+	},
+	{
+		"kurssi": 4,
+		"sana": "Demilitarized zone",
+		"lyhenne": "DMZ",
+		"selitys": "Verkon osa, johon sijoitetaan ulkoisesti saavutettavat palvelimet, mutta joka on eristetty sisäverkosta",
+		"id": 316
+	},
+	{
+		"kurssi": 4,
+		"sana": "Wireless access point",
+		"lyhenne": "WAP",
+		"selitys": "Laite, joka tarjoaa langattoman yhteyden verkkoon",
+		"id": 317
+	},
+	{
+		"kurssi": 4,
+		"sana": "Network interface controller",
+		"lyhenne": "NIC",
+		"selitys": "Laite tai piirisarja, joka yhdistää tietokoneen verkkoon",
+		"id": 318
+	},
+	{
+		"kurssi": 4,
+		"sana": "Internet Exchange Point",
+		"lyhenne": "IXP",
+		"selitys": "Fyysinen kohta, jossa eri internet-palveluntarjoajat voivat vaihtaa liikennettä",
+		"id": 319
+	},
+	{
+		"kurssi": 4,
+		"sana": "Content delivery network",
+		"lyhenne": "CDN",
+		"selitys": "Verkko palvelimia, jotka toimittavat verkkosisältöä nopeasti käyttäjille eri puolilla maailmaa",
+		"id": 320
+	},
+	{
+		"kurssi": 4,
+		"sana": "Verkkotunnus",
+		"lyhenne": "",
+		"selitys": "Verkko-osoitteen ihmisen luettava nimi, joka vastaa IP-osoitetta",
+		"id": 321
+	},
+	{
+		"kurssi": 4,
+		"sana": "Top domain",
+		"lyhenne": "",
+		"selitys": "Verkkotunnuksen viimeinen osa, kuten .fi, .com tai .org",
+		"id": 322
+	},
+	{
+		"kurssi": 4,
+		"sana": "Virtual Private Server",
+		"lyhenne": "VPS",
+		"selitys": "Palvelin, joka jakaa fyysisen palvelimen resurssit muiden kanssa, mutta toimii itsenäisesti",
+		"id": 323
+	},
+	{
+		"kurssi": 4,
+		"sana": "Kuormantasaimet",
+		"lyhenne": "",
+		"selitys": "Laitteita tai ohjelmia, jotka jakavat verkkoliikenteen useille palvelimille tasaisesti",
+		"id": 324
+	},
+	{
+		"sana": "Ohjelmointi",
+		"lyhenne": "",
+		"selitys": "Tietokoneelle annettavien toimintaohjeiden eli käskyjen sarja",
+		"kurssi": 6,
+		"id": 325
+	},
+	{
+		"sana": "Bitti",
+		"lyhenne": "",
+		"selitys": "Ykköset ja nollat, joista konekieli koostuu",
+		"kurssi": 6,
+		"id": 326
+	},
+	{
+		"sana": "Ohjelmointikieli",
+		"lyhenne": "",
+		"selitys": "Ykkösistä ja nollista koostuva konekieli on piilotettu symbolien ja termien taakse",
+		"kurssi": 6,
+		"id": 327
+	},
+	{
+		"sana": "Käännettävä ohjelmointikieli",
+		"lyhenne": "",
+		"selitys": "Tekstitiedostoon kirjoitettu lähdekoodi käännetään konekieliseksi kielikohtaisella kääntäjällä",
+		"kurssi": 6,
+		"id": 328
+	},
+	{
+		"sana": "Tulkattava ohjelmointikieli",
+		"lyhenne": "",
+		"selitys": "Ohjelmat ajetaan kielikohtaisen tulkin lävitse",
+		"kurssi": 6,
+		"id": 329
+	},
+	{
+		"sana": "Javascript",
+		"lyhenne": "",
+		"selitys": "Ainoa suoraan web-selaimessa tuettu ohjelmointikieli",
+		"kurssi": 6,
+		"id": 330
+	},
+	{
+		"sana": "Transpilointi",
+		"lyhenne": "",
+		"selitys": "Ohjelmakoodin muuntaminen uudemmasta vanhempaan ja laajemmin tuettuun versioon",
+		"kurssi": 6,
+		"id": 331
+	},
+	{
+		"sana": "Typescript",
+		"lyhenne": "",
+		"selitys": "Javascriptin rinnalle kehitetty kieltä parantava ja/tai selkiyttävä ohjelmointikieli",
+		"kurssi": 6,
+		"id": 332
+	},
+	{
+		"sana": "Algoritmi",
+		"lyhenne": "",
+		"selitys": "Tehtävän ratkaisemiseksi tehty ohjeistus",
+		"kurssi": 6,
+		"id": 333
+	},
+	{
+		"sana": "Pseudokoodi",
+		"lyhenne": "",
+		"selitys": "Koodi, joka ei sellaisenaan ole sopiva tietokoneelle, mutta helpompi tulkita ja ymmärtää tuntematta käytettyä ohjelmointikieltä",
+		"kurssi": 6,
+		"id": 334
+	},
+	{
+		"sana": "Syntaksi",
+		"lyhenne": "",
+		"selitys": "Ohjelmointikielen kielioppi",
+		"kurssi": 6,
+		"id": 335
+	},
+	{
+		"sana": "Notaatio",
+		"lyhenne": "",
+		"selitys": "Ohjelmointikielen merkintätapa",
+		"kurssi": 6,
+		"id": 336
+	},
+	{
+		"sana": "Muuttuja",
+		"lyhenne": "",
+		"selitys": "Tiedon tallennuspaikka, jossa olevaan sisältöön päästään käsiksi ja jota voidaan muuttaa",
+		"kurssi": 6,
+		"id": 337
+	},
+	{
+		"sana": "Toistorakenne",
+		"lyhenne": "",
+		"selitys": "Silmukka, jonka avulla koodin tiettyä osaa toistetaan haluttu määrä",
+		"kurssi": 6,
+		"id": 338
+	},
+	{
+		"sana": "Haarautumisrakenne",
+		"lyhenne": "",
+		"selitys": "Ohjelman osa, joka pystyy tekemään eri asioita tilasta tai tilanteesta riippuen",
+		"kurssi": 6,
+		"id": 339
+	},
+	{
+		"sana": "Funktio",
+		"lyhenne": "",
+		"selitys": "Ohjelman osa, joka suorittaa yleensä pienen ja rajatun toiminnallisuuden ohjelmassa",
+		"kurssi": 6,
+		"id": 340
+	},
+	{
+		"sana": "Hello World",
+		"lyhenne": "",
+		"selitys": "Ohjelma, jolla ohjelmoinnin opiskelu tyypillisesti aloitetaan",
+		"kurssi": 6,
+		"id": 341
+	},
+	{
+		"sana": "Puolipiste",
+		"lyhenne": "",
+		"selitys": "Tähän koodirivi tyypillisesti päätetään",
+		"kurssi": 6,
+		"id": 342
+	},
+	{
+		"sana": "Kommentti",
+		"lyhenne": "",
+		"selitys": "Selkiyttää koodirivien eri tarkoituksia",
+		"kurssi": 6,
+		"id": 343
+	},
+	{
+		"sana": "Koodilohko",
+		"lyhenne": "",
+		"selitys": "Muuttujan näkyvyysalue, joka määritellään aaltosulkeilla",
+		"kurssi": 6,
+		"id": 344
+	},
+	{
+		"sana": "Tietotyyppi",
+		"lyhenne": "",
+		"selitys": "Päätellään dynaamisesti suorituksen aikana muuttujan arvon perusteella",
+		"kurssi": 6,
+		"id": 345
+	},
+	{
+		"sana": "Number",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, joka merkitsee kokonaislukua tai liukulukua",
+		"kurssi": 6,
+		"id": 346
+	},
+	{
+		"sana": "Bigint",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, joka esittelee liian suuret luvut Number-tietotyypille",
+		"kurssi": 6,
+		"id": 347
+	},
+	{
+		"sana": "Merkkijono",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, joka tulkitaan tekstinä",
+		"kurssi": 6,
+		"id": 348
+	},
+	{
+		"sana": "Boolean",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, jolla on vain kaksi arvoa: true ja false",
+		"kurssi": 6,
+		"id": 349
+	},
+	{
+		"sana": "Undefined",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, jossa muuttujan arvoa ei ole määritelty",
+		"kurssi": 6,
+		"id": 350
+	},
+	{
+		"sana": "Null",
+		"lyhenne": "",
+		"selitys": "Tietotyyppi, jossa muuttujan arvo on tarkoituksellisesti määrittelemätön tai tyhjä",
+		"kurssi": 6,
+		"id": 351
+	},
+	{
+		"sana": "Vertailuoperaattorit",
+		"lyhenne": "",
+		"selitys": "Selvittää, ovatko muuttujat suurempia, pienempiä tai yhtäsuuria",
+		"kurssi": 6,
+		"id": 352
+	},
+	{
+		"sana": "Loogiset operaattorit",
+		"lyhenne": "",
+		"selitys": "Ja-tai-operaattorit, joilla voi yhdistää kaksi vertailua",
+		"kurssi": 6,
+		"id": 353
+	},
+	{
+		"sana": "Switch",
+		"lyhenne": "",
+		"selitys": "Evaluoi ehtolauseen ja suorittaa sen tulosta vastaavan case-osan sisällön",
+		"kurssi": 6,
+		"id": 354
+	},
+	{
+		"sana": "Break",
+		"lyhenne": "",
+		"selitys": "Päättää silmukan suorittamisen kesken kaiken",
+		"kurssi": 6,
+		"id": 355
+	},
+	{
+		"sana": "While-silmukka",
+		"lyhenne": "",
+		"selitys": "Toistorakenne, jossa koodilohkoa suoritetaan niin kauan, kun vertailuehto on voimassa",
+		"kurssi": 6,
+		"id": 356
+	},
+	{
+		"sana": "For-silmukka",
+		"lyhenne": "",
+		"selitys": "Soveltuu tilanteisiin, joissa tiedetään etukäteen toistojen määrä",
+		"kurssi": 6,
+		"id": 357
+	},
+	{
+		"sana": "Continue",
+		"lyhenne": "",
+		"selitys": "Lause, jolla hypätään toistorakenteen sisällä koodilohkon loppujen komentojen yli",
+		"kurssi": 6,
+		"id": 358
+	},
+	{
+		"sana": "Readline-sync",
+		"lyhenne": "",
+		"selitys": "Tarjoaa helpon, synkronisen tavan syötteiden lukemiseen",
+		"kurssi": 6,
+		"id": 359
+	},
+	{
+		"sana": "parseInt",
+		"lyhenne": "",
+		"selitys": "Muuntaa luvun kokonaisluvuksi",
+		"kurssi": 6,
+		"id": 360
+	},
+	{
+		"sana": "parseFloat",
+		"lyhenne": "",
+		"selitys": "Muuntaa luvun desimaaliluvuksi",
+		"kurssi": 6,
+		"id": 361
+	},
+	{
+		"sana": "Taulukko",
+		"lyhenne": "",
+		"selitys": "Käytetään usean tietoalkion tallentamiseksi yhteen muuttujaan",
+		"kurssi": 6,
+		"id": 362
+	},
+	{
+		"sana": "forEach",
+		"lyhenne": "",
+		"selitys": "Metodi, jota käytetään taulukon alkioiden läpikäymiseen",
+		"kurssi": 6,
+		"id": 363
+	},
+	{
+		"sana": "Push",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lisää alkion taulukon loppuun",
+		"kurssi": 6,
+		"id": 364
+	},
+	{
+		"sana": "Pop",
+		"lyhenne": "",
+		"selitys": "Metodi, joka poistaa alkion taulukon lopusta",
+		"kurssi": 6,
+		"id": 365
+	},
+	{
+		"sana": "Unshift",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lisää alkion taulukon alkuun",
+		"kurssi": 6,
+		"id": 366
+	},
+	{
+		"sana": "Shift",
+		"lyhenne": "",
+		"selitys": "Metodi, joka poistaa alkion taulukon alusta",
+		"kurssi": 6,
+		"id": 367
+	},
+	{
+		"sana": "indexOf",
+		"lyhenne": "",
+		"selitys": "Metodi, jolla voi etsiä tiettyä alkiota taulusta",
+		"kurssi": 6,
+		"id": 368
+	},
+	{
+		"sana": "Splice",
+		"lyhenne": "",
+		"selitys": "Metodi, joka poistaa alkion taulukon tietystä kohdasta",
+		"kurssi": 6,
+		"id": 369
+	},
+	{
+		"sana": "Concat",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lisää taulukon alkiot toiseen taulukkoon",
+		"kurssi": 6,
+		"id": 370
+	},
+	{
+		"sana": "Join",
+		"lyhenne": "",
+		"selitys": "Metodi, joka yhdistää taulukon alkiot merkkijonoksi",
+		"kurssi": 6,
+		"id": 371
+	},
+	{
+		"sana": "Sort",
+		"lyhenne": "",
+		"selitys": "Metodi, joka lajittelee taulukon nousevaan aakkosjärjestykseen",
+		"kurssi": 6,
+		"id": 372
+	},
+	{
+		"sana": "Reverse",
+		"lyhenne": "",
+		"selitys": "Metodi, joka kääntää taulukon ympäri",
+		"kurssi": 6,
+		"id": 373
+	},
+	{
+		"sana": "Parametri",
+		"lyhenne": "",
+		"selitys": "Funktiolle välitetty arvo, jonka pohjalta funktio toimii ja palauttaa erilaisia arvoja eri suorituskerroilla",
+		"kurssi": 6,
+		"id": 374
+	},
+	{
+		"sana": "Argumentti",
+		"lyhenne": "",
+		"selitys": "Antaa funktion parametrille arvon funktiota kutsuttaessa",
+		"kurssi": 6,
+		"id": 375
+	},
+	{
+		"sana": "Hoisting",
+		"lyhenne": "",
+		"selitys": "Funktioiden määritteleminen deklaraatioina, jolloin funktiomäärittelyt nousevat näkyvyysalueen alkuun",
+		"kurssi": 6,
+		"id": 376
+	},
+	{
+		"sana": "Funktion sivuvaikutus",
+		"lyhenne": "",
+		"selitys": "Voi muuttaa esimerkiksi argumenttina annetun muuttujan tai globaalin muuttujan arvoa",
+		"kurssi": 6,
+		"id": 377
+	},
+	{
+		"sana": "Typeof",
+		"lyhenne": "",
+		"selitys": "Operaattori, joka varmistaa, että parametri on oikean tyyppinen",
+		"kurssi": 6,
+		"id": 378
+	},
+	{
+		"sana": "Anonyymi funktio",
+		"lyhenne": "",
+		"selitys": "Lausekesyntaksilla määritelty funktio, jolla ei välttämättä tarvitse olla nimeä",
+		"kurssi": 6,
+		"id": 379
+	},
+	{
+		"sana": "Callback",
+		"lyhenne": "",
+		"selitys": "Funktio, joka välitetään toiselle funktiolle parametrina, ja jota kutsutaan tästä toisesta funktiosta",
+		"kurssi": 6,
+		"id": 380
+	},
+	{
+		"sana": "Map",
+		"lyhenne": "",
+		"selitys": "Metodi, joka luo uuden taulukon ja suorittaa kullekin alkiolle callback-funktiossa määritellyt toimenpiteet",
+		"kurssi": 6,
+		"id": 381
+	},
+	{
+		"sana": "Filter",
+		"lyhenne": "",
+		"selitys": "Metodi, joka luo uuden taulukon, johon se palauttaa toisesta taulukosta sellaiset alkiot, jotka toteuttavat callback-funktiossa määritellyt arvot",
+		"kurssi": 6,
+		"id": 382
+	},
+	{
+		"sana": "Find",
+		"lyhenne": "",
+		"selitys": "Metodi, joka palauttaa käsiteltävän taulukon ensimmäisen alkion, joka täyttää callback-funktiossa määritellyt ehdot",
+		"kurssi": 6,
+		"id": 383
+	},
+	{
+		"sana": "Objekti",
+		"lyhenne": "",
+		"selitys": "Kokoelma pilkulla toisistaan erotettuja ominaisuuksia, jotka puolestaan ovat nimi-arvo -pareja",
+		"kurssi": 6,
+		"id": 384
+	},
+	{
+		"sana": "Object.assign",
+		"lyhenne": "",
+		"selitys": "Metodi, jolla objektista voidaan tehdä klooni",
+		"kurssi": 6,
+		"id": 385
+	},
+	{
+		"sana": "Object.freeze",
+		"lyhenne": "",
+		"selitys": "Metodi, jolla voidaan estää objektin sisällön muuttaminen",
+		"kurssi": 6,
+		"id": 386
+	},
+	{
+		"sana": "Destructing assignment",
+		"lyhenne": "",
+		"selitys": "Syntaksi, jolla voidaan ottaa objektista tai taulukosta käyttöön vain tietty osa",
+		"kurssi": 6,
+		"id": 387
+	},
+	{
+		"sana": "This",
+		"lyhenne": "",
+		"selitys": "Avainsana, jonka avulla objektin metodista pystytään viittaamaan objektin muihin arvoihin",
+		"kurssi": 6,
+		"id": 388
+	},
+	{
+		"sana": "Olio",
+		"lyhenne": "",
+		"selitys": "Ohjelman osa, joka yhdistää dataa (ominaisuuksia) ja siihen liittyviä toimintoja (metodeita ja funktioita)",
+		"kurssi": 6,
+		"id": 389
+	},
+	{
+		"sana": "Olio-ohjelmointi",
+		"lyhenne": "",
+		"selitys": "Ohjelmointiparadigma, joka perustuu objektien käyttöön ohjelman rakenteen ja toiminnan suunnittelussa",
+		"kurssi": 6,
+		"id": 390
+	},
+	{
+		"sana": "Luokka",
+		"lyhenne": "",
+		"selitys": "Kuvaa käsiteltävän asian piirteet",
+		"kurssi": 6,
+		"id": 391
+	},
+	{
+		"sana": "Prototyyppi",
+		"lyhenne": "",
+		"selitys": "Objekti, joka tarjoaa muille objekteille niiden käyttämät yhteiset ominaisuudet ja metodit",
+		"kurssi": 6,
+		"id": 392
+	},
+	{
+		"sana": "Kapselointi",
+		"lyhenne": "",
+		"selitys": "Ilmentymien sisältämien tietojen suojaamista",
+		"kurssi": 6,
+		"id": 393
+	},
+	{
+		"sana": "Staattinen muuttuja",
+		"lyhenne": "",
+		"selitys": "Koko luokan ominaisuus",
+		"kurssi": 6,
+		"id": 394
+	}
+]
