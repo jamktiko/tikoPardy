@@ -198,19 +198,24 @@
 				<label class="checkbox-wrapper">
 					<input type="checkbox" bind:checked={ajastinPaalla.on} onchange={asetusMuutos} />
 					<span class="custom-checkbox"></span>
-					<strong>Ajastin:</strong> 15s aikaa vastata.
+					<strong>Ajastin ⏰:</strong> 15s aikaa vastata.
 				</label>
 
 				<label class="checkbox-wrapper">
 					<input type="checkbox" bind:checked={sDeath.on} onchange={asetusMuutos} />
 					<span class="custom-checkbox"></span>
-					<strong>Sudden Death:</strong> Vain yksi elämä.
+					<strong>Sudden Death ☠️:</strong> Vain yksi elämä.
 				</label>
 
 				<label class="checkbox-wrapper">
 					<input type="checkbox" bind:checked={harkka.on} onchange={settingsChange} />
 					<span class="custom-checkbox"></span>
-					<strong>Harjoittelu:</strong> Loputtomat elämät, ei ajastinta. Highscore ei tallennu harjoittelussa.
+					<strong>Harjoittelu 📖:</strong> Loputtomat elämät, ei ajastinta. Highscore ei tallennu harjoittelussa.
+				</label>
+				<label class="checkbox-wrapper">
+					<input type="checkbox" bind:checked={harkka.on} onchange={settingsChange} />
+					<span class="custom-checkbox"></span>
+					<strong>Musiikki 🎶:</strong> Musiikki päälle tai pois.
 				</label>
 			</div>
 
