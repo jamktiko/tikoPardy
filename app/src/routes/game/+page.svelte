@@ -390,7 +390,7 @@
 		<AudioSlider
 			setVolume={audioVolume}
 			Mplay={false}
-			audioSrc="millionaireBackground.mp3"
+			audioSrc="background.mp3"
 			on:volumechange={handleVolumeChange}
 		/>
 	</div>
