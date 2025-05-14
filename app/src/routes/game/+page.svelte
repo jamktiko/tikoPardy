@@ -8,7 +8,7 @@
 	import { Volume2, VolumeX, Volume1, MoveLeft } from '@lucide/svelte';
 	import kurssitData from '../../lib/kurssit.json';
 	import Timer from '../../lib/components/Timer.svelte';
-	import { ajastinPaalla, sDeath, harkka } from '$lib/states.svelte';
+	import { ajastinPaalla, sDeath, harkka, musiikkiMuted } from '$lib/states.svelte';
 	import { browser } from '$app/environment';
 	import type { Kysymys } from '../../lib/interfaces';
 
@@ -310,6 +310,10 @@
 			openModal('Virhe', 'Kysymysten lataaminen epäonnistui!');
 		}
 	});
+
+	if (!musiikkiMuted.on) {
+		audioVolume = 0;
+	}
 </script>
 
 <button class="goBack" onclick={mainMenu}><MoveLeft /></button>
@@ -619,9 +623,9 @@
 		}
 
 		.audio-slider-container {
-		display: none;
+			display: none;
+		}
 	}
-}
 	/* Responsive Styles */
 	@media (max-width: 768px) {
 		.main-content {
@@ -677,8 +681,8 @@
 		}
 		.audio-slider-container {
 			display: none;
+		}
 	}
-}
 
 	@media (max-width: 480px) {
 		h1 {
@@ -736,8 +740,8 @@
 			position: relative;
 			padding: 10px 20px;
 		}
-	.audio-slider-container {
-		display: none;
+		.audio-slider-container {
+			display: none;
+		}
 	}
-}
 </style>

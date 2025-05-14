@@ -9,3 +9,7 @@ export const sDeath = $state({
 export const harkka = $state({
 	on: false
 });
+
+export const musiikkiMuted = $state({
+	on: true
+});

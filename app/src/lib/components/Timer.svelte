@@ -6,7 +6,6 @@
 	let { duration, reset = 0, pause = false } = $props();
 	const dispatch = createEventDispatcher();
 
-	// Create a Tween instance (new API in Svelte 5)
 	const tween = new Tween(1, {
 		delay: 200,
 		duration: duration,
